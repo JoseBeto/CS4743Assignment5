@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="rootPane" fx:controller="assignment1.MenuController"
+	xmlns:fx="http://javafx.com/fxml"
+    prefHeight="500" prefWidth="700" >
+    
+    <top>
+<VBox id="vbox" 
+      xmlns:fx="http://javafx.com/fxml">
+      
+	<MenuBar fx:id="menuBar">
+		<menus>
+		<Menu text="Menu">
+            <items>
+               <MenuItem fx:id="menuItemAuthorList" text="Author List" onAction="#handleMenuAction"/>
+               <SeparatorMenuItem  />
+               <MenuItem fx:id="menuItemQuit" text="Quit" onAction="#handleMenuAction"/>
+            </items>
+		</Menu>
+		</menus>
+	</MenuBar>
+</VBox>
+</top>
+
+<center>
+</center>
+
+</BorderPane>
