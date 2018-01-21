@@ -16,10 +16,7 @@ public class Launcher extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		//generate a scenegraph from the fxml file
-		//note that the entire view will be laid out in the fxml file
 		Parent root = FXMLLoader.load(getClass().getResource("menu.fxml"));
-		//build a scene with the scenegraph as its root node
 		Scene scene = new Scene(root);
 
 		primaryStage.setTitle("assignment1");

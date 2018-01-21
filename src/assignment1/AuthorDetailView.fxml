@@ -6,20 +6,19 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button fx:id="saveButton" layoutX="259.0" layoutY="323.0" mnemonicParsing="false" onAction="#handleSaveButton" text="Save" />
+      <Button fx:id="saveAuthor" layoutX="259.0" layoutY="323.0" mnemonicParsing="false" onAction="#handleSaveButton" text="Save" />
       <Label alignment="CENTER_RIGHT" layoutX="150.0" layoutY="50.0" prefHeight="25.0" prefWidth="67.0" text="First Name">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="290.0" layoutY="50.0" />
-      <TextField layoutX="290.0" layoutY="100.0" />
-      <TextField layoutX="290.0" layoutY="150.0" />
-      <TextField layoutX="290.0" layoutY="250.0" />
-      <TextField layoutX="290.0" layoutY="200.0" />
+      <TextField fx:id="firstName" layoutX="290.0" layoutY="50.0" />
+      <TextField fx:id="lastName" layoutX="290.0" layoutY="100.0" />
+      <TextField fx:id="doB" layoutX="290.0" layoutY="150.0" />
+      <TextField fx:id="website" layoutX="290.0" layoutY="250.0" />
+      <TextField fx:id="gender" layoutX="290.0" layoutY="200.0" />
       <Label alignment="CENTER_RIGHT" layoutX="150.0" layoutY="200.0" prefHeight="25.0" prefWidth="67.0" text="Gender">
          <font>
             <Font size="14.0" />

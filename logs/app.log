@@ -1,0 +1,33 @@
+19:24:21.499 INFO  assignment1.AuthorListController : Jose clicked
+19:28:18.720 INFO  assignment1.AuthorListController : Jose clicked
+19:29:12.081 INFO  assignment1.AuthorListController : Jose clicked
+19:29:49.143 INFO  assignment1.AuthorListController : Sweetie clicked
+19:31:45.100 INFO  assignment1.AuthorListController : Jose clicked
+19:31:47.259 INFO  assignment1.AuthorDetailController : Saved
+19:32:26.689 INFO  assignment1.AuthorListController : Author "Jose" clicked
+19:33:52.094 INFO  assignment1.AuthorListController : Author "Jose B" clicked
+19:33:57.788 INFO  assignment1.AuthorListController : Author "Sweetie we" clicked
+19:33:59.599 INFO  assignment1.AuthorDetailController : Save button clicked
+19:46:52.923 INFO  assignment1.AuthorListController : Author "Fred Carrier" clicked
+19:47:18.607 INFO  assignment1.AuthorListController : Author "Fred Carrier" clicked
+19:47:28.247 INFO  assignment1.AuthorListController : Author "Fred Carrier" clicked
+19:49:07.345 INFO  assignment1.AuthorListController : Author "Fred Carrier" clicked
+19:50:20.148 INFO  assignment1.AuthorListController : Author "Fred Carrier" clicked
+19:50:42.109 INFO  assignment1.AuthorListController : Author "Fred Carrier" clicked
+19:50:46.298 INFO  assignment1.AuthorListController : Author "Wendy Lehner" clicked
+19:50:51.149 INFO  assignment1.AuthorListController : Author "Fred Carrier" clicked
+19:50:56.237 INFO  assignment1.AuthorDetailController : Save button clicked
+19:51:18.384 INFO  assignment1.AuthorListController : Author "Fred Carrier" clicked
+19:51:21.834 INFO  assignment1.AuthorListController : Author "Wendy Lehner" clicked
+19:52:23.831 INFO  assignment1.AuthorListController : Author "Fred Carrier" clicked
+19:58:12.962 INFO  assignment1.AuthorListController : Author "Fred Carrier" clicked
+19:58:24.453 INFO  assignment1.AuthorListController : Author "Fred Carrier" clicked
+19:58:35.679 INFO  assignment1.AuthorListController : Author "Fred Carrier" clicked
+19:58:37.740 INFO  assignment1.AuthorListController : Author "Wendy Lehner" clicked
+19:59:04.020 INFO  assignment1.AuthorListController : Author "Fred Carrier" clicked
+19:59:08.836 INFO  assignment1.AuthorListController : Author "Wendy Lehner" clicked
+20:01:52.517 INFO  assignment1.AuthorListController : Author "Fred Carrier" clicked
+20:01:59.849 INFO  assignment1.AuthorListController : Author "Fred Carrier" clicked
+20:02:05.666 INFO  assignment1.AuthorListController : Author "Fred Carrier" clicked
+20:02:27.420 INFO  assignment1.AuthorListController : Author "Fred Carrier" clicked
+20:02:30.034 INFO  assignment1.AuthorListController : Author "Wendy Lehner" clicked
