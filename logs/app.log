@@ -31,3 +31,6 @@
 20:02:05.666 INFO  assignment1.AuthorListController : Author "Fred Carrier" clicked
 20:02:27.420 INFO  assignment1.AuthorListController : Author "Fred Carrier" clicked
 20:02:30.034 INFO  assignment1.AuthorListController : Author "Wendy Lehner" clicked
+20:01:15.327 INFO  assignment1.AuthorListController : Author "Fred Carrier" double clicked
+20:01:18.417 INFO  assignment1.AuthorDetailController : Save button clicked
+20:01:24.468 INFO  assignment1.AuthorListController : Author "Wendy Lehner" double clicked

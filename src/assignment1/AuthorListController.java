@@ -41,7 +41,7 @@ public class AuthorListController implements Initializable {
     			logger.info("Author \"" + author.getFirstName() + " " + author.getLastName() + "\" double clicked");
     		}
     	} catch (IOException e) {
-    		e.printStackTrace();
+    		logger.error("ERROR: IO Exception");
     	}
     }
 	

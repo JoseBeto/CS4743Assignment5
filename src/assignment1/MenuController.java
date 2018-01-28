@@ -7,6 +7,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -25,6 +27,7 @@ public class MenuController implements Initializable {
 	@FXML private MenuItem menuItemQuit;
 	@FXML private BorderPane rootPane;
 	private ObservableList<Author> authors;
+	private static Logger logger = LogManager.getLogger();
 	
 	@FXML private void handleMenuAction(ActionEvent event) throws IOException {
 		if(event.getSource() == menuItemAuthorList) {
@@ -51,8 +54,7 @@ public class MenuController implements Initializable {
 			Date wendyDate = dateFormat.parse("7/27/1985");
 			authors.add(new Author("Wendy", "Lehner", wendyDate, "Female"));
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("ERROR: Parse Exception");
 		}
 	}
 	
