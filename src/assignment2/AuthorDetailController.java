@@ -1,4 +1,4 @@
-package assignment1;
+package assignment2;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
