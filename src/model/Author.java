@@ -1,8 +1,9 @@
 package model;
 
+import java.sql.Date;
 import java.time.LocalDate;
-import java.util.Date;
-
+import database.AuthorTableGateway;
+import database.AppException;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 
@@ -13,6 +14,8 @@ public class Author {
 	private SimpleObjectProperty<LocalDate> doB;
 	private SimpleStringProperty gender;
 	private SimpleStringProperty website;
+	private int id;
+	private AuthorTableGateway gateway;
 	
 	public Author() {
 		
@@ -24,10 +27,54 @@ public class Author {
 		this.doB = new SimpleObjectProperty<LocalDate>();
 		this.gender = new SimpleStringProperty();
 		website = new SimpleStringProperty();
+		
+		if(!isValidName(fName))
+			throw new IllegalArgumentException("First name must be between 1 and 100 characters!");
 		setFirstName(fName);
+		
+		if(!isValidName(lName))
+			throw new IllegalArgumentException("Last name must be between 1 and 100 characters!");
 		setLastName(lName);
+		
+		if(!isValidDate(doB))
+			throw new IllegalArgumentException("Date must be a date before the current date!");
 		setDoB(doB);
+		
+		if(!isValidGender(gender))
+			throw new IllegalArgumentException("Gender must be either male, female, or unknown!");
 		setGender(gender);
+	}
+	
+	public void save() throws AppException {
+		gateway.updateAuthor(this);
+	}
+
+	//biz logic
+	public boolean isValidName(String name) {
+		//First and last name must be between 1 and 100 chars
+		if(name.length() < 1 || name.length() > 100)
+			return false;
+		return true;
+	}
+	
+	public boolean isValidDate(LocalDate doB2) {
+		LocalDate newDate = null;
+		if(doB2.isBefore(newDate))
+			return true;
+		return false;
+	}
+	
+	public boolean isValidGender(String gender) {
+		//Gender must be either male, female, or unknown
+		if(gender.equalsIgnoreCase("male") || gender.equalsIgnoreCase("female") || gender.equalsIgnoreCase("unknown"))
+			return true;
+		return false;
+	}
+	
+	public boolean isValidWebsite(String website) {
+		if(website.length() > 100)
+			return false;
+		return true;
 	}
 
 	public String getFirstName() {
@@ -46,8 +93,8 @@ public class Author {
 		this.lastName.set(lastName);
 	}
 
-	public LocalDate getDoB() {
-		return doB.get();
+	public Date getDoB() {
+		return Date.valueOf(doB.get());
 	}
 
 	public void setDoB(LocalDate doB2) {
@@ -68,6 +115,22 @@ public class Author {
 
 	public void setWebsite(String website) {
 		this.website.set(website);
+	}
+	
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	public AuthorTableGateway getGateway() {
+		return gateway;
+	}
+
+	public void setGateway(AuthorTableGateway gateway) {
+		this.gateway = gateway;
 	}
 	
 	public SimpleStringProperty firstNameProperty() {

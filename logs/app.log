@@ -53,3 +53,4 @@
 14:02:27.453 ERROR controller.AuthorListController : ERROR: IO Exception
 14:05:53.751 INFO  controller.AuthorListController : Author "Wendy Lehner" double clicked
 14:06:01.010 INFO  controller.AuthorListController : Author "Fred Carrier" double clicked
+16:42:56.871 INFO  assignment2.Launcher : Creating connection...

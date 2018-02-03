@@ -1,49 +1,41 @@
 package controller;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
+import database.AuthorTableGateway;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.BorderPane;
 import model.Author;
 
-public class AuthorListController implements Initializable {
+public class AuthorListController implements Initializable, MyController {
 
 	private static Logger logger = LogManager.getLogger();
 	@FXML private ListView<Author> authorList;
-	private BorderPane rootPane;
 	private ObservableList<Author> authors;
+	private AuthorTableGateway gateway;
 
-	public AuthorListController(ObservableList<Author> authors, BorderPane rootPane) {
+	public AuthorListController(AuthorTableGateway gateway) {
+    	this.gateway = gateway;
+    	authors = this.gateway.getAuthors();
+    }
+	
+	public AuthorListController(ObservableList<Author> authors) {
     	this.authors = authors;
-    	this.rootPane = rootPane;
     }
 	
     @FXML
     void authorListClicked(MouseEvent event) {
-    	if(event.getClickCount() != 2)
-    		return;
-    	try {
+    	if(event.getClickCount() > 1) {
     		Author author = authorList.getSelectionModel().getSelectedItem();
-    		if(author != null) {
-    			FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/view/AuthorDetailView.fxml"));
-    			loader.setController(new AuthorDetailController(author));
-    			Parent pane = loader.load();
-    			rootPane.setCenter(pane);
-    			
-    			logger.info("Author \"" + author.getFirstName() + " " + author.getLastName() + "\" double clicked");
+   			if(author != null) {
+    			AppController.getInstance().changeView(AppController.AUTHOR_DETAIL, author);
+        		logger.info(author.getFirstName() + " clicked");
     		}
-    	} catch (IOException e) {
-    		logger.error("ERROR: IO Exception");
     	}
     }
 	
