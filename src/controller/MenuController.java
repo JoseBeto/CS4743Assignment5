@@ -1,4 +1,4 @@
-package assignment2;
+package controller;
 
 import java.io.IOException;
 import java.net.URL;
@@ -20,6 +20,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.BorderPane;
+import model.Author;
 
 public class MenuController implements Initializable {
 

@@ -1,12 +1,15 @@
-package assignment2;
+package controller;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import model.Author;
+
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

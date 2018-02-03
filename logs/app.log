@@ -34,3 +34,7 @@
 20:01:15.327 INFO  assignment1.AuthorListController : Author "Fred Carrier" double clicked
 20:01:18.417 INFO  assignment1.AuthorDetailController : Save button clicked
 20:01:24.468 INFO  assignment1.AuthorListController : Author "Wendy Lehner" double clicked
+12:48:51.252 INFO  assignment2.AuthorListController : Author "Fred Carrier" double clicked
+12:48:55.822 INFO  assignment2.AuthorListController : Author "Wendy Lehner" double clicked
+12:49:04.870 INFO  assignment2.AuthorListController : Author "Fred Carrier" double clicked
+12:49:07.375 INFO  assignment2.AuthorDetailController : Save button clicked

@@ -1,4 +1,4 @@
-package assignment2;
+package model;
 
 import java.util.Date;
 
