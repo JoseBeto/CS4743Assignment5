@@ -6,6 +6,7 @@ import model.Author;
 
 import java.net.URL;
 import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -40,8 +41,8 @@ public class AuthorDetailController implements Initializable {
 		firstName.setText(author.getFirstName());
 		lastName.setText(author.getLastName());
 		
-		SimpleDateFormat ft = new SimpleDateFormat("MM/dd/y");
-		doB.setText(ft.format(author.getDoB()));
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMM-yyyy");
+		doB.setText(formatter.format(author.getDoB()));
 		
 		website.setText(author.getWebsite());
 		gender.setText(author.getGender());

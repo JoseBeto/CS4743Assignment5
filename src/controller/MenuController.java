@@ -5,6 +5,8 @@ import java.net.URL;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.ResourceBundle;
 import org.apache.logging.log4j.LogManager;
@@ -46,18 +48,16 @@ public class MenuController implements Initializable {
 	
 	public void createAuthors() {
 		authors = FXCollections.observableArrayList();
-		DateFormat dateFormat = new SimpleDateFormat("MM/dd/y");
+		//DateFormat dateFormat = new SimpleDateFormat("MM/dd/y");
+		String fredDob = "13-Dec-1978";
+		String wendyDob = "27-Jul-1985";
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMM-yyyy");
+		LocalDate fredDate = LocalDate.parse(fredDob, formatter);
+		authors.add(new Author("Fred", "Carrier", fredDate, "Male"));
+		authors.get(0).setWebsite("www.google.com");
 		
-		try {
-			Date fredDate = dateFormat.parse("12/13/1978");
-			authors.add(new Author("Fred", "Carrier", fredDate, "Male"));
-			authors.get(0).setWebsite("www.google.com");
-			
-			Date wendyDate = dateFormat.parse("7/27/1985");
-			authors.add(new Author("Wendy", "Lehner", wendyDate, "Female"));
-		} catch (ParseException e) {
-			logger.error("ERROR: Parse Exception");
-		}
+		LocalDate wendyDate = LocalDate.parse(wendyDob, formatter);
+		authors.add(new Author("Wendy", "Lehner", wendyDate, "Female"));
 	}
 	
 	@Override

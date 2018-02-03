@@ -1,16 +1,29 @@
 package model;
 
+import java.time.LocalDate;
 import java.util.Date;
+
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
 
 public class Author {
 
-	private String firstName;
-	private String lastName;
-	private Date doB;
-	private String gender;
-	private String website;
+	private SimpleStringProperty firstName;
+	private SimpleStringProperty lastName;
+	private SimpleObjectProperty<LocalDate> doB;
+	private SimpleStringProperty gender;
+	private SimpleStringProperty website;
 	
-	public Author(String fName, String lName, Date doB, String gender) {
+	public Author() {
+		
+	}
+	
+	public Author(String fName, String lName, LocalDate doB, String gender) {
+		firstName = new SimpleStringProperty();
+		lastName = new SimpleStringProperty();
+		this.doB = new SimpleObjectProperty<LocalDate>();
+		this.gender = new SimpleStringProperty();
+		website = new SimpleStringProperty();
 		setFirstName(fName);
 		setLastName(lName);
 		setDoB(doB);
@@ -18,47 +31,60 @@ public class Author {
 	}
 
 	public String getFirstName() {
-		return firstName;
+		return firstName.get();
 	}
 
 	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+		this.firstName.set(firstName);
 	}
 
 	public String getLastName() {
-		return lastName;
+		return lastName.get();
 	}
 
 	public void setLastName(String lastName) {
-		this.lastName = lastName;
+		this.lastName.set(lastName);
 	}
 
-	public Date getDoB() {
-		return doB;
+	public LocalDate getDoB() {
+		return doB.get();
 	}
 
-	public void setDoB(Date doB) {
-		this.doB = doB;
+	public void setDoB(LocalDate doB2) {
+		this.doB.set(doB2);
 	}
 
 	public String getGender() {
-		return gender;
+		return gender.get();
 	}
 
 	public void setGender(String gender) {
-		this.gender = gender;
+		this.gender.set(gender);
 	}
 
 	public String getWebsite() {
-		return website;
+		return website.get();
 	}
 
 	public void setWebsite(String website) {
-		this.website = website;
+		this.website.set(website);
+	}
+	
+	public SimpleStringProperty firstNameProperty() {
+		return firstName;
+	}
+	public SimpleStringProperty lastNameProperty() {
+		return lastName;
+	}
+	public SimpleObjectProperty<LocalDate> dateOfBirthProperty(){
+		return doB;
+	}
+	public SimpleStringProperty websiteProperty(){
+		return website;
 	}
 
 	@Override
 	public String toString() {
-		return firstName + " " + lastName;
+		return firstName.get() + " " + lastName.get();
 	}
 }

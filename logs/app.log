@@ -39,3 +39,17 @@
 12:49:04.870 INFO  assignment2.AuthorListController : Author "Fred Carrier" double clicked
 12:49:07.375 INFO  assignment2.AuthorDetailController : Save button clicked
 13:06:20.053 INFO  controller.AuthorListController : Author "Fred Carrier" double clicked
+13:55:15.206 ERROR controller.AuthorListController : ERROR: IO Exception
+13:55:18.349 ERROR controller.AuthorListController : ERROR: IO Exception
+13:55:19.430 ERROR controller.AuthorListController : ERROR: IO Exception
+13:58:07.681 ERROR controller.AuthorListController : ERROR: IO Exception
+13:58:10.965 ERROR controller.AuthorListController : ERROR: IO Exception
+13:58:12.091 ERROR controller.AuthorListController : ERROR: IO Exception
+14:00:58.460 ERROR controller.AuthorListController : ERROR: IO Exception
+14:01:01.371 ERROR controller.AuthorListController : ERROR: IO Exception
+14:01:35.532 INFO  controller.AuthorListController : Author "Fred Carrier" double clicked
+14:02:25.562 ERROR controller.AuthorListController : ERROR: IO Exception
+14:02:26.547 ERROR controller.AuthorListController : ERROR: IO Exception
+14:02:27.453 ERROR controller.AuthorListController : ERROR: IO Exception
+14:05:53.751 INFO  controller.AuthorListController : Author "Wendy Lehner" double clicked
+14:06:01.010 INFO  controller.AuthorListController : Author "Fred Carrier" double clicked
