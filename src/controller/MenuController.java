@@ -35,7 +35,7 @@ public class MenuController implements Initializable {
 		if(event.getSource() == menuItemAuthorList) {
 			createAuthors();
 			
-			FXMLLoader loader = new FXMLLoader(this.getClass().getResource("AuthorListView.fxml"));
+			FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/view/AuthorListView.fxml"));
 			loader.setController(new AuthorListController(authors, rootPane));
 			Parent pane = loader.load();
 			rootPane.setCenter(pane);

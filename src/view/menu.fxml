@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane fx:id="rootPane" fx:controller="assignment2.MenuController"
+<BorderPane fx:id="rootPane" fx:controller="controller.MenuController"
 	xmlns:fx="http://javafx.com/fxml"
     prefHeight="500" prefWidth="700" >
     

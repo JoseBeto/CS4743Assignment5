@@ -35,7 +35,7 @@ public class AuthorListController implements Initializable {
     	try {
     		Author author = authorList.getSelectionModel().getSelectedItem();
     		if(author != null) {
-    			FXMLLoader loader = new FXMLLoader(this.getClass().getResource("AuthorDetailView.fxml"));
+    			FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/view/AuthorDetailView.fxml"));
     			loader.setController(new AuthorDetailController(author));
     			Parent pane = loader.load();
     			rootPane.setCenter(pane);
