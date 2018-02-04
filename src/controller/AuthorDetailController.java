@@ -2,6 +2,8 @@ package controller;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.util.StringConverter;
+import javafx.util.converter.LocalDateTimeStringConverter;
 import model.Author;
 import java.net.URL;
 import java.time.format.DateTimeFormatter;
@@ -67,14 +69,10 @@ public class AuthorDetailController implements Initializable, MyController {
     
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		firstName.setText(author.getFirstName());
-		lastName.setText(author.getLastName());
-		
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMM-yyyy");
-		doB.setText(formatter.format(author.getDoB()));
-		
-		website.setText(author.getWebsite());
-		gender.setText(author.getGender());
+		firstName.textProperty().bindBidirectional(author.firstNameProperty());
+		lastName.textProperty().bindBidirectional(author.lastNameProperty());
+		//doB.textProperty().bindBidirectional(author.dateOfBirthProperty(), new LocalDateTimeStringConverter());
+		website.textProperty().bindBidirectional(author.websiteProperty());
+		gender.textProperty().bindBidirectional(author.genderProperty());
 	}
-
 }

@@ -145,6 +145,9 @@ public class Author {
 	public SimpleObjectProperty<LocalDate> dateOfBirthProperty(){
 		return doB;
 	}
+	public SimpleStringProperty genderProperty(){
+		return gender;
+	}
 	public SimpleStringProperty websiteProperty(){
 		return website;
 	}

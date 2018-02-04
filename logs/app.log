@@ -133,3 +133,80 @@
 01:21:45.851 INFO  controller.AppController : Author list menu item clicked
 01:21:46.721 INFO  controller.AuthorListController : Fred clicked
 01:22:03.962 INFO  assignment2.Launcher : Closing connection...
+01:23:25.018 INFO  assignment2.Launcher : Creating connection...
+01:23:29.301 INFO  controller.AppController : Author list menu item clicked
+01:23:30.160 INFO  controller.AuthorListController : Fred clicked
+01:23:32.981 INFO  controller.AuthorDetailController : Model's name is Fred
+01:23:32.982 INFO  controller.AuthorDetailController : Saved
+01:23:35.814 INFO  controller.AppController : Author list menu item clicked
+01:23:36.636 INFO  controller.AuthorListController : Fred clicked
+01:23:37.577 INFO  assignment2.Launcher : Closing connection...
+01:25:58.500 INFO  assignment2.Launcher : Creating connection...
+01:26:00.619 INFO  controller.AppController : Author list menu item clicked
+01:26:01.778 INFO  controller.AuthorListController : Mary clicked
+01:26:06.268 INFO  controller.AuthorDetailController : Model's name is Mary
+01:26:11.174 INFO  controller.AppController : Author list menu item clicked
+01:26:12.265 INFO  controller.AuthorListController : Mary clicked
+01:26:14.630 INFO  assignment2.Launcher : Closing connection...
+01:26:53.711 INFO  assignment2.Launcher : Creating connection...
+01:26:55.919 INFO  controller.AppController : Author list menu item clicked
+01:26:56.820 INFO  controller.AuthorListController : Mary clicked
+01:26:59.436 INFO  controller.AuthorDetailController : Model's name is Mary
+01:27:01.332 INFO  controller.AppController : Author list menu item clicked
+01:27:02.280 INFO  controller.AuthorListController : Mary clicked
+01:27:06.334 INFO  controller.AuthorDetailController : Model's name is Mary
+01:27:07.010 INFO  controller.AuthorDetailController : Model's name is Mary
+01:27:07.127 INFO  controller.AuthorDetailController : Model's name is Mary
+01:27:07.258 INFO  controller.AuthorDetailController : Model's name is Mary
+01:27:07.398 INFO  controller.AuthorDetailController : Model's name is Mary
+01:27:10.729 INFO  controller.AppController : Author list menu item clicked
+01:27:12.232 INFO  controller.AuthorListController : John clicked
+01:27:13.441 INFO  controller.AppController : Author list menu item clicked
+01:27:14.143 INFO  controller.AuthorListController : Mary clicked
+01:27:14.962 INFO  assignment2.Launcher : Closing connection...
+01:29:34.262 INFO  assignment2.Launcher : Creating connection...
+01:29:36.366 INFO  controller.AppController : Author list menu item clicked
+01:29:37.126 INFO  controller.AuthorListController : Mary clicked
+01:29:38.130 INFO  controller.AuthorDetailController : Model's name is Mary
+01:29:43.780 INFO  controller.AuthorDetailController : Model's name is Mary
+01:29:45.745 INFO  controller.AppController : Author list menu item clicked
+01:29:47.013 INFO  controller.AuthorListController : Mary clicked
+01:29:48.258 INFO  assignment2.Launcher : Closing connection...
+01:31:38.228 INFO  assignment2.Launcher : Creating connection...
+01:31:39.905 INFO  assignment2.Launcher : Closing connection...
+01:40:35.186 INFO  assignment2.Launcher : Creating connection...
+01:40:37.281 INFO  controller.AppController : Author list menu item clicked
+01:40:38.854 INFO  controller.AuthorListController : Fred clicked
+01:40:43.006 INFO  controller.AuthorDetailController : Model's name is Fry
+01:40:44.952 INFO  controller.AppController : Author list menu item clicked
+01:40:49.488 INFO  assignment2.Launcher : Closing connection...
+01:41:00.846 INFO  assignment2.Launcher : Creating connection...
+01:41:02.833 INFO  controller.AppController : Author list menu item clicked
+01:41:03.684 INFO  controller.AuthorListController : Mary clicked
+01:41:07.122 INFO  controller.AuthorDetailController : Model's name is Mary
+01:41:14.056 INFO  controller.AppController : Author list menu item clicked
+01:41:15.441 INFO  controller.AuthorListController : Mary clicked
+01:41:20.356 INFO  controller.AuthorDetailController : Model's name is Mary
+01:41:37.990 INFO  assignment2.Launcher : Closing connection...
+01:42:25.665 INFO  assignment2.Launcher : Creating connection...
+01:42:27.977 INFO  controller.AppController : Author list menu item clicked
+01:42:28.970 INFO  controller.AuthorListController : Mary clicked
+01:42:32.066 INFO  controller.AuthorDetailController : Model's name is Mary
+01:42:33.813 INFO  controller.AppController : Author list menu item clicked
+01:42:34.536 INFO  controller.AuthorListController : Mary clicked
+01:42:39.673 INFO  controller.AuthorDetailController : Model's name is Mary
+01:42:41.767 INFO  controller.AppController : Author list menu item clicked
+01:42:42.619 INFO  controller.AuthorListController : Mary clicked
+01:42:43.657 INFO  assignment2.Launcher : Closing connection...
+01:42:55.948 INFO  assignment2.Launcher : Creating connection...
+01:42:58.180 INFO  controller.AppController : Author list menu item clicked
+01:42:58.921 INFO  controller.AuthorListController : Fry clicked
+01:43:01.798 INFO  controller.AppController : Author list menu item clicked
+01:43:02.445 INFO  controller.AuthorListController : John clicked
+01:43:03.567 INFO  assignment2.Launcher : Closing connection...
+02:10:30.684 INFO  assignment2.Launcher : Creating connection...
+02:10:33.026 INFO  controller.AppController : Author list menu item clicked
+02:10:33.665 INFO  controller.AuthorListController : Fry clicked
+02:10:39.055 INFO  controller.AuthorDetailController : Model's name is Fred
+02:10:40.684 INFO  controller.AppController : Author list menu item clicked
+02:10:41.545 INFO  assignment2.Launcher : Closing connection...
