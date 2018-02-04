@@ -4,12 +4,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import model.Author;
 import java.net.URL;
-import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import assignment2.AlertHelper;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -47,7 +45,7 @@ public class AuthorDetailController implements Initializable, MyController {
     		AlertHelper.showWarningMessage("Oops!", "Last name is invalid", "Names cannot be "
     				+ "blank and must be no more than 100 characters.");
     		return;
-    	} else if(!author.isValidDate(author.getDoB().toLocalDate())) {
+    	} else if(!author.isValidDate(author.getDoB())) {
     		logger.error("Invalid date: " + author.getDoB());
     		
     		AlertHelper.showWarningMessage("Oops!", "Date is invalid", "Date of birth must be "
@@ -73,7 +71,7 @@ public class AuthorDetailController implements Initializable, MyController {
 		lastName.setText(author.getLastName());
 		
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMM-yyyy");
-		doB.setText(formatter.format(author.getDoB().toLocalDate()));
+		doB.setText(formatter.format(author.getDoB()));
 		
 		website.setText(author.getWebsite());
 		gender.setText(author.getGender());

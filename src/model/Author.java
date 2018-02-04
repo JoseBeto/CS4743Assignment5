@@ -1,8 +1,7 @@
 package model;
 
-import java.sql.Date;
-import java.time.LocalDate;
 import database.AuthorTableGateway;
+import java.time.LocalDate;
 import database.AppException;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -21,12 +20,12 @@ public class Author {
 		
 	}
 	
-	public Author(String fName, String lName, LocalDate doB, String gender) {
+	public Author(String fName, String lName, LocalDate doB, String gender, String website) {
 		firstName = new SimpleStringProperty();
 		lastName = new SimpleStringProperty();
 		this.doB = new SimpleObjectProperty<LocalDate>();
 		this.gender = new SimpleStringProperty();
-		website = new SimpleStringProperty();
+		this.website = new SimpleStringProperty();
 		
 		if(!isValidName(fName))
 			throw new IllegalArgumentException("First name must be between 1 and 100 characters!");
@@ -43,6 +42,10 @@ public class Author {
 		if(!isValidGender(gender))
 			throw new IllegalArgumentException("Gender must be either male, female, or unknown!");
 		setGender(gender);
+		
+		if(!isValidWebsite(website))
+			throw new IllegalArgumentException("Website must be no more than 100 characters!");
+		setWebsite(website);
 	}
 	
 	public void save() throws AppException {
@@ -58,7 +61,7 @@ public class Author {
 	}
 	
 	public boolean isValidDate(LocalDate doB2) {
-		LocalDate newDate = null;
+		LocalDate newDate = LocalDate.now();
 		if(doB2.isBefore(newDate))
 			return true;
 		return false;
@@ -93,8 +96,8 @@ public class Author {
 		this.lastName.set(lastName);
 	}
 
-	public Date getDoB() {
-		return Date.valueOf(doB.get());
+	public LocalDate getDoB() {
+		return doB.get();
 	}
 
 	public void setDoB(LocalDate doB2) {
