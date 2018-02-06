@@ -43,12 +43,12 @@ public class AuthorTableGateway {
 	}
 	
 	public void addAuthor(Author author) throws AppException {
-		System.out.println("Adding Author");
-		author.setId(10);
+		//Find a way to increment ID
+		author.setId(6);
 		PreparedStatement st = null;
 		try {
 			st = conn.prepareStatement("insert into author (id, first_name, last_name, "
-					+ "dob, gender, web_site) values (?, ?, ?, ?, ?, ?");
+					+ "dob, gender, web_site) values (?, ?, ?, ?, ?, ?)");
 			st.setInt(1, author.getId());
 			st.setString(2, author.getFirstName());
 			st.setString(3, author.getLastName());
