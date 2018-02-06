@@ -2,11 +2,9 @@ package controller;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.util.StringConverter;
-import javafx.util.converter.LocalDateTimeStringConverter;
+import javafx.util.converter.LocalDateStringConverter;
 import model.Author;
 import java.net.URL;
-import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -71,7 +69,7 @@ public class AuthorDetailController implements Initializable, MyController {
 	public void initialize(URL location, ResourceBundle resources) {
 		firstName.textProperty().bindBidirectional(author.firstNameProperty());
 		lastName.textProperty().bindBidirectional(author.lastNameProperty());
-		//doB.textProperty().bindBidirectional(author.dateOfBirthProperty(), new LocalDateTimeStringConverter());
+		doB.textProperty().bindBidirectional(author.dateOfBirthProperty(), new LocalDateStringConverter());
 		website.textProperty().bindBidirectional(author.websiteProperty());
 		gender.textProperty().bindBidirectional(author.genderProperty());
 	}
