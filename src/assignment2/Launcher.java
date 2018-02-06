@@ -26,7 +26,6 @@ public class Launcher extends Application {
 		AppController controller = AppController.getInstance();
 		controller.setConnection(conn);
 		
-		//TODO: move this to a singleton switchView method OR a view builder
 		URL fxmlFile = this.getClass().getResource("/view/AppView.fxml");
 		FXMLLoader loader = new FXMLLoader(fxmlFile);
 		
@@ -37,7 +36,7 @@ public class Launcher extends Application {
 		
 		Scene scene = new Scene(root, 610, 400);
 	    
-		primaryStage.setTitle("assignment1");
+		primaryStage.setTitle("assignment2");
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
@@ -60,7 +59,6 @@ public class Launcher extends Application {
 	public void stop() throws Exception {
 		super.stop();
 		
-		//TODO: find out how to attach to shutdown hook
 		logger.info("Closing connection...");
 		
 		conn.close();

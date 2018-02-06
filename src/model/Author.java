@@ -17,7 +17,17 @@ public class Author {
 	private AuthorTableGateway gateway;
 	
 	public Author() {
+		firstName = new SimpleStringProperty();
+		lastName = new SimpleStringProperty();
+		this.doB = new SimpleObjectProperty<LocalDate>();
+		this.gender = new SimpleStringProperty();
+		this.website = new SimpleStringProperty();
 		
+		setFirstName("");
+		setLastName("");
+		setDoB(null);
+		setGender("");
+		setWebsite("");
 	}
 	
 	public Author(String fName, String lName, LocalDate doB, String gender, String website) {
@@ -49,7 +59,10 @@ public class Author {
 	}
 	
 	public void save() throws AppException {
-		gateway.updateAuthor(this);
+		if(id == 0)
+			gateway.addAuthor(this);
+		else
+			gateway.updateAuthor(this);
 	}
 
 	//biz logic
@@ -62,6 +75,8 @@ public class Author {
 	
 	public boolean isValidDate(LocalDate doB2) {
 		LocalDate newDate = LocalDate.now();
+		if(doB2 == null)
+			return false;
 		if(doB2.isBefore(newDate))
 			return true;
 		return false;

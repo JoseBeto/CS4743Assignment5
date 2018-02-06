@@ -42,6 +42,34 @@ public class AuthorTableGateway {
 		}
 	}
 	
+	public void addAuthor(Author author) throws AppException {
+		System.out.println("Adding Author");
+		author.setId(10);
+		PreparedStatement st = null;
+		try {
+			st = conn.prepareStatement("insert into author (id, first_name, last_name, "
+					+ "dob, gender, web_site) values (?, ?, ?, ?, ?, ?");
+			st.setInt(1, author.getId());
+			st.setString(2, author.getFirstName());
+			st.setString(3, author.getLastName());
+			st.setDate(4, Date.valueOf(author.getDoB()));
+			st.setString(5, author.getGender());
+			st.setString(6, author.getWebsite());
+			st.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new AppException(e);
+		} finally {
+			try {
+				if(st != null)
+					st.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				throw new AppException(e);
+			}
+		}
+	}
+	
 	public ObservableList<Author> getAuthors() throws AppException {
 		ObservableList<Author> authors = FXCollections.observableArrayList();
 		

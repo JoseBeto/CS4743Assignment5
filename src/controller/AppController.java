@@ -65,6 +65,15 @@ public class AppController implements Initializable {
     }
 	
 	@FXML
+    void clickMenuAddAuthor(ActionEvent event) {
+		logger.info("Add Author menu item clicked");
+		Author author = new Author();
+		author.setId(0);
+		author.setGateway(new AuthorTableGateway(conn));
+		changeView(AUTHOR_DETAIL, author);
+    }
+	
+	@FXML
     void clickMenuQuit(ActionEvent event) {
 		logger.info("Quit menu item clicked");
 		Platform.exit();
