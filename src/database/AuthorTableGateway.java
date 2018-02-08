@@ -43,8 +43,6 @@ public class AuthorTableGateway {
 	}
 	
 	public void addAuthor(Author author) throws AppException {
-		//Find a way to increment ID
-		author.setId(6);
 		PreparedStatement st = null;
 		try {
 			st = conn.prepareStatement("insert into author (id, first_name, last_name, "
