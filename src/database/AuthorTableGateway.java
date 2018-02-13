@@ -68,6 +68,26 @@ public class AuthorTableGateway {
 		}
 	}
 	
+	public void deleteAuthor(Author author) throws AppException {
+		PreparedStatement st = null;
+		try {
+			st = conn.prepareStatement("delete from author (id, first_name, last_name, "
+					+ "dob, gender, web_site) values (?, ?, ?, ?, ?, ?)");
+			st.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new AppException(e);
+		} finally {
+			try {
+				if(st != null)
+					st.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				throw new AppException(e);
+			}
+		}
+	}
+	
 	public ObservableList<Author> getAuthors() throws AppException {
 		ObservableList<Author> authors = FXCollections.observableArrayList();
 		

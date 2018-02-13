@@ -64,6 +64,10 @@ public class Author {
 		else
 			gateway.updateAuthor(this);
 	}
+	
+	public void delete() {
+		gateway.deleteAuthor(this);
+	}
 
 	//biz logic
 	public boolean isValidName(String name) {

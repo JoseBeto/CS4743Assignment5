@@ -18,6 +18,7 @@ public class AuthorDetailController implements Initializable, MyController {
 	private static Logger logger = LogManager.getLogger();
 
 	@FXML private Button saveAuthor;
+	@FXML private Button deleteAuthor; 
 	@FXML private TextField firstName;
 	@FXML private TextField lastName;
 	@FXML private TextField doB;
@@ -65,6 +66,11 @@ public class AuthorDetailController implements Initializable, MyController {
     	author.save();
 	}
     
+	@FXML
+	void handleDeleteButton(ActionEvent event){
+		author.delete();
+	}
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		firstName.textProperty().bindBidirectional(author.firstNameProperty());
