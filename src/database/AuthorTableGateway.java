@@ -71,8 +71,8 @@ public class AuthorTableGateway {
 	public void deleteAuthor(Author author) throws AppException {
 		PreparedStatement st = null;
 		try {
-			st = conn.prepareStatement("delete from author (id, first_name, last_name, "
-					+ "dob, gender, web_site) values (?, ?, ?, ?, ?, ?)");
+			st = conn.prepareStatement("delete from author where id = ?");
+			st.setInt(1, author.getId());
 			st.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
