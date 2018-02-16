@@ -5,10 +5,14 @@ import javafx.scene.control.TextField;
 import javafx.util.converter.LocalDateStringConverter;
 import model.Author;
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.ResourceBundle;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import assignment2.AlertHelper;
+import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -68,6 +72,7 @@ public class AuthorDetailController implements Initializable, MyController {
     
 	@FXML
 	void handleDeleteButton(ActionEvent event){
+		logger.info("Author deleted");
 		author.delete();
 	}
 	
@@ -75,7 +80,30 @@ public class AuthorDetailController implements Initializable, MyController {
 	public void initialize(URL location, ResourceBundle resources) {
 		firstName.textProperty().bindBidirectional(author.firstNameProperty());
 		lastName.textProperty().bindBidirectional(author.lastNameProperty());
-		doB.textProperty().bindBidirectional(author.dateOfBirthProperty(), new LocalDateStringConverter());
+		
+		Bindings.bindBidirectional( doB.textProperty(), author.dateOfBirthProperty(), new LocalDateStringConverter()
+	    {
+			@Override
+			public String toString(LocalDate object) {
+				DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+				return object == null ? "" : object.format(dtf);
+			}
+
+	        @Override
+	        public LocalDate fromString( String string )
+	        {
+	        	DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+	        	LocalDate date;
+	        	try {
+	        		date = LocalDate.parse(string, dtf);
+	        	}
+	        	catch(DateTimeParseException e) {
+	        		date = null;
+	        	}
+	        	return date;
+	        }
+	    } );
+		
 		website.textProperty().bindBidirectional(author.websiteProperty());
 		gender.textProperty().bindBidirectional(author.genderProperty());
 	}

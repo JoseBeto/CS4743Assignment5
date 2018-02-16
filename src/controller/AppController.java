@@ -69,7 +69,6 @@ public class AppController implements Initializable {
 		logger.info("Add Author menu item clicked");
 		Author author = new Author();
 		author.setGateway(new AuthorTableGateway(conn));
-		System.out.println("ID: " + author.getId());
 		changeView(AUTHOR_DETAIL, author);
     }
 	
