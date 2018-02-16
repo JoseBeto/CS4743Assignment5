@@ -2,6 +2,9 @@ package controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javax.swing.JOptionPane;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import database.AuthorTableGateway;
@@ -43,11 +46,17 @@ public class AuthorListController implements Initializable, MyController {
 	@FXML void handleDeleteButton(ActionEvent event) {
 		Author author = authorList.getSelectionModel().getSelectedItem();
 		if(author != null) {
-    		logger.info(author.getFirstName() + " deleted");
-    		author.delete();
+			String title = "Warning";
+			String message = "Are you sure you want to delete author named " + author.getFirstName() + " ?";
+			int reply = JOptionPane.showConfirmDialog(null, message, title, JOptionPane.YES_NO_OPTION);
+			if(reply == JOptionPane.YES_OPTION){
+				author.delete();
+				logger.info(author.getFirstName() + " deleted");
+				authors.remove(author);
+			}
 		}
 	}
-	
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		this.authorList.setItems(authors);

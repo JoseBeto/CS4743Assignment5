@@ -9,7 +9,7 @@
    <center>
       <ListView fx:id="authorList" onMouseClicked="#authorListClicked" BorderPane.alignment="CENTER">
          <BorderPane.margin>
-            <Insets bottom="20.0" left="5.0" right="5.0" top="20.0" />
+            <Insets bottom="20.0" left="5.0" right="5.0" top="30.0" />
          </BorderPane.margin>
          <padding>
             <Insets bottom="20.0" left="5.0" right="5.0" top="20.0" />
@@ -17,13 +17,10 @@
       </ListView>
    </center>
    <bottom>
-      <Button fx:id="deleteAuthor" alignment="CENTER" maxWidth="100.0" mnemonicParsing="false" onAction="#handleDeleteButton" text="Delete" textAlignment="CENTER" BorderPane.alignment="CENTER">
+      <Button fx:id="deleteAuthor" alignment="CENTER" contentDisplay="CENTER" maxWidth="100.0" mnemonicParsing="false" onAction="#handleDeleteButton" text="Delete" textAlignment="CENTER" BorderPane.alignment="CENTER">
          <BorderPane.margin>
-            <Insets bottom="20.0" />
+            <Insets bottom="35.0" />
          </BorderPane.margin>
-         <padding>
-            <Insets bottom="20.0" />
-         </padding>
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
