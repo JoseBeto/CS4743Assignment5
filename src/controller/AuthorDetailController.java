@@ -69,12 +69,6 @@ public class AuthorDetailController implements Initializable, MyController {
     	}
     	author.save();
 	}
-    
-	@FXML
-	void handleDeleteButton(ActionEvent event){
-		logger.info("Author deleted");
-		author.delete();
-	}
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {

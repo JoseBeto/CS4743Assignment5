@@ -6,6 +6,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import database.AuthorTableGateway;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
@@ -38,6 +39,14 @@ public class AuthorListController implements Initializable, MyController {
     		}
     	}
     }
+	
+	@FXML void handleDeleteButton(ActionEvent event) {
+		Author author = authorList.getSelectionModel().getSelectedItem();
+		if(author != null) {
+    		logger.info(author.getFirstName() + " deleted");
+    		author.delete();
+		}
+	}
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
