@@ -10,6 +10,7 @@ import org.apache.logging.log4j.Logger;
 import assignment3.Launcher;
 import database.AppException;
 import database.AuthorTableGateway;
+import database.BookTableGateway;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,12 +19,16 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.layout.BorderPane;
 import model.Author;
+import model.Book;
 
 public class AppController implements Initializable {
 	private static Logger logger = LogManager.getLogger(Launcher.class);
 
 	public static final int AUTHOR_LIST = 1;
 	public static final int AUTHOR_DETAIL = 2;
+	
+	public static final int BOOK_LIST = 3;
+	public static final int BOOK_DETAIL = 4;
 
 	private static AppController myInstance = null;
 	private BorderPane rootPane = null;
@@ -45,6 +50,14 @@ public class AppController implements Initializable {
 				case AUTHOR_DETAIL:
 					fxmlFile = this.getClass().getResource("/view/AuthorDetailView.fxml");
 					controller = new AuthorDetailController((Author) arg);
+					break;
+				case BOOK_LIST:
+					fxmlFile = this.getClass().getResource("/view/BookListView.fxml");
+					controller = new BookListController(new BookTableGateway(conn));
+					break;
+				case BOOK_DETAIL:
+					fxmlFile = this.getClass().getResource("/view/BookDetailView.fxml");
+					controller = new BookDetailController((Book) arg);
 					break;
 			}
 		
@@ -70,6 +83,20 @@ public class AppController implements Initializable {
 		Author author = new Author();
 		author.setGateway(new AuthorTableGateway(conn));
 		changeView(AUTHOR_DETAIL, author);
+    }
+	
+	@FXML
+    void clickMenuBookList(ActionEvent event) {
+		logger.info("Book list menu item clicked");
+		changeView(BOOK_LIST, null);
+    }
+	
+	@FXML
+    void clickMenuAddBook(ActionEvent event) {
+		logger.info("Add Book menu item clicked");
+		Book book = new Book();
+		book.setGateway(new BookTableGateway(conn));
+		changeView(BOOK_DETAIL, book);
     }
 	
 	@FXML
