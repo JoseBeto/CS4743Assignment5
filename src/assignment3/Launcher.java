@@ -1,4 +1,4 @@
-package assignment2;
+package assignment3;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -14,7 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-/* CS 4743 Assignment 2 by Jose Bocanegra and David Peek */
+/* CS 4743 Assignment 3 by Jose Bocanegra and David Peek */
 
 public class Launcher extends Application {
 
@@ -36,7 +36,7 @@ public class Launcher extends Application {
 		
 		Scene scene = new Scene(root, 610, 400);
 	    
-		primaryStage.setTitle("assignment2");
+		primaryStage.setTitle("assignment3");
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}

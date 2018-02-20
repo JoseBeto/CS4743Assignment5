@@ -1,4 +1,4 @@
-package assignment2;
+package assignment3;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
