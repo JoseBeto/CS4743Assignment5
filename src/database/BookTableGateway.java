@@ -119,4 +119,36 @@ public class BookTableGateway {
 		}
 		return books;
 	}
+	
+	public ObservableList<Book> getBooks(String search) throws AppException {
+		ObservableList<Book> books = FXCollections.observableArrayList();
+		
+		PreparedStatement st = null;
+		try {
+			st = conn.prepareStatement("select * from book where title like ?");
+			st.setString(1, "%" + search + "%");
+			ResultSet rs = st.executeQuery();
+			while(rs.next()) {
+				Book book = new Book(rs.getString("title"), rs.getString("summary"),
+						rs.getInt("year_published"), rs.getInt("publisher_id"), rs.getString("isbn"));
+				book.setGateway(this);
+				book.setPubGateway(pubGateway);
+				book.setPublisher();
+				book.setId(rs.getInt("id"));
+				books.add(book);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new AppException(e);
+		} finally {
+			try {
+				if(st != null)
+					st.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				throw new AppException(e);
+			}
+		}
+		return books;
+	}
 }

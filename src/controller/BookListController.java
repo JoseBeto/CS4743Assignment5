@@ -60,6 +60,8 @@ public class BookListController implements Initializable, MyController {
 	@FXML
     void handleSearchBook(ActionEvent event) {
 		System.out.println("Searching for " + searchBook.getText());
+		ObservableList<Book> books = gateway.getBooks(searchBook.getText());
+		this.bookList.setItems(books);
     }
 
 	@Override
