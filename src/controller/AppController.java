@@ -11,6 +11,7 @@ import assignment3.Launcher;
 import database.AppException;
 import database.AuthorTableGateway;
 import database.BookTableGateway;
+import database.PublisherTableGateway;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -96,6 +97,8 @@ public class AppController implements Initializable {
 		logger.info("Add Book menu item clicked");
 		Book book = new Book();
 		book.setGateway(new BookTableGateway(conn));
+		book.setPubGateway(new PublisherTableGateway(conn));
+		book.setPublisher();
 		changeView(BOOK_DETAIL, book);
     }
 	

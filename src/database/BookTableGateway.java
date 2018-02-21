@@ -18,16 +18,16 @@ public class BookTableGateway {
 	}
 	
 	public void updateBook(Book book) throws AppException {
-		/*PreparedStatement st = null;
+		PreparedStatement st = null;
 		try {
-			st = conn.prepareStatement("update author set first_name = ?, last_name = ?, dob = ?, "
-					+ "gender = ?, web_site = ? where id = ?");
-			st.setString(1, author.getFirstName());
-			st.setString(2, author.getLastName());
-			st.setDate(3, Date.valueOf(author.getDoB()));
-			st.setString(4, author.getGender());
-			st.setString(5, author.getWebsite());
-			st.setInt(6, author.getId());
+			st = conn.prepareStatement("update book set title = ?, summary = ?, year_published = ?, "
+					+ "publisher_id = ?, isbn = ? where id = ?");
+			st.setString(1, book.getTitle());
+			st.setString(2, book.getSummary());
+			st.setInt(3, book.getYearPublished());
+			st.setInt(4, book.getPublisherId());
+			st.setString(5, book.getIsbn());
+			st.setInt(6, book.getId());
 			st.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -40,20 +40,20 @@ public class BookTableGateway {
 				e.printStackTrace();
 				throw new AppException(e);
 			}
-		}*/
+		}
 	}
 	
 	public void addBook(Book book) throws AppException {
-		/*PreparedStatement st = null;
+		PreparedStatement st = null;
 		try {
-			st = conn.prepareStatement("insert into author (id, first_name, last_name, "
-					+ "dob, gender, web_site) values (?, ?, ?, ?, ?, ?)");
-			st.setInt(1, author.getId());
-			st.setString(2, author.getFirstName());
-			st.setString(3, author.getLastName());
-			st.setDate(4, Date.valueOf(author.getDoB()));
-			st.setString(5, author.getGender());
-			st.setString(6, author.getWebsite());
+			st = conn.prepareStatement("insert into book (id, title, summary, "
+					+ "year_published, publisher_id, isbn) values (?, ?, ?, ?, ?, ?)");
+			st.setInt(1, book.getId());
+			st.setString(2, book.getTitle());
+			st.setString(3, book.getSummary());
+			st.setInt(4, book.getYearPublished());
+			st.setInt(5, book.getPublisherId());
+			st.setString(6, book.getIsbn());
 			st.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -66,14 +66,14 @@ public class BookTableGateway {
 				e.printStackTrace();
 				throw new AppException(e);
 			}
-		}*/
+		}
 	}
 	
 	public void deleteBook(Book book) throws AppException {
-		/*PreparedStatement st = null;
+		PreparedStatement st = null;
 		try {
-			st = conn.prepareStatement("delete from author where id = ?");
-			st.setInt(1, author.getId());
+			st = conn.prepareStatement("delete from book where id = ?");
+			st.setInt(1, book.getId());
 			st.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -86,7 +86,7 @@ public class BookTableGateway {
 				e.printStackTrace();
 				throw new AppException(e);
 			}
-		}*/
+		}
 	}
 	
 	public ObservableList<Book> getBooks() throws AppException {

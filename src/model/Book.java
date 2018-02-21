@@ -34,7 +34,8 @@ public class Book {
 		
 		setTitle("");
 		setSummary("");
-		setYearPublished(null);
+		setYearPublished(LocalDate.now().getYear());
+		setPublisherId(1);
 		setIsbn("");
 	}
 	
@@ -67,14 +68,14 @@ public class Book {
 	}
 	
 	public void save() throws AppException {
-		/*if(id == 0)
-			gateway.addAuthor(this);
+		if(id == 0)
+			gateway.addBook(this);
 		else
-			gateway.updateAuthor(this);*/
+			gateway.updateBook(this);
 	}
 	
 	public void delete() {
-		//gateway.deleteAuthor(this);
+		gateway.deleteBook(this);
 	}
 
 	//biz logic

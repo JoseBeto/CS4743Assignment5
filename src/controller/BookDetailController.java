@@ -9,6 +9,7 @@ import java.util.ResourceBundle;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import assignment3.AlertHelper;
+import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -66,7 +67,19 @@ public class BookDetailController implements Initializable, MyController {
 	public void initialize(URL location, ResourceBundle resources) {
 		title.textProperty().bindBidirectional(book.titleProperty());
 		summary.textProperty().bindBidirectional(book.summaryProperty());
-		yearPublished.textProperty().bindBidirectional(book.yearPublishedProperty(), new NumberStringConverter());
+		Bindings.bindBidirectional( yearPublished.textProperty(), book.yearPublishedProperty(), new NumberStringConverter()
+	    {
+			@Override
+			public String toString(Number value) {
+				return value.toString();
+			}
+
+	        @Override
+	        public Integer fromString( String string )
+	        {
+	        	return Integer.parseInt(string);
+	        }
+	    });
 		publisherId.textProperty().bindBidirectional(book.publisherIdProperty(), new NumberStringConverter());
 		isbn.textProperty().bindBidirectional(book.isbnProperty());
 	}
