@@ -2,9 +2,8 @@ package controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-
+import javafx.scene.control.TextField;
 import javax.swing.JOptionPane;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import database.BookTableGateway;
@@ -20,6 +19,7 @@ public class BookListController implements Initializable, MyController {
 
 	private static Logger logger = LogManager.getLogger();
 	@FXML private ListView<Book> bookList;
+	@FXML private TextField searchBook;
 	private ObservableList<Book> books;
 	private BookTableGateway gateway;
 
@@ -56,6 +56,11 @@ public class BookListController implements Initializable, MyController {
 			}
 		}
 	}
+	
+	@FXML
+    void handleSearchBook(ActionEvent event) {
+		System.out.println("Searching for " + searchBook.getText());
+    }
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
