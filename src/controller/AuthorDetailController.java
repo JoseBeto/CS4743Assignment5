@@ -1,6 +1,5 @@
 package controller;
 
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.util.converter.LocalDateStringConverter;
 import model.Author;
@@ -22,8 +21,6 @@ public class AuthorDetailController implements Initializable, MyController {
 
 	private static Logger logger = LogManager.getLogger();
 
-	@FXML private Button saveAuthor;
-	@FXML private Button deleteAuthor; 
 	@FXML private TextField firstName;
 	@FXML private TextField lastName;
 	@FXML private TextField doB;

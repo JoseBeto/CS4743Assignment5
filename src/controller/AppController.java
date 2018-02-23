@@ -30,12 +30,14 @@ public class AppController implements Initializable {
 	
 	public static final int BOOK_LIST = 3;
 	public static final int BOOK_DETAIL = 4;
+	
+	public static final int AUDIT_TRAIL = 5;
 
 	private static AppController myInstance = null;
 	private BorderPane rootPane = null;
 	private Connection conn;
 	
-	private AppController() {
+	public AppController() {
 		//TODO: instantiate models
 	}
 	
@@ -59,6 +61,10 @@ public class AppController implements Initializable {
 				case BOOK_DETAIL:
 					fxmlFile = this.getClass().getResource("/view/BookDetailView.fxml");
 					controller = new BookDetailController((Book) arg, new PublisherTableGateway(conn));
+					break;
+				case AUDIT_TRAIL:
+					fxmlFile = this.getClass().getResource("/view/AuditTrailView.fxml");
+					controller = new AuditTrailController((Book) arg, this);
 					break;
 			}
 		

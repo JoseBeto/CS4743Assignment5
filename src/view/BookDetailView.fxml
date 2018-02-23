@@ -10,7 +10,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button fx:id="savePublisher" layoutX="259.0" layoutY="323.0" mnemonicParsing="false" onAction="#handleSaveButton" text="Save" />
+      <Button layoutX="160.0" layoutY="320.0" mnemonicParsing="false" onAction="#handleSaveButton" text="Save" />
       <Label alignment="CENTER_RIGHT" layoutX="40.0" layoutY="50.0" prefHeight="25.0" prefWidth="67.0" text="Title">
          <font>
             <Font size="14.0" />
@@ -41,5 +41,6 @@
       </Label>
       <ComboBox fx:id="publisher" layoutX="150.0" layoutY="150.0" prefWidth="200.0" />
       <TextArea fx:id="summary" layoutX="370.0" layoutY="100.0" prefHeight="220.0" prefWidth="220.0" wrapText="true" />
+      <Button layoutX="216.0" layoutY="320.0" mnemonicParsing="false" onAction="#handleAuditTrailButton" prefHeight="25.0" prefWidth="85.0" text="Audit Trail" />
    </children>
 </Pane>

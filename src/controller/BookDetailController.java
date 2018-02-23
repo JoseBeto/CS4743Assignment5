@@ -71,6 +71,12 @@ public class BookDetailController implements Initializable, MyController {
     	book.save();
 	}
 	
+	@FXML
+	void handleAuditTrailButton(ActionEvent event) {
+		AppController controller = new AppController().getInstance();
+		controller.changeView(controller.AUDIT_TRAIL, book);
+	}
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		title.textProperty().bindBidirectional(book.titleProperty());
