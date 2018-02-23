@@ -1,15 +1,20 @@
 package controller;
 
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.util.converter.NumberStringConverter;
 import model.Book;
+import model.Publisher;
 import java.net.URL;
 import java.util.ResourceBundle;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import assignment3.AlertHelper;
 import javafx.beans.binding.Bindings;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -20,10 +25,10 @@ public class BookDetailController implements Initializable, MyController {
 
 	@FXML private Button savePublisher;
     @FXML private TextField title;
-    @FXML private TextField summary;
+    @FXML private TextArea summary;
     @FXML private TextField yearPublished;
     @FXML private TextField isbn;
-    @FXML private TextField publisherId;
+    @FXML private ComboBox<Publisher> publisher;
     
 	private Book book;
 
@@ -67,7 +72,19 @@ public class BookDetailController implements Initializable, MyController {
 	public void initialize(URL location, ResourceBundle resources) {
 		title.textProperty().bindBidirectional(book.titleProperty());
 		summary.textProperty().bindBidirectional(book.summaryProperty());
-		Bindings.bindBidirectional( yearPublished.textProperty(), book.yearPublishedProperty(), new NumberStringConverter()
+		
+		//Prevents user from entering a non digit
+		yearPublished.textProperty().addListener(new ChangeListener<String>() {
+		    @Override
+		    public void changed(ObservableValue<? extends String> observable, String oldValue, 
+		        String newValue) {
+		        if (!newValue.matches("\\d*")) {
+		        	yearPublished.setText(newValue.replaceAll("[^\\d]", ""));
+		        }
+		    }
+		});
+		
+		Bindings.bindBidirectional(yearPublished.textProperty(), book.yearPublishedProperty(), new NumberStringConverter()
 	    {
 			@Override
 			public String toString(Number value) {
@@ -75,12 +92,14 @@ public class BookDetailController implements Initializable, MyController {
 			}
 
 	        @Override
-	        public Integer fromString( String string )
-	        {
+	        public Integer fromString(String string) {
+	        	if(string.equals(""))
+	        		return null;
 	        	return Integer.parseInt(string);
 	        }
 	    });
-		publisherId.textProperty().bindBidirectional(book.publisherIdProperty(), new NumberStringConverter());
+		publisher.valueProperty().bindBidirectional(book.publisherProperty());
+		publisher.setItems(book.getPublisher().getGateway().getPublishers());
 		isbn.textProperty().bindBidirectional(book.isbnProperty());
 	}
 }

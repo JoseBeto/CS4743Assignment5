@@ -95,10 +95,8 @@ public class AppController implements Initializable {
 	@FXML
     void clickMenuAddBook(ActionEvent event) {
 		logger.info("Add Book menu item clicked");
-		Book book = new Book();
+		Book book = new Book(new PublisherTableGateway(conn));
 		book.setGateway(new BookTableGateway(conn));
-		book.setPubGateway(new PublisherTableGateway(conn));
-		book.setPublisher();
 		changeView(BOOK_DETAIL, book);
     }
 	

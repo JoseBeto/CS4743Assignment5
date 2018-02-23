@@ -18,33 +18,34 @@ public class Book {
 	private SimpleObjectProperty<Publisher> publisher;
 	private SimpleStringProperty isbn;
 	private SimpleObjectProperty<LocalDate> dateAdded;
-	private SimpleIntegerProperty publisherId;
 	
 	private BookTableGateway gateway;
 	private PublisherTableGateway pubGateway;
 	
-	public Book() {
+	public Book(PublisherTableGateway pubGateway) {
+		this.pubGateway = pubGateway;
+		
 		this.title = new SimpleStringProperty();
 		this.summary = new SimpleStringProperty();
 		this.yearPublished = new SimpleIntegerProperty();
 		this.publisher = new SimpleObjectProperty<Publisher>();
-		this.publisherId = new SimpleIntegerProperty();
 		this.isbn = new SimpleStringProperty();
 		this.dateAdded = new SimpleObjectProperty<LocalDate>();
 		
 		setTitle("");
 		setSummary("");
 		setYearPublished(LocalDate.now().getYear());
-		setPublisherId(1);
+		setPublisher(1);
 		setIsbn("");
 	}
 	
-	public Book(String title, String summary, int yearPublished, Integer publisherId, String isbn) {
+	public Book(PublisherTableGateway pubGateway, String title, String summary, int yearPublished, Integer publisherId, String isbn) {
+		this.pubGateway = pubGateway;
+		
 		this.title = new SimpleStringProperty();
 		this.summary = new SimpleStringProperty();
 		this.yearPublished = new SimpleIntegerProperty();
 		this.publisher = new SimpleObjectProperty<Publisher>();
-		this.publisherId = new SimpleIntegerProperty();
 		this.isbn = new SimpleStringProperty();
 		this.dateAdded = new SimpleObjectProperty<LocalDate>();
 		
@@ -60,7 +61,7 @@ public class Book {
 			throw new IllegalArgumentException("Year published must be a date before the current date!");
 		setYearPublished(yearPublished);
 		
-		setPublisherId(publisherId);
+		setPublisher(publisherId);
 		
 		if(!isValidIsbn(isbn))
 			throw new IllegalArgumentException("Isbn cannot be greater than 13 characters!");
@@ -88,7 +89,7 @@ public class Book {
 	
 	public boolean isValidSummary(String summary) {
 		//Summary must be less than 65536 characters
-		if(summary.length() < 65536)
+		if(summary == null || summary.length() < 65536)
 			return true;
 		return false;
 	}
@@ -96,13 +97,15 @@ public class Book {
 	public boolean isValidYearPublished(Integer year) {
 		//Year published cannot be a date after the current date
 		if(year == null)
-			return false;
+			return true;
 		if(year > LocalDate.now().getYear())
 			return false;
 		return true;
 	}
 	
 	public boolean isValidIsbn(String isbn) {
+		if(isbn == null)
+			return true;
 		//Isbn cannot be greater than 13 characters
 		if(isbn.length() > 13)
 			return false;
@@ -137,16 +140,8 @@ public class Book {
 		return publisher.get();
 	}
 
-	public void setPublisher() {
-		this.publisher.set(pubGateway.getPublisherById(getPublisherId()));
-	}
-	
-	public int getPublisherId() {
-		return publisherId.get();
-	}
-	
-	public void setPublisherId(int publisherId) {
-		this.publisherId.set(publisherId);
+	public void setPublisher(int id) {
+		this.publisher.set(pubGateway.getPublisherById(id));
 	}
 	
 	public String getIsbn() {
@@ -190,12 +185,9 @@ public class Book {
 	public SimpleIntegerProperty yearPublishedProperty() {
 		return yearPublished;
 	}
-	public SimpleIntegerProperty publisherIdProperty(){
-		return publisherId;
-	}
-	/*public SimpleObjectProperty<Publisher> publisherProperty(){
+	public SimpleObjectProperty<Publisher> publisherProperty(){
 		return publisher;
-	}*/
+	}
 	public SimpleStringProperty isbnProperty(){
 		return isbn;
 	}

@@ -64,6 +64,6 @@ public class Publisher {
 
 	@Override
 	public String toString() {
-		return "Publisher name: " + publisherName.get();
+		return publisherName.get();
 	}
 }

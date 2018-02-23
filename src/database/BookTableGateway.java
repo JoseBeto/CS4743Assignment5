@@ -25,7 +25,7 @@ public class BookTableGateway {
 			st.setString(1, book.getTitle());
 			st.setString(2, book.getSummary());
 			st.setInt(3, book.getYearPublished());
-			st.setInt(4, book.getPublisherId());
+			st.setInt(4, book.getPublisher().getId());
 			st.setString(5, book.getIsbn());
 			st.setInt(6, book.getId());
 			st.executeUpdate();
@@ -52,7 +52,7 @@ public class BookTableGateway {
 			st.setString(2, book.getTitle());
 			st.setString(3, book.getSummary());
 			st.setInt(4, book.getYearPublished());
-			st.setInt(5, book.getPublisherId());
+			st.setInt(5, book.getPublisher().getId());
 			st.setString(6, book.getIsbn());
 			st.executeUpdate();
 		} catch (SQLException e) {
@@ -97,11 +97,9 @@ public class BookTableGateway {
 			st = conn.prepareStatement("select * from book order by title");
 			ResultSet rs = st.executeQuery();
 			while(rs.next()) {
-				Book book = new Book(rs.getString("title"), rs.getString("summary"),
+				Book book = new Book(pubGateway, rs.getString("title"), rs.getString("summary"),
 						rs.getInt("year_published"), rs.getInt("publisher_id"), rs.getString("isbn"));
 				book.setGateway(this);
-				book.setPubGateway(pubGateway);
-				book.setPublisher();
 				book.setId(rs.getInt("id"));
 				books.add(book);
 			}
@@ -129,11 +127,9 @@ public class BookTableGateway {
 			st.setString(1, "%" + search + "%");
 			ResultSet rs = st.executeQuery();
 			while(rs.next()) {
-				Book book = new Book(rs.getString("title"), rs.getString("summary"),
+				Book book = new Book(pubGateway, rs.getString("title"), rs.getString("summary"),
 						rs.getInt("year_published"), rs.getInt("publisher_id"), rs.getString("isbn"));
 				book.setGateway(this);
-				book.setPubGateway(pubGateway);
-				book.setPublisher();
 				book.setId(rs.getInt("id"));
 				books.add(book);
 			}
