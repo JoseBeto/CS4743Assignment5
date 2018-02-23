@@ -8,6 +8,7 @@ import database.AppException;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.ObservableList;
 
 public class Book {
 
@@ -162,6 +163,10 @@ public class Book {
 	
 	public void setId(int id) {
 		this.id = id;
+	}
+	
+	public ObservableList<AuditTrailEntry> getAuditTrail() {
+		return gateway.getAuditTrails(this);
 	}
 	
 	public BookTableGateway getGateway() {

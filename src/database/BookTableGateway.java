@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import model.AuditTrailEntry;
 import model.Book;
 
 public class BookTableGateway {
@@ -146,5 +147,34 @@ public class BookTableGateway {
 			}
 		}
 		return books;
+	}
+	
+	public ObservableList<AuditTrailEntry> getAuditTrails(Book book) throws AppException {
+		ObservableList<AuditTrailEntry> auditTrailEntries = FXCollections.observableArrayList();
+		
+		PreparedStatement st = null;
+		try {
+			st = conn.prepareStatement("select * from book_audit_trail order by date_added");
+			ResultSet rs = st.executeQuery();
+			while(rs.next()) {
+				AuditTrailEntry auditTrailEntry = new AuditTrailEntry(rs.getInt("book_id"), rs.getDate("date_added"),
+						rs.getString("entry_msg"));
+				//book.setGateway(this);
+				auditTrailEntry.setId(rs.getInt("id"));
+				auditTrailEntries.add(auditTrailEntry);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new AppException(e);
+		} finally {
+			try {
+				if(st != null)
+					st.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				throw new AppException(e);
+			}
+		}
+		return auditTrailEntries;
 	}
 }

@@ -1391,3 +1391,18 @@
 10:05:01.946 INFO  controller.AppController : Add Book menu item clicked
 10:05:02.972 INFO  controller.AppController : Book list menu item clicked
 10:05:03.856 INFO  assignment3.Launcher : Closing connection...
+10:22:20.329 INFO  assignment3.Launcher : Creating connection...
+10:22:22.581 INFO  controller.AppController : Add Book menu item clicked
+10:22:25.189 INFO  controller.BookDetailController : Model's name is test
+10:22:26.630 INFO  controller.AppController : Book list menu item clicked
+10:22:27.782 INFO  controller.BookListController : test clicked
+10:22:29.350 INFO  controller.AppController : Book list menu item clicked
+10:22:30.212 INFO  controller.BookListController : Neverness clicked
+10:22:31.157 INFO  controller.AppController : Book list menu item clicked
+10:22:31.969 INFO  controller.BookListController : test clicked
+10:22:33.506 INFO  controller.BookDetailController : Model's name is test
+10:22:34.845 INFO  controller.AppController : Book list menu item clicked
+10:22:35.616 INFO  controller.BookListController : test clicked
+10:22:38.643 INFO  controller.AppController : Book list menu item clicked
+10:22:41.883 INFO  controller.BookListController : test deleted
+10:22:44.828 INFO  assignment3.Launcher : Closing connection...

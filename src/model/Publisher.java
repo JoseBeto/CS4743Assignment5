@@ -1,7 +1,6 @@
 package model;
 
 import database.PublisherTableGateway;
-import database.AppException;
 import javafx.beans.property.SimpleStringProperty;
 
 public class Publisher {
@@ -21,17 +20,6 @@ public class Publisher {
 		publisherName = new SimpleStringProperty();
 		
 		setName(name);
-	}
-	
-	public void save() throws AppException {
-		/*if(id == 0)
-			gateway.addPublisher(this);
-		else
-			gateway.updatePublisher(this);*/
-	}
-	
-	public void delete() {
-		//gateway.deletePublisher(this);
 	}
 
 	public String getName() {
