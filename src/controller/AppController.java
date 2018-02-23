@@ -58,7 +58,7 @@ public class AppController implements Initializable {
 					break;
 				case BOOK_DETAIL:
 					fxmlFile = this.getClass().getResource("/view/BookDetailView.fxml");
-					controller = new BookDetailController((Book) arg);
+					controller = new BookDetailController((Book) arg, new PublisherTableGateway(conn));
 					break;
 			}
 		

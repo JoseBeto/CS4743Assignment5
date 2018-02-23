@@ -12,6 +12,7 @@ import java.util.ResourceBundle;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import assignment3.AlertHelper;
+import database.PublisherTableGateway;
 import javafx.beans.binding.Bindings;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -31,9 +32,11 @@ public class BookDetailController implements Initializable, MyController {
     @FXML private ComboBox<Publisher> publisher;
     
 	private Book book;
+	private PublisherTableGateway pubGateway;
 
-	public BookDetailController(Book book) {
+	public BookDetailController(Book book, PublisherTableGateway pubGateway) {
 		this.book = book;
+		this.pubGateway = pubGateway;
     }
 	
 	@FXML
@@ -101,7 +104,7 @@ public class BookDetailController implements Initializable, MyController {
 	        }
 	    });
 		publisher.valueProperty().bindBidirectional(book.publisherProperty());
-		publisher.setItems(book.getPublisher().getGateway().getPublishers());
+		publisher.setItems(pubGateway.getPublishers());
 		isbn.textProperty().bindBidirectional(book.isbnProperty());
 	}
 }
