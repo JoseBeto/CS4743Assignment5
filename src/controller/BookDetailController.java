@@ -64,7 +64,7 @@ public class BookDetailController implements Initializable, MyController {
     	} else if(!book.isValidIsbn(book.getIsbn())) {
     		logger.error("Invalid isbn: " + book.getIsbn());
     		
-    		AlertHelper.showWarningMessage("Oops!", "isbn is invalid", "isbn cannot be greater "
+    		AlertHelper.showWarningMessage("Oops!", "Isbn is invalid", "Isbn cannot be greater "
     				+ "than 13 characters");
     		return;
     	}
@@ -73,8 +73,18 @@ public class BookDetailController implements Initializable, MyController {
 	
 	@FXML
 	void handleAuditTrailButton(ActionEvent event) {
-		AppController controller = new AppController().getInstance();
-		controller.changeView(controller.AUDIT_TRAIL, book);
+		//Prevent books not saved into database to access audit trail
+		if(book.getId() == 0) {
+			logger.error("Book needs to be saved into database before accessing audit trail");
+			AlertHelper.showWarningMessage("Oops!", "Book doesn't exist in database", "Book needs to be saved "
+					+ "into database before accessing audit trail");
+			return;
+		}
+
+		logger.info("Audit trail for book: " + book.getTitle() + " accessed.");
+		new AppController();
+		AppController controller = AppController.getInstance();
+		controller.changeView(AppController.AUDIT_TRAIL, book);
 	}
 	
 	@Override

@@ -154,12 +154,12 @@ public class BookTableGateway {
 		
 		PreparedStatement st = null;
 		try {
-			st = conn.prepareStatement("select * from book_audit_trail order by date_added");
+			st = conn.prepareStatement("select book_audit_trail order by date_added where book_id = ?");
+			st.setInt(1, book.getId());
 			ResultSet rs = st.executeQuery();
 			while(rs.next()) {
 				AuditTrailEntry auditTrailEntry = new AuditTrailEntry(rs.getInt("book_id"), rs.getDate("date_added"),
 						rs.getString("entry_msg"));
-				//book.setGateway(this);
 				auditTrailEntry.setId(rs.getInt("id"));
 				auditTrailEntries.add(auditTrailEntry);
 			}

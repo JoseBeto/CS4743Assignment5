@@ -1,6 +1,8 @@
 package model;
 
 import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 public class AuditTrailEntry {
 	
@@ -19,5 +21,12 @@ public class AuditTrailEntry {
 	
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	@Override
+	public String toString() {
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss", Locale.ENGLISH);
+
+		return formatter.format(dateAdded) + " " + message;
 	}
 }

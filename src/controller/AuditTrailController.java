@@ -22,14 +22,11 @@ public class AuditTrailController implements Initializable, MyController {
     public AuditTrailController(Book book, AppController controller) {
     	this.book = book;
     	this.controller = controller;
-    	
-    	//auditTrailTitle.setText("Audit Trail for " + book.getTitle());
     }
     
     @FXML
     void handleBackButton(ActionEvent event) {
-    	AppController controller = new AppController().getInstance();
-    	controller.changeView(controller.BOOK_DETAIL, book);
+    	controller.changeView(AppController.BOOK_DETAIL, book);
     }
 
 	@Override
