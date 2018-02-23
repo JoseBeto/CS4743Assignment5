@@ -34,7 +34,7 @@ public class Book {
 		
 		setTitle("");
 		setSummary("");
-		setYearPublished(LocalDate.now().getYear());
+		setYearPublished(0);
 		setPublisher(1);
 		setIsbn("");
 	}

@@ -88,6 +88,8 @@ public class BookDetailController implements Initializable, MyController {
 	    {
 			@Override
 			public String toString(Number value) {
+				if(value.equals(0))
+					return "";
 				return value.toString();
 			}
 
