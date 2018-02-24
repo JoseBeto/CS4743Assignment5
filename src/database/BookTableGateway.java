@@ -47,14 +47,13 @@ public class BookTableGateway {
 	public void addBook(Book book) throws AppException {
 		PreparedStatement st = null;
 		try {
-			st = conn.prepareStatement("insert into book (id, title, summary, "
-					+ "year_published, publisher_id, isbn) values (?, ?, ?, ?, ?, ?)");
-			st.setInt(1, book.getId());
-			st.setString(2, book.getTitle());
-			st.setString(3, book.getSummary());
-			st.setInt(4, book.getYearPublished());
-			st.setInt(5, book.getPublisher().getId());
-			st.setString(6, book.getIsbn());
+			st = conn.prepareStatement("insert into book (title, summary, "
+					+ "year_published, publisher_id, isbn) values (?, ?, ?, ?, ?)");
+			st.setString(1, book.getTitle());
+			st.setString(2, book.getSummary());
+			st.setInt(3, book.getYearPublished());
+			st.setInt(4, book.getPublisher().getId());
+			st.setString(5, book.getIsbn());
 			st.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -154,7 +153,7 @@ public class BookTableGateway {
 		
 		PreparedStatement st = null;
 		try {
-			st = conn.prepareStatement("select book_audit_trail order by date_added where book_id = ?");
+			st = conn.prepareStatement("select * from book_audit_trail where book_id = ? order by date_added");
 			st.setInt(1, book.getId());
 			ResultSet rs = st.executeQuery();
 			while(rs.next()) {
@@ -176,5 +175,27 @@ public class BookTableGateway {
 			}
 		}
 		return auditTrailEntries;
+	}
+	
+	public void addAuditEntry(Book book, String message) throws AppException {
+		PreparedStatement st = null;
+		try {
+			st = conn.prepareStatement("insert into book_audit_trail (book_id, entry_msg)"
+					+ " values (?, ?)");
+			st.setInt(1, book.getId());
+			st.setString(2, message);
+			st.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new AppException(e);
+		} finally {
+			try {
+				if(st != null)
+					st.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				throw new AppException(e);
+			}
+		}
 	}
 }

@@ -4,6 +4,8 @@ import database.BookTableGateway;
 import database.PublisherTableGateway;
 
 import java.time.LocalDate;
+
+import controller.AppController;
 import database.AppException;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
@@ -72,8 +74,14 @@ public class Book {
 	public void save() throws AppException {
 		if(id == 0)
 			gateway.addBook(this);
-		else
+		else {
 			gateway.updateBook(this);
+			addAuditEntry("Book updated");
+		}
+		
+		new AppController();
+		AppController controller = AppController.getInstance();
+		controller.changeView(AppController.BOOK_LIST, null);
 	}
 	
 	public void delete() {
@@ -167,6 +175,10 @@ public class Book {
 	
 	public ObservableList<AuditTrailEntry> getAuditTrail() {
 		return gateway.getAuditTrails(this);
+	}
+	
+	public void addAuditEntry(String message) {
+		gateway.addAuditEntry(this, message);
 	}
 	
 	public BookTableGateway getGateway() {
