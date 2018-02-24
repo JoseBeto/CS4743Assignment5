@@ -193,7 +193,7 @@ public class BookTableGateway {
 			st.setInt(1, book.getId());
 			ResultSet rs = st.executeQuery();
 			while(rs.next()) {
-				AuditTrailEntry auditTrailEntry = new AuditTrailEntry(rs.getInt("book_id"), rs.getDate("date_added"),
+				AuditTrailEntry auditTrailEntry = new AuditTrailEntry(rs.getInt("book_id"), rs.getTimestamp("date_added"),
 						rs.getString("entry_msg"));
 				auditTrailEntry.setId(rs.getInt("id"));
 				auditTrailEntries.add(auditTrailEntry);

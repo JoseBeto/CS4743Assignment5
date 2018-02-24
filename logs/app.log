@@ -2080,3 +2080,22 @@
 12:42:22.320 INFO  controller.BookDetailController : Audit trail for test book 12 accessed.
 12:42:34.771 INFO  controller.AppController : Book list menu item clicked
 12:42:51.556 INFO  assignment3.Launcher : Closing connection...
+12:43:06.691 INFO  assignment3.Launcher : Creating connection...
+12:43:08.728 INFO  controller.AppController : Book list menu item clicked
+12:43:10.104 INFO  controller.BookListController : Neverness clicked
+12:43:11.142 INFO  controller.BookDetailController : Audit trail for Neverness accessed.
+12:43:12.775 INFO  controller.AppController : Book list menu item clicked
+12:43:13.728 INFO  controller.BookListController : test book 12 clicked
+12:43:14.384 INFO  controller.BookDetailController : Audit trail for test book 12 accessed.
+12:43:19.019 INFO  assignment3.Launcher : Closing connection...
+13:47:02.572 INFO  assignment3.Launcher : Creating connection...
+13:47:05.700 INFO  controller.AppController : Book list menu item clicked
+13:47:06.864 INFO  controller.BookListController : Neverness clicked
+13:47:07.773 INFO  controller.BookDetailController : Audit trail for Neverness accessed.
+13:47:09.037 INFO  controller.AppController : Book list menu item clicked
+13:47:10.493 INFO  controller.BookListController : test book 12 clicked
+13:47:11.433 INFO  controller.BookDetailController : Audit trail for test book 12 accessed.
+13:47:42.082 INFO  controller.BookDetailController : Model's name is test book 12
+13:47:45.249 INFO  controller.BookListController : test book 12 clicked
+13:47:46.337 INFO  controller.BookDetailController : Audit trail for test book 12 accessed.
+13:47:54.976 INFO  assignment3.Launcher : Closing connection...
