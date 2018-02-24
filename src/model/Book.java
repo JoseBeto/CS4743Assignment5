@@ -42,7 +42,7 @@ public class Book {
 		setIsbn("");
 	}
 	
-	public Book(PublisherTableGateway pubGateway, String title, String summary, int yearPublished, Integer publisherId, String isbn) {
+	public Book(PublisherTableGateway pubGateway, String title, String summary, int yearPublished, Integer publisherId, String isbn, LocalDate dateAdded) {
 		this.pubGateway = pubGateway;
 		
 		this.title = new SimpleStringProperty();
@@ -69,16 +69,16 @@ public class Book {
 		if(!isValidIsbn(isbn))
 			throw new IllegalArgumentException("Isbn cannot be greater than 13 characters!");
 		setIsbn(isbn);
+		
+		setDateAdded(dateAdded);
 	}
 	
 	public void save() throws AppException {
 		if(id == 0)
 			gateway.addBook(this);
-		else {
+		else
 			gateway.updateBook(this);
-			addAuditEntry("Book updated");
-		}
-		
+
 		new AppController();
 		AppController controller = AppController.getInstance();
 		controller.changeView(AppController.BOOK_LIST, null);
@@ -163,6 +163,10 @@ public class Book {
 	
 	public LocalDate getDateAdded() {
 		return dateAdded.get();
+	}
+	
+	public void setDateAdded(LocalDate dateAdded) {
+		this.dateAdded.set(dateAdded);
 	}
 	
 	public int getId() {

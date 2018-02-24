@@ -81,7 +81,7 @@ public class BookDetailController implements Initializable, MyController {
 			return;
 		}
 
-		logger.info("Audit trail for book: " + book.getTitle() + " accessed.");
+		logger.info("Audit trail for " + book.getTitle() + " accessed.");
 		new AppController();
 		AppController controller = AppController.getInstance();
 		controller.changeView(AppController.AUDIT_TRAIL, book);

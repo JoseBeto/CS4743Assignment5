@@ -19,6 +19,8 @@ public class BookTableGateway {
 	}
 	
 	public void updateBook(Book book) throws AppException {
+		createAuditTrails(book);
+		
 		PreparedStatement st = null;
 		try {
 			st = conn.prepareStatement("update book set title = ?, summary = ?, year_published = ?, "
@@ -30,6 +32,40 @@ public class BookTableGateway {
 			st.setString(5, book.getIsbn());
 			st.setInt(6, book.getId());
 			st.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new AppException(e);
+		} finally {
+			try {
+				if(st != null)
+					st.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				throw new AppException(e);
+			}
+		}
+	}
+	
+	public void createAuditTrails(Book book) throws AppException {
+		PreparedStatement st = null;
+		try {
+			st = conn.prepareStatement("select * from book where id = ?");
+			st.setInt(1, book.getId());
+			ResultSet rs = st.executeQuery();
+			
+			while(rs.next()) {
+				if(!book.getTitle().equals(rs.getString("title")))
+					addAuditEntry(book, "Title changed from " + rs.getString("title") + " to " + book.getTitle());
+				if(!book.getSummary().equals(rs.getString("summary")))
+					addAuditEntry(book, "Summary changed from " + rs.getString("summary") + " to " + book.getSummary());
+				if(book.getYearPublished() != rs.getInt("year_published"))
+					addAuditEntry(book, "Year published changed from " + rs.getInt("year_published") + " to " + book.getYearPublished());
+				if(book.getPublisher().getId() != rs.getInt("publisher_id"))
+					addAuditEntry(book, "Publisher changed from " + pubGateway.getPublisherById(rs.getInt("publisher_id")) 
+						+ " to " + book.getPublisher());
+				if(!book.getIsbn().equals(rs.getString("isbn")))
+					addAuditEntry(book, "Isbn changed from " + rs.getInt("isbn") + " to " + book.getIsbn());
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new AppException(e);
@@ -98,7 +134,7 @@ public class BookTableGateway {
 			ResultSet rs = st.executeQuery();
 			while(rs.next()) {
 				Book book = new Book(pubGateway, rs.getString("title"), rs.getString("summary"),
-						rs.getInt("year_published"), rs.getInt("publisher_id"), rs.getString("isbn"));
+						rs.getInt("year_published"), rs.getInt("publisher_id"), rs.getString("isbn"), rs.getDate("date_added").toLocalDate());
 				book.setGateway(this);
 				book.setId(rs.getInt("id"));
 				books.add(book);
@@ -128,7 +164,7 @@ public class BookTableGateway {
 			ResultSet rs = st.executeQuery();
 			while(rs.next()) {
 				Book book = new Book(pubGateway, rs.getString("title"), rs.getString("summary"),
-						rs.getInt("year_published"), rs.getInt("publisher_id"), rs.getString("isbn"));
+						rs.getInt("year_published"), rs.getInt("publisher_id"), rs.getString("isbn"), rs.getDate("date_added").toLocalDate());
 				book.setGateway(this);
 				book.setId(rs.getInt("id"));
 				books.add(book);
