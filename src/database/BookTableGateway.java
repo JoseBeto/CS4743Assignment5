@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.AuditTrailEntry;
@@ -83,14 +85,19 @@ public class BookTableGateway {
 	public void addBook(Book book) throws AppException {
 		PreparedStatement st = null;
 		try {
-			st = conn.prepareStatement("insert into book (title, summary, "
-					+ "year_published, publisher_id, isbn) values (?, ?, ?, ?, ?)");
+			String statement = "insert into book (title, summary, "
+					+ "year_published, publisher_id, isbn) values (?, ?, ?, ?, ?)";
+			st = conn.prepareStatement(statement, Statement.RETURN_GENERATED_KEYS);
 			st.setString(1, book.getTitle());
 			st.setString(2, book.getSummary());
 			st.setInt(3, book.getYearPublished());
 			st.setInt(4, book.getPublisher().getId());
 			st.setString(5, book.getIsbn());
 			st.executeUpdate();
+			
+			ResultSet rs = st.getGeneratedKeys();
+			rs.next();
+			addAuditEntry(getBookById(rs.getInt(1)), "Book added");
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new AppException(e);
@@ -182,6 +189,36 @@ public class BookTableGateway {
 			}
 		}
 		return books;
+	}
+	
+	public Book getBookById(int id) {
+		PreparedStatement st = null;
+		Book book = null;
+		
+		try {
+			st = conn.prepareStatement("select * from book where id = ?");
+			st.setInt(1, id);
+			ResultSet rs = st.executeQuery();
+			
+			while(rs.next()) {
+				book = new Book(pubGateway, rs.getString("title"), rs.getString("summary"),
+						rs.getInt("year_published"), rs.getInt("publisher_id"), rs.getString("isbn"), rs.getDate("date_added").toLocalDate());
+				book.setGateway(this);
+				book.setId(rs.getInt("id"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new AppException(e);
+		} finally {
+			try {
+				if(st != null)
+					st.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				throw new AppException(e);
+			}
+		}
+		return book;
 	}
 	
 	public ObservableList<AuditTrailEntry> getAuditTrails(Book book) throws AppException {

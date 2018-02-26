@@ -2099,3 +2099,98 @@
 13:47:45.249 INFO  controller.BookListController : test book 12 clicked
 13:47:46.337 INFO  controller.BookDetailController : Audit trail for test book 12 accessed.
 13:47:54.976 INFO  assignment3.Launcher : Closing connection...
+09:28:19.520 INFO  assignment3.Launcher : Creating connection...
+09:28:25.739 INFO  controller.AppController : Book list menu item clicked
+09:28:27.651 INFO  controller.BookListController : test book 12 clicked
+09:28:29.285 INFO  controller.AppController : Book list menu item clicked
+09:28:30.440 INFO  controller.BookListController : The Great Gatsby clicked
+09:28:34.061 INFO  controller.AppController : Book list menu item clicked
+09:28:35.538 INFO  controller.BookListController : test book 12 clicked
+09:28:46.177 INFO  controller.BookDetailController : Model's name is test book 1
+09:28:57.048 INFO  controller.BookDetailController : Audit trail for test book 1 accessed.
+09:29:15.169 INFO  assignment3.Launcher : Closing connection...
+09:32:02.113 INFO  assignment3.Launcher : Creating connection...
+09:32:03.983 INFO  assignment3.Launcher : Closing connection...
+09:33:50.826 INFO  assignment3.Launcher : Creating connection...
+09:33:53.571 INFO  controller.AppController : Add Book menu item clicked
+09:33:55.867 INFO  controller.BookDetailController : Model's name is test 2
+09:33:57.571 INFO  assignment3.Launcher : Closing connection...
+09:34:25.138 INFO  assignment3.Launcher : Creating connection...
+09:34:27.277 INFO  controller.AppController : Book list menu item clicked
+09:34:29.496 INFO  controller.AppController : Add Book menu item clicked
+09:34:31.724 INFO  controller.BookDetailController : Model's name is test 2
+09:34:33.135 INFO  assignment3.Launcher : Closing connection...
+09:36:00.623 INFO  assignment3.Launcher : Creating connection...
+09:36:03.106 INFO  controller.AppController : Add Book menu item clicked
+09:36:05.552 INFO  controller.BookDetailController : Model's name is test 2
+09:36:07.832 INFO  assignment3.Launcher : Closing connection...
+09:37:05.234 INFO  assignment3.Launcher : Creating connection...
+09:37:07.380 INFO  controller.AppController : Book list menu item clicked
+09:37:11.809 INFO  controller.BookListController : test 2 deleted
+09:37:13.444 INFO  controller.BookListController : test 2 deleted
+09:37:14.688 INFO  controller.AppController : Book list menu item clicked
+09:37:16.430 INFO  controller.AppController : Add Book menu item clicked
+09:37:18.859 INFO  controller.BookDetailController : Model's name is test 2
+09:37:21.821 INFO  assignment3.Launcher : Closing connection...
+09:41:08.577 INFO  assignment3.Launcher : Creating connection...
+09:41:11.438 INFO  controller.AppController : Add Book menu item clicked
+09:41:15.318 INFO  controller.BookDetailController : Model's name is test b 2
+09:41:30.785 INFO  assignment3.Launcher : Closing connection...
+09:47:18.441 INFO  assignment3.Launcher : Creating connection...
+09:47:21.514 INFO  controller.AppController : Book list menu item clicked
+09:47:24.288 INFO  controller.BookListController : test 2 deleted
+09:47:26.213 INFO  controller.BookListController : test b 2 deleted
+09:47:28.333 INFO  controller.BookListController : test book 12 deleted
+09:47:34.647 INFO  assignment3.Launcher : Creating connection...
+09:47:39.620 INFO  controller.BookListController : Neverness clicked
+09:47:40.895 INFO  controller.AppController : Add Book menu item clicked
+09:47:53.152 INFO  controller.BookDetailController : Model's name is Neverness
+09:47:57.258 INFO  controller.AppController : Book list menu item clicked
+09:48:00.724 INFO  controller.BookListController : Neverness clicked
+09:48:01.327 INFO  controller.BookDetailController : Audit trail for Neverness accessed.
+09:48:04.946 INFO  controller.AppController : Book list menu item clicked
+09:48:07.169 INFO  controller.BookListController : Neverness deleted
+09:48:07.982 INFO  controller.BookListController : Neverness clicked
+09:48:08.743 INFO  controller.BookDetailController : Audit trail for Neverness accessed.
+09:48:10.999 INFO  controller.BookDetailController : Audit trail for Neverness accessed.
+09:48:17.930 INFO  controller.AppController : Book list menu item clicked
+09:48:21.083 INFO  controller.AppController : Book list menu item clicked
+09:48:22.221 INFO  controller.BookListController : The Great Gatsby clicked
+09:48:22.924 INFO  controller.BookListController : The Great Gatsby clicked
+09:48:24.907 INFO  controller.AppController : Add Book menu item clicked
+09:48:36.625 INFO  controller.BookDetailController : Model's name is The Great Gatsby
+09:48:39.308 INFO  controller.AppController : Book list menu item clicked
+09:48:41.263 INFO  controller.BookListController : The Great Gatsby clicked
+09:48:41.904 INFO  controller.BookDetailController : Audit trail for The Great Gatsby accessed.
+09:48:46.127 INFO  controller.BookListController : The Great Gatsby deleted
+09:48:49.219 INFO  controller.AppController : Book list menu item clicked
+09:48:54.060 INFO  controller.AppController : Add Book menu item clicked
+09:48:54.835 INFO  controller.BookListController : The Martian clicked
+09:49:11.354 INFO  controller.BookDetailController : Model's name is The Martian
+09:49:12.584 INFO  controller.BookListController : The Martian clicked
+09:49:15.594 INFO  controller.BookDetailController : Model's name is The Martian
+09:49:18.445 INFO  controller.BookListController : The Martian deleted
+09:49:20.053 INFO  controller.AppController : Book list menu item clicked
+09:49:21.108 INFO  controller.BookListController : To Kill a Mockingbird clicked
+09:49:22.437 INFO  controller.AppController : Add Book menu item clicked
+09:49:33.299 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+09:49:36.009 INFO  controller.BookListController : To Kill a Mockingbird deleted
+09:49:36.797 INFO  assignment3.Launcher : Closing connection...
+09:49:38.766 INFO  controller.BookListController : Neverness clicked
+09:49:40.859 INFO  controller.BookDetailController : Audit trail for Neverness accessed.
+09:49:42.342 INFO  controller.AppController : Book list menu item clicked
+09:49:43.138 INFO  controller.BookListController : The Great Gatsby clicked
+09:49:45.244 INFO  controller.BookDetailController : Audit trail for The Great Gatsby accessed.
+09:49:46.814 INFO  controller.AppController : Book list menu item clicked
+09:49:47.624 INFO  controller.BookListController : The Martian clicked
+09:49:48.587 INFO  controller.BookDetailController : Audit trail for The Martian accessed.
+09:49:52.518 INFO  controller.AppController : Book list menu item clicked
+09:49:53.390 INFO  controller.BookListController : To Kill a Mockingbird clicked
+09:49:54.566 INFO  controller.AppController : Book list menu item clicked
+09:49:55.968 INFO  controller.BookListController : To Kill a Mockingbird clicked
+09:49:56.452 INFO  controller.BookDetailController : Audit trail for To Kill a Mockingbird accessed.
+09:49:57.886 INFO  controller.AppController : Book list menu item clicked
+09:50:00.601 INFO  controller.BookListController : The Martian clicked
+09:50:01.284 INFO  controller.BookDetailController : Audit trail for The Martian accessed.
+09:50:28.295 INFO  controller.AppController : Book list menu item clicked
+09:50:29.736 INFO  assignment3.Launcher : Closing connection...
