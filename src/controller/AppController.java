@@ -6,8 +6,7 @@ import java.sql.Connection;
 import java.util.ResourceBundle;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import assignment3.Launcher;
+import userInterfaces.Launcher;
 import database.AppException;
 import database.AuthorTableGateway;
 import database.BookTableGateway;
@@ -25,12 +24,11 @@ import model.Book;
 public class AppController implements Initializable {
 	private static Logger logger = LogManager.getLogger(Launcher.class);
 
-	public static final int AUTHOR_LIST = 1;
-	public static final int AUTHOR_DETAIL = 2;
+	public static final int MAIN = 1;
 	
+	public static final int AUTHOR_DETAIL = 2;
 	public static final int BOOK_LIST = 3;
 	public static final int BOOK_DETAIL = 4;
-	
 	public static final int AUDIT_TRAIL = 5;
 
 	private static AppController myInstance = null;
@@ -46,11 +44,11 @@ public class AppController implements Initializable {
 			MyController controller = null;
 			URL fxmlFile = null;
 			switch(viewType) {
-				case AUTHOR_LIST:
-					fxmlFile = this.getClass().getResource("/view/AuthorListView.fxml");
+				case MAIN:
+					fxmlFile = this.getClass().getResource("/view/test.fxml");
 					controller = new AuthorListController(new AuthorTableGateway(conn));
 					break;
-				case AUTHOR_DETAIL:
+				/*case AUTHOR_DETAIL:
 					fxmlFile = this.getClass().getResource("/view/AuthorDetailView.fxml");
 					controller = new AuthorDetailController((Author) arg);
 					break;
@@ -65,7 +63,7 @@ public class AppController implements Initializable {
 				case AUDIT_TRAIL:
 					fxmlFile = this.getClass().getResource("/view/AuditTrailView.fxml");
 					controller = new AuditTrailController((Book) arg, this);
-					break;
+					break;*/
 			}
 		
 			FXMLLoader loader = new FXMLLoader(fxmlFile);
