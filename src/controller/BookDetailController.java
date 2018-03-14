@@ -11,7 +11,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import userInterfaces.AlertHelper;
+import assignment3.AlertHelper;
 import database.PublisherTableGateway;
 import javafx.beans.binding.Bindings;
 import javafx.beans.value.ChangeListener;
