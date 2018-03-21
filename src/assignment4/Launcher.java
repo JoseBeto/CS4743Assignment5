@@ -1,4 +1,4 @@
-package assignment3;
+package assignment4;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -14,7 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-/* CS 4743 Assignment 3 by Jose Bocanegra */
+/* CS 4743 Assignment 4 by Jose Bocanegra */
 
 public class Launcher extends Application {
 
