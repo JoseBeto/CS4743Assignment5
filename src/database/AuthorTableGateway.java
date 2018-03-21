@@ -5,6 +5,7 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.Author;
@@ -27,7 +28,13 @@ public class AuthorTableGateway {
 			st.setString(4, author.getGender());
 			st.setString(5, author.getWebsite());
 			st.setInt(6, author.getId());
+			
+			if(!author.getLastModified().isEqual(getLastModified(author)))
+				throw new AppException("not in sync");
+			
 			st.executeUpdate();
+			
+			updateLastModified(author);
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new AppException(e);
@@ -42,6 +49,56 @@ public class AuthorTableGateway {
 		}
 	}
 	
+	public LocalDateTime getLastModified(Author author) {
+		LocalDateTime lastModified = null;
+		
+		PreparedStatement st = null;
+		try {
+			st = conn.prepareStatement("select * from author where id = ?");
+			st.setInt(1, author.getId());
+			ResultSet rs = st.executeQuery();
+			if(rs.next()) {
+				lastModified = rs.getTimestamp("last_modified").toLocalDateTime();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new AppException(e);
+		} finally {
+			try {
+				if(st != null)
+					st.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				throw new AppException(e);
+			}
+		}
+		
+		return lastModified;
+	}
+	
+	public void updateLastModified(Author author) {
+		PreparedStatement st = null;
+		try {
+			st = conn.prepareStatement("select * from author where id = ?");
+			st.setInt(1, author.getId());
+			ResultSet rs = st.executeQuery();
+			if(rs.next()) {
+				author.setLastModified(rs.getTimestamp("last_modified").toLocalDateTime());
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new AppException(e);
+		} finally {
+			try {
+				if(st != null)
+					st.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				throw new AppException(e);
+			}
+		}
+	}
+
 	public void addAuthor(Author author) throws AppException {
 		PreparedStatement st = null;
 		try {
@@ -97,7 +154,8 @@ public class AuthorTableGateway {
 			ResultSet rs = st.executeQuery();
 			while(rs.next()) {
 				Author author = new Author(rs.getString("first_name"), rs.getString("last_name"),
-						rs.getDate("dob").toLocalDate(), rs.getString("gender"), rs.getString("web_site"));
+						rs.getDate("dob").toLocalDate(), rs.getString("gender"), 
+						rs.getString("web_site"), rs.getTimestamp("last_modified").toLocalDateTime());
 				author.setGateway(this);
 				author.setId(rs.getInt("id"));
 				authors.add(author);

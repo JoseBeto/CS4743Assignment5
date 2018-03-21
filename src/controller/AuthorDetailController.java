@@ -12,6 +12,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import assignment4.AlertHelper;
+import database.AppException;
 import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -65,14 +66,23 @@ public class AuthorDetailController implements Initializable, MyController {
     		AlertHelper.showWarningMessage("Oops!", "Website is invalid", "Websites must be no more than 100 characters");
     		return;
     	}
-    	author.save();
+
+    	try {
+    		author.save();
+    	} catch(AppException e) {
+    		if(e.getLocalizedMessage().equals("not in sync")) {
+    			AlertHelper.showWarningMessage("Oops!", "Author isn't up to date", "Go back to the author list to fetch a "
+    					+ "fresh copy of this author");
+    		}
+    	}
+
 	}
-	
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		firstName.textProperty().bindBidirectional(author.firstNameProperty());
 		lastName.textProperty().bindBidirectional(author.lastNameProperty());
-		
+
 		Bindings.bindBidirectional( doB.textProperty(), author.dateOfBirthProperty(), new LocalDateStringConverter()
 	    {
 			@Override

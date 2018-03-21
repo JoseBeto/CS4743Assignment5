@@ -2,6 +2,8 @@ package model;
 
 import database.AuthorTableGateway;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 import database.AppException;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -15,6 +17,7 @@ public class Author {
 	private SimpleStringProperty website;
 	private int id;
 	private AuthorTableGateway gateway;
+	private SimpleObjectProperty<LocalDateTime> lastModified;
 	
 	public Author() {
 		firstName = new SimpleStringProperty();
@@ -22,20 +25,23 @@ public class Author {
 		this.doB = new SimpleObjectProperty<LocalDate>();
 		this.gender = new SimpleStringProperty();
 		this.website = new SimpleStringProperty();
+		this.lastModified = new SimpleObjectProperty<LocalDateTime>();
 		
 		setFirstName("");
 		setLastName("");
 		setDoB(null);
 		setGender("");
 		setWebsite("");
+		setLastModified(null);
 	}
 	
-	public Author(String fName, String lName, LocalDate doB, String gender, String website) {
+	public Author(String fName, String lName, LocalDate doB, String gender, String website, LocalDateTime lastModified) {
 		firstName = new SimpleStringProperty();
 		lastName = new SimpleStringProperty();
 		this.doB = new SimpleObjectProperty<LocalDate>();
 		this.gender = new SimpleStringProperty();
 		this.website = new SimpleStringProperty();
+		this.lastModified = new SimpleObjectProperty<LocalDateTime>();
 		
 		if(!isValidName(fName))
 			throw new IllegalArgumentException("First name must be between 1 and 100 characters!");
@@ -56,6 +62,8 @@ public class Author {
 		if(!isValidWebsite(website))
 			throw new IllegalArgumentException("Website must be no more than 100 characters!");
 		setWebsite(website);
+		
+		setLastModified(lastModified);
 	}
 	
 	public void save() throws AppException {
@@ -115,12 +123,12 @@ public class Author {
 		this.lastName.set(lastName);
 	}
 
-	public LocalDate getDoB() {
-		return doB.get();
+	public LocalDateTime getLastModified() {
+		return lastModified.get();
 	}
 
-	public void setDoB(LocalDate doB2) {
-		this.doB.set(doB2);
+	public void setLastModified(LocalDateTime lastModified2) {
+		this.lastModified.set(lastModified2);
 	}
 
 	public String getGender() {
@@ -137,6 +145,14 @@ public class Author {
 
 	public void setWebsite(String website) {
 		this.website.set(website);
+	}
+	
+	public LocalDate getDoB() {
+		return doB.get();
+	}
+
+	public void setDoB(LocalDate doB2) {
+		this.doB.set(doB2);
 	}
 	
 	public int getId() {
