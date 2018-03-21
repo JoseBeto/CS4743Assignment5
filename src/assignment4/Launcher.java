@@ -36,7 +36,7 @@ public class Launcher extends Application {
 		
 		Scene scene = new Scene(root, 610, 400);
 	    
-		primaryStage.setTitle("assignment3");
+		primaryStage.setTitle("assignment4");
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
