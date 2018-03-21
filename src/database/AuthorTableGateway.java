@@ -34,7 +34,7 @@ public class AuthorTableGateway {
 			
 			st.executeUpdate();
 			
-			updateLastModified(author);
+			author.setLastModified(getLastModified(author));
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new AppException(e);
@@ -74,29 +74,6 @@ public class AuthorTableGateway {
 		}
 		
 		return lastModified;
-	}
-	
-	public void updateLastModified(Author author) {
-		PreparedStatement st = null;
-		try {
-			st = conn.prepareStatement("select * from author where id = ?");
-			st.setInt(1, author.getId());
-			ResultSet rs = st.executeQuery();
-			if(rs.next()) {
-				author.setLastModified(rs.getTimestamp("last_modified").toLocalDateTime());
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-			throw new AppException(e);
-		} finally {
-			try {
-				if(st != null)
-					st.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-				throw new AppException(e);
-			}
-		}
 	}
 
 	public void addAuthor(Author author) throws AppException {

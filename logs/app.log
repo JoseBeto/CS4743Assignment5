@@ -2262,3 +2262,22 @@
 18:34:41.263 INFO  controller.AppController : Author list menu item clicked
 18:34:42.920 INFO  controller.AuthorListController : John clicked
 18:34:45.298 INFO  assignment4.Launcher : Closing connection...
+18:38:23.028 INFO  assignment4.Launcher : Creating connection...
+18:38:33.284 INFO  assignment4.Launcher : Creating connection...
+18:38:44.704 INFO  controller.AppController : Author list menu item clicked
+18:38:47.911 INFO  controller.AppController : Author list menu item clicked
+18:38:48.927 INFO  controller.AuthorListController : John clicked
+18:38:50.193 INFO  controller.AuthorListController : John clicked
+18:38:58.409 INFO  controller.AuthorDetailController : Model's name is John
+18:39:08.442 INFO  controller.AuthorDetailController : Model's name is j
+18:39:22.340 INFO  controller.AuthorDetailController : Model's name is j
+18:39:28.251 INFO  controller.AuthorDetailController : Model's name is j
+18:39:28.252 ERROR controller.AuthorDetailController : Invalid gender: 
+18:39:34.933 INFO  controller.AppController : Author list menu item clicked
+18:39:35.806 INFO  controller.AuthorListController : John clicked
+18:39:40.004 INFO  controller.AuthorDetailController : Model's name is John
+18:39:47.621 INFO  controller.AuthorDetailController : Model's name is John
+18:39:54.249 INFO  assignment4.Launcher : Closing connection...
+18:39:57.680 INFO  controller.AppController : Author list menu item clicked
+18:39:58.951 INFO  controller.AuthorListController : John clicked
+18:40:03.563 INFO  assignment4.Launcher : Closing connection...
