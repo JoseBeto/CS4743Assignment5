@@ -32,6 +32,8 @@ public class AppController implements Initializable {
 	public static final int BOOK_DETAIL = 4;
 	
 	public static final int AUDIT_TRAIL = 5;
+	
+	public static final int AUTHOR_BOOK = 6;
 
 	private static AppController myInstance = null;
 	private BorderPane rootPane = null;
@@ -60,11 +62,17 @@ public class AppController implements Initializable {
 					break;
 				case BOOK_DETAIL:
 					fxmlFile = this.getClass().getResource("/view/BookDetailView.fxml");
-					controller = new BookDetailController((Book) arg, new PublisherTableGateway(conn));
+					controller = new BookDetailController((Book) arg, new PublisherTableGateway(conn),
+							new BookTableGateway(conn));
 					break;
 				case AUDIT_TRAIL:
 					fxmlFile = this.getClass().getResource("/view/AuditTrailView.fxml");
 					controller = new AuditTrailController(arg, this);
+					break;
+				case AUTHOR_BOOK:
+					fxmlFile = this.getClass().getResource("/view/AuthorBookView.fxml");
+					controller = new AuthorBookController(new BookTableGateway(conn), 
+							new AuthorTableGateway(conn), (Book) arg);
 					break;
 			}
 		

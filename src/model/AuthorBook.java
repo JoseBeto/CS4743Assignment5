@@ -11,19 +11,37 @@ public class AuthorBook {
 	private Author author;
 	private Book book;
 	private int royalty;
+	private BigDecimal royaltyDec;
 	private Boolean newRecord = true;
 	
-	public AuthorBook(int authorId, Book book, BigDecimal royalty, Connection conn) {
-		this.author = new AuthorTableGateway(conn).getAuthorById(authorId);
+	public AuthorBook(Author author, Book book, BigDecimal royalty) {
+		this.author = author;
 		this.book = book;
 		//this.royalty = 100000 * royalty;
-		this.royalty = 1;
-		System.out.println(royalty);
+		//this.royalty = 1;
+		this.royaltyDec = royalty;
 		
 		newRecord = false;
 	}
 	
 	public AuthorBook() {
 		
+	}
+	
+	public Author getAuthor() {
+		return author;
+	}
+	
+	public Book getBook() {
+		return book;
+	}
+	
+	public BigDecimal getRoyalty() {
+		return royaltyDec;
+	}
+	
+	@Override
+	public String toString() {
+		return "Author: " + author + "\t\t\t\tRoyalty: " + royaltyDec + "%";
 	}
 }

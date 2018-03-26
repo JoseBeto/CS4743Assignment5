@@ -6,14 +6,15 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.util.converter.NumberStringConverter;
+import model.AuthorBook;
 import model.Book;
 import model.Publisher;
 import java.net.URL;
 import java.util.ResourceBundle;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import assignment4.AlertHelper;
+import database.BookTableGateway;
 import database.PublisherTableGateway;
 import javafx.beans.binding.Bindings;
 import javafx.beans.value.ChangeListener;
@@ -32,14 +33,16 @@ public class BookDetailController implements Initializable, MyController {
     @FXML private TextField yearPublished;
     @FXML private TextField isbn;
     @FXML private ComboBox<Publisher> publisher;
-    @FXML private ListView<?> authorList;
+    @FXML private ListView<AuthorBook> authorList;
     
 	private Book book;
 	private PublisherTableGateway pubGateway;
+	private BookTableGateway bookGateway;
 
-	public BookDetailController(Book book, PublisherTableGateway pubGateway) {
+	public BookDetailController(Book book, PublisherTableGateway pubGateway, BookTableGateway gateway) {
 		this.book = book;
 		this.pubGateway = pubGateway;
+		this.bookGateway = gateway;
     }
 	
 	@FXML
@@ -85,19 +88,19 @@ public class BookDetailController implements Initializable, MyController {
 		}
 
 		logger.info("Audit trail for " + book.getTitle() + " accessed.");
-		new AppController();
-		AppController controller = AppController.getInstance();
-		controller.changeView(AppController.AUDIT_TRAIL, book);
+		AppController.getInstance().changeView(AppController.AUDIT_TRAIL, book);
 	}
 	
 	@FXML
     void addAuthorClicked(ActionEvent event) {
-
+		AppController.getInstance().changeView(AppController.AUTHOR_BOOK, book);
     }
 
     @FXML
     void deleteAuthorClicked(ActionEvent event) {
-
+    	bookGateway.deleteAuthorBook(authorList.getSelectionModel().getSelectedItem());
+    	
+    	authorList.setItems(bookGateway.getAuthorsForBook(book));
     }
 	
 	@Override
@@ -135,5 +138,7 @@ public class BookDetailController implements Initializable, MyController {
 		publisher.valueProperty().bindBidirectional(book.publisherProperty());
 		publisher.setItems(pubGateway.getPublishers());
 		isbn.textProperty().bindBidirectional(book.isbnProperty());
+		
+		authorList.setItems(bookGateway.getAuthorsForBook(book));
 	}
 }

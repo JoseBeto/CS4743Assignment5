@@ -8,16 +8,19 @@ import java.sql.Statement;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.AuditTrailEntry;
+import model.Author;
 import model.AuthorBook;
 import model.Book;
 
 public class BookTableGateway {
 	private Connection conn;
 	private PublisherTableGateway pubGateway;
+	private AuthorTableGateway authorGateway;
 	
 	public BookTableGateway(Connection conn) {
 		this.conn = conn;
-		pubGateway = new PublisherTableGateway(conn);
+		this.pubGateway = new PublisherTableGateway(conn);
+		this.authorGateway = new AuthorTableGateway(conn);
 	}
 	
 	public void updateBook(Book book) throws AppException {
@@ -271,6 +274,80 @@ public class BookTableGateway {
 		}
 		return auditTrailEntries;
 	}
+	
+	public void addAuthorBook(AuthorBook authorBook) throws AppException {
+		PreparedStatement st = null;
+		try {
+			st = conn.prepareStatement("insert into author_book (author_id, book_id, royalty)"
+					+ " values (?, ?, ?)");
+			st.setInt(1, authorBook.getAuthor().getId());
+			st.setInt(2, authorBook.getBook().getId());
+			st.setBigDecimal(3, authorBook.getRoyalty());
+			st.executeUpdate();
+			
+			addAuditEntry(authorBook.getBook(), "Author " 
+					+ authorGateway.getAuthorById(authorBook.getAuthor().getId())+" added");
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new AppException(e);
+		} finally {
+			try {
+				if(st != null)
+					st.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				throw new AppException(e);
+			}
+		}
+	}
+	
+	public void updateAuthorBook(AuthorBook authorBook) throws AppException {
+		PreparedStatement st = null;
+		try {
+			st = conn.prepareStatement("update author_book set author_id = ?, royalty = ? "
+					+ "where book_id = ?, author_id = ?");
+			st.setInt(1, authorBook.getAuthor().getId());
+			st.setBigDecimal(2, authorBook.getRoyalty());
+			st.setInt(3, authorBook.getBook().getId());
+			st.setInt(4, authorBook.getAuthor().getId());
+			st.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new AppException(e);
+		} finally {
+			try {
+				if(st != null)
+					st.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				throw new AppException(e);
+			}
+		}
+	}
+	
+	public void deleteAuthorBook(AuthorBook authorBook) throws AppException {
+		PreparedStatement st = null;
+		try {
+			st = conn.prepareStatement("delete from author_book where book_id = ? and author_id = ?");
+			st.setInt(1, authorBook.getBook().getId());
+			st.setInt(2, authorBook.getAuthor().getId());
+			st.executeUpdate();
+			
+			addAuditEntry(authorBook.getBook(), "Author " 
+					+ authorGateway.getAuthorById(authorBook.getAuthor().getId())+" deleted");
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new AppException(e);
+		} finally {
+			try {
+				if(st != null)
+					st.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				throw new AppException(e);
+			}
+		}
+	}
 
 	public ObservableList<AuthorBook> getAuthorsForBook(Book book) {
 		ObservableList<AuthorBook> authorBooks = FXCollections.observableArrayList();
@@ -281,8 +358,10 @@ public class BookTableGateway {
 			st.setInt(1, book.getId());
 			ResultSet rs = st.executeQuery();
 			while(rs.next()) {
-				AuthorBook authorBook = new AuthorBook(rs.getInt("author_id"), book
-						, rs.getBigDecimal("royalty"), conn);
+				Author author = new AuthorTableGateway(conn).getAuthorById(rs.getInt("author_id"));
+				
+				AuthorBook authorBook = new AuthorBook(author, book
+						, rs.getBigDecimal("royalty"));
 				authorBooks.add(authorBook);
 			}
 		} catch (SQLException e) {
