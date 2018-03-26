@@ -2,9 +2,11 @@ package controller;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.util.converter.NumberStringConverter;
 import model.AuthorBook;
 import model.Book;
@@ -33,7 +35,9 @@ public class BookDetailController implements Initializable, MyController {
     @FXML private TextField yearPublished;
     @FXML private TextField isbn;
     @FXML private ComboBox<Publisher> publisher;
-    @FXML private ListView<AuthorBook> authorList;
+    @FXML private TableView<AuthorBook> authorRoyaltyList;
+    @FXML private TableColumn<AuthorBook, String> authorList;
+    @FXML private TableColumn<AuthorBook, String> royaltyList;
     
 	private Book book;
 	private PublisherTableGateway pubGateway;
@@ -98,9 +102,9 @@ public class BookDetailController implements Initializable, MyController {
 
     @FXML
     void deleteAuthorClicked(ActionEvent event) {
-    	bookGateway.deleteAuthorBook(authorList.getSelectionModel().getSelectedItem());
+    	bookGateway.deleteAuthorBook(authorRoyaltyList.getSelectionModel().getSelectedItem());
     	
-    	authorList.setItems(bookGateway.getAuthorsForBook(book));
+    	authorRoyaltyList.setItems(bookGateway.getAuthorsForBook(book));
     }
 	
 	@Override
@@ -139,6 +143,9 @@ public class BookDetailController implements Initializable, MyController {
 		publisher.setItems(pubGateway.getPublishers());
 		isbn.textProperty().bindBidirectional(book.isbnProperty());
 		
-		authorList.setItems(bookGateway.getAuthorsForBook(book));
+		authorList.setCellValueFactory(new PropertyValueFactory<>("author"));
+		royaltyList.setCellValueFactory(new PropertyValueFactory<>("royaltyPercent"));
+		
+		authorRoyaltyList.setItems(bookGateway.getAuthorsForBook(book));
 	}
 }
