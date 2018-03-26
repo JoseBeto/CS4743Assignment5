@@ -1,25 +1,18 @@
 package model;
 
 import java.math.BigDecimal;
-import java.sql.Connection;
-import java.util.Date;
-
-import database.AuthorTableGateway;
 
 public class AuthorBook {
 
 	private Author author;
 	private Book book;
-	private int royalty;
-	private BigDecimal royaltyDec;
+	private BigDecimal royalty;
 	private Boolean newRecord = true;
 	
 	public AuthorBook(Author author, Book book, BigDecimal royalty) {
 		this.author = author;
 		this.book = book;
-		//this.royalty = 100000 * royalty;
-		//this.royalty = 1;
-		this.royaltyDec = royalty;
+		this.royalty = royalty.multiply(new BigDecimal(100000));
 		
 		newRecord = false;
 	}
@@ -37,11 +30,15 @@ public class AuthorBook {
 	}
 	
 	public BigDecimal getRoyalty() {
-		return royaltyDec;
+		return royalty;
 	}
 	
 	@Override
 	public String toString() {
-		return "Author: " + author + "\t\t\t\tRoyalty: " + royaltyDec + "%";
+		String s = "";
+		for(int i = 0; i < (50 - author.toString().length()); i++) {
+			s += " ";
+		}
+		return "Author: " + author + s + "Royalty: " + royalty + "%";
 	}
 }
