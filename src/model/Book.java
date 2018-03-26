@@ -79,9 +79,7 @@ public class Book {
 		else
 			gateway.updateBook(this);
 
-		new AppController();
-		AppController controller = AppController.getInstance();
-		controller.changeView(AppController.BOOK_LIST, null);
+		AppController.getInstance().changeView(AppController.BOOK_LIST, null);
 	}
 	
 	public void delete() {

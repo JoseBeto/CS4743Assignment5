@@ -39,5 +39,6 @@
             <Font size="14.0" />
          </font>
       </Label>
+      <Button layoutX="322.0" layoutY="323.0" mnemonicParsing="false" onAction="#handleAuditTrailButton" prefHeight="25.0" prefWidth="85.0" text="Audit Trail" />
    </children>
 </Pane>

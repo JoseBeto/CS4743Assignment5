@@ -9,7 +9,7 @@ public class AuditTrailEntry {
 	private Date dateAdded;
 	private String message;
 
-	public AuditTrailEntry(int bookId, Date dateAdded, String message) {
+	public AuditTrailEntry(Date dateAdded, String message) {
 		this.dateAdded = dateAdded;
 		this.message = message;
 	}

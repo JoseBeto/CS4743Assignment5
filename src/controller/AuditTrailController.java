@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import model.AuditTrailEntry;
+import model.Author;
 import model.Book;
 
 public class AuditTrailController implements Initializable, MyController {
@@ -17,22 +18,35 @@ public class AuditTrailController implements Initializable, MyController {
     @FXML private ListView<AuditTrailEntry> auditTrailList;
     
     private Book book;
+    private Author author;
     private AppController controller;
     
-    public AuditTrailController(Book book, AppController controller) {
-    	this.book = book;
+    public AuditTrailController(Object arg, AppController controller) {
+    	if(arg.getClass().getTypeName().equals("model.Book"))
+    		this.book = (Book) arg;
+    	else if(arg.getClass().getTypeName().equals("model.Author"))
+    		this.author = (Author) arg;
+    	
     	this.controller = controller;
     }
     
     @FXML
     void handleBackButton(ActionEvent event) {
-    	controller.changeView(AppController.BOOK_DETAIL, book);
+    	if(book != null)
+    		controller.changeView(AppController.BOOK_DETAIL, book);
+    	else if(author != null)
+    		controller.changeView(AppController.AUTHOR_DETAIL, author);
     }
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		auditTrailTitle.setText("Audit Trail for " + book.getTitle());
-		
-		auditTrailList.setItems(book.getAuditTrail());
+		if(book != null) {
+			auditTrailTitle.setText("Audit Trail for " + book.getTitle());
+			auditTrailList.setItems(book.getAuditTrail());
+		}
+    	else if(author != null) {
+    		auditTrailTitle.setText("Audit Trail for " + author.toString());
+    		auditTrailList.setItems(author.getAuditTrail());
+    	}
 	}
 }

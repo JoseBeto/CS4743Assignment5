@@ -4,9 +4,11 @@ import database.AuthorTableGateway;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+import controller.AppController;
 import database.AppException;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.ObservableList;
 
 public class Author {
 
@@ -71,6 +73,8 @@ public class Author {
 			gateway.addAuthor(this);
 		else
 			gateway.updateAuthor(this);
+		
+		AppController.getInstance().changeView(AppController.AUTHOR_LIST, null);
 	}
 	
 	public void delete() {
@@ -161,6 +165,14 @@ public class Author {
 	
 	public void setId(int id) {
 		this.id = id;
+	}
+	
+	public ObservableList<AuditTrailEntry> getAuditTrail() {
+		return gateway.getAuditTrails(this);
+	}
+	
+	public void addAuditEntry(String message) {
+		gateway.addAuditEntry(this, message);
 	}
 	
 	public AuthorTableGateway getGateway() {

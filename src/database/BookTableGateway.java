@@ -48,40 +48,6 @@ public class BookTableGateway {
 		}
 	}
 	
-	public void createAuditTrails(Book book) throws AppException {
-		PreparedStatement st = null;
-		try {
-			st = conn.prepareStatement("select * from book where id = ?");
-			st.setInt(1, book.getId());
-			ResultSet rs = st.executeQuery();
-			
-			while(rs.next()) {
-				if(!book.getTitle().equals(rs.getString("title")))
-					addAuditEntry(book, "Title changed from " + rs.getString("title") + " to " + book.getTitle());
-				if(!book.getSummary().equals(rs.getString("summary")))
-					addAuditEntry(book, "Summary changed from " + rs.getString("summary") + " to " + book.getSummary());
-				if(book.getYearPublished() != rs.getInt("year_published"))
-					addAuditEntry(book, "Year published changed from " + rs.getInt("year_published") + " to " + book.getYearPublished());
-				if(book.getPublisher().getId() != rs.getInt("publisher_id"))
-					addAuditEntry(book, "Publisher changed from " + pubGateway.getPublisherById(rs.getInt("publisher_id")) 
-						+ " to " + book.getPublisher());
-				if(!book.getIsbn().equals(rs.getString("isbn")))
-					addAuditEntry(book, "Isbn changed from " + rs.getInt("isbn") + " to " + book.getIsbn());
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-			throw new AppException(e);
-		} finally {
-			try {
-				if(st != null)
-					st.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-				throw new AppException(e);
-			}
-		}
-	}
-	
 	public void addBook(Book book) throws AppException {
 		PreparedStatement st = null;
 		try {
@@ -221,19 +187,25 @@ public class BookTableGateway {
 		return book;
 	}
 	
-	public ObservableList<AuditTrailEntry> getAuditTrails(Book book) throws AppException {
-		ObservableList<AuditTrailEntry> auditTrailEntries = FXCollections.observableArrayList();
-		
+	public void createAuditTrails(Book book) throws AppException {
 		PreparedStatement st = null;
 		try {
-			st = conn.prepareStatement("select * from book_audit_trail where book_id = ? order by date_added");
+			st = conn.prepareStatement("select * from book where id = ?");
 			st.setInt(1, book.getId());
 			ResultSet rs = st.executeQuery();
+			
 			while(rs.next()) {
-				AuditTrailEntry auditTrailEntry = new AuditTrailEntry(rs.getInt("book_id"), rs.getTimestamp("date_added"),
-						rs.getString("entry_msg"));
-				auditTrailEntry.setId(rs.getInt("id"));
-				auditTrailEntries.add(auditTrailEntry);
+				if(!book.getTitle().equals(rs.getString("title")))
+					addAuditEntry(book, "Title changed from " + rs.getString("title") + " to " + book.getTitle());
+				if(!book.getSummary().equals(rs.getString("summary")))
+					addAuditEntry(book, "Summary changed from " + rs.getString("summary") + " to " + book.getSummary());
+				if(book.getYearPublished() != rs.getInt("year_published"))
+					addAuditEntry(book, "Year published changed from " + rs.getInt("year_published") + " to " + book.getYearPublished());
+				if(book.getPublisher().getId() != rs.getInt("publisher_id"))
+					addAuditEntry(book, "Publisher changed from " + pubGateway.getPublisherById(rs.getInt("publisher_id")) 
+						+ " to " + book.getPublisher());
+				if(!book.getIsbn().equals(rs.getString("isbn")))
+					addAuditEntry(book, "Isbn changed from " + rs.getInt("isbn") + " to " + book.getIsbn());
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -247,7 +219,6 @@ public class BookTableGateway {
 				throw new AppException(e);
 			}
 		}
-		return auditTrailEntries;
 	}
 	
 	public void addAuditEntry(Book book, String message) throws AppException {
@@ -270,5 +241,34 @@ public class BookTableGateway {
 				throw new AppException(e);
 			}
 		}
+	}
+	
+	public ObservableList<AuditTrailEntry> getAuditTrails(Book book) throws AppException {
+		ObservableList<AuditTrailEntry> auditTrailEntries = FXCollections.observableArrayList();
+		
+		PreparedStatement st = null;
+		try {
+			st = conn.prepareStatement("select * from book_audit_trail where book_id = ? order by date_added");
+			st.setInt(1, book.getId());
+			ResultSet rs = st.executeQuery();
+			while(rs.next()) {
+				AuditTrailEntry auditTrailEntry = new AuditTrailEntry(rs.getTimestamp("date_added"),
+						rs.getString("entry_msg"));
+				auditTrailEntry.setId(rs.getInt("id"));
+				auditTrailEntries.add(auditTrailEntry);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new AppException(e);
+		} finally {
+			try {
+				if(st != null)
+					st.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				throw new AppException(e);
+			}
+		}
+		return auditTrailEntries;
 	}
 }

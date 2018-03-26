@@ -78,6 +78,22 @@ public class AuthorDetailController implements Initializable, MyController {
 
 	}
 
+	@FXML
+	void handleAuditTrailButton(ActionEvent event) {
+		//Prevent books not saved into database to access audit trail
+		if(author.getId() == 0) {
+			logger.error("Author needs to be saved into database before accessing audit trail");
+			AlertHelper.showWarningMessage("Oops!", "Author doesn't exist in database", "Author needs to be saved "
+					+ "into database before accessing audit trail");
+			return;
+		}
+
+		logger.info("Audit trail for " + author.toString() + " accessed.");
+		new AppController();
+		AppController controller = AppController.getInstance();
+		controller.changeView(AppController.AUDIT_TRAIL, author);
+	}
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		firstName.textProperty().bindBidirectional(author.firstNameProperty());

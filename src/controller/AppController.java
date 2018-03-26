@@ -64,7 +64,7 @@ public class AppController implements Initializable {
 					break;
 				case AUDIT_TRAIL:
 					fxmlFile = this.getClass().getResource("/view/AuditTrailView.fxml");
-					controller = new AuditTrailController((Book) arg, this);
+					controller = new AuditTrailController(arg, this);
 					break;
 			}
 		

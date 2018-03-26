@@ -2281,3 +2281,107 @@
 18:39:57.680 INFO  controller.AppController : Author list menu item clicked
 18:39:58.951 INFO  controller.AuthorListController : John clicked
 18:40:03.563 INFO  assignment4.Launcher : Closing connection...
+08:32:11.273 INFO  assignment4.Launcher : Creating connection...
+08:32:17.733 INFO  controller.AppController : Author list menu item clicked
+08:32:19.769 INFO  controller.AppController : Book list menu item clicked
+08:32:20.828 INFO  controller.BookListController : Neverness clicked
+08:32:25.749 INFO  controller.BookDetailController : Audit trail for Neverness accessed.
+08:32:29.327 INFO  controller.AppController : Author list menu item clicked
+08:32:30.128 INFO  controller.AuthorListController : John clicked
+08:32:46.725 INFO  controller.AppController : Book list menu item clicked
+08:32:49.037 INFO  controller.AppController : Author list menu item clicked
+08:32:50.460 INFO  controller.AuthorListController : John clicked
+08:33:03.516 INFO  controller.AppController : Author list menu item clicked
+08:33:04.650 INFO  assignment4.Launcher : Closing connection...
+09:04:11.149 INFO  assignment4.Launcher : Creating connection...
+09:04:13.670 INFO  controller.AppController : Book list menu item clicked
+09:04:14.670 INFO  controller.BookListController : To Kill a Mockingbird clicked
+09:04:15.298 INFO  controller.BookDetailController : Audit trail for To Kill a Mockingbird accessed.
+09:04:20.413 INFO  controller.AppController : Book list menu item clicked
+09:04:22.378 INFO  controller.BookListController : Neverness clicked
+09:04:23.426 INFO  controller.BookDetailController : Audit trail for Neverness accessed.
+09:04:26.171 INFO  assignment4.Launcher : Closing connection...
+09:04:43.034 INFO  assignment4.Launcher : Creating connection...
+09:04:45.287 INFO  controller.AppController : Book list menu item clicked
+09:04:46.087 INFO  controller.BookListController : To Kill a Mockingbird clicked
+09:04:46.724 INFO  controller.BookDetailController : Audit trail for To Kill a Mockingbird accessed.
+09:04:50.808 INFO  assignment4.Launcher : Closing connection...
+09:05:01.025 INFO  assignment4.Launcher : Creating connection...
+09:05:03.221 INFO  controller.AppController : Book list menu item clicked
+09:05:04.046 INFO  controller.BookListController : Neverness clicked
+09:05:04.779 INFO  controller.BookDetailController : Audit trail for Neverness accessed.
+09:05:08.675 INFO  assignment4.Launcher : Closing connection...
+09:08:51.910 INFO  assignment4.Launcher : Creating connection...
+09:08:54.130 INFO  controller.AppController : Book list menu item clicked
+09:08:55.155 INFO  controller.BookListController : To Kill a Mockingbird clicked
+09:08:56.246 INFO  controller.BookDetailController : Audit trail for To Kill a Mockingbird accessed.
+09:09:03.329 INFO  controller.AppController : Book list menu item clicked
+09:09:04.163 INFO  controller.BookListController : Neverness clicked
+09:09:05.134 INFO  controller.BookDetailController : Audit trail for Neverness accessed.
+09:09:16.775 INFO  controller.AppController : Book list menu item clicked
+09:09:17.724 INFO  controller.BookListController : The Great Gatsby clicked
+09:09:18.237 INFO  controller.BookDetailController : Audit trail for The Great Gatsby accessed.
+09:09:20.022 INFO  controller.AppController : Book list menu item clicked
+09:09:20.796 INFO  controller.BookListController : The Martian clicked
+09:09:21.293 INFO  controller.BookDetailController : Audit trail for The Martian accessed.
+09:09:26.135 INFO  controller.AppController : Author list menu item clicked
+09:09:29.189 INFO  controller.AuthorListController : John clicked
+09:09:34.506 INFO  assignment4.Launcher : Creating connection...
+09:09:49.053 INFO  controller.AppController : Add Author menu item clicked
+09:10:11.826 ERROR controller.AuthorDetailController : Author needs to be saved into database before accessing audit trail
+09:10:15.618 INFO  controller.AuthorDetailController : Model's name is John
+09:10:23.770 INFO  controller.AppController : Author list menu item clicked
+09:10:27.686 INFO  controller.AuthorListController : John deleted
+09:10:29.305 INFO  controller.AuthorDetailController : Model's name is John
+09:10:33.154 INFO  controller.AppController : Author list menu item clicked
+09:10:34.811 INFO  controller.AppController : Add Author menu item clicked
+09:10:47.040 INFO  controller.AuthorDetailController : Model's name is test
+09:10:49.793 INFO  assignment4.Launcher : Closing connection...
+09:10:51.176 INFO  assignment4.Launcher : Closing connection...
+09:11:51.838 INFO  assignment4.Launcher : Creating connection...
+09:11:54.318 INFO  controller.AppController : Add Author menu item clicked
+09:12:11.571 ERROR controller.AuthorDetailController : Author needs to be saved into database before accessing audit trail
+09:12:12.731 INFO  controller.AuthorDetailController : Model's name is John
+09:12:15.387 ERROR controller.AuthorDetailController : Author needs to be saved into database before accessing audit trail
+09:12:20.486 INFO  controller.AppController : Add Book menu item clicked
+09:12:27.114 INFO  controller.BookDetailController : Model's name is test
+09:12:29.965 INFO  controller.AppController : Add Book menu item clicked
+09:12:30.875 INFO  controller.AppController : Book list menu item clicked
+09:12:33.774 INFO  controller.BookListController : test deleted
+09:12:35.979 INFO  controller.AppController : Author list menu item clicked
+09:12:38.104 INFO  controller.AuthorListController : John clicked
+09:12:50.033 INFO  controller.AuthorDetailController : Model's name is John
+09:12:52.386 INFO  controller.AppController : Book list menu item clicked
+09:12:53.183 INFO  controller.BookListController : The Great Gatsby clicked
+09:12:54.993 INFO  controller.BookDetailController : Model's name is The Great Gatsby
+09:12:57.900 INFO  controller.BookListController : Neverness clicked
+09:12:58.569 INFO  controller.BookDetailController : Audit trail for Neverness accessed.
+09:13:00.923 INFO  controller.AppController : Book list menu item clicked
+09:13:02.136 INFO  controller.BookListController : The Great Gatsby clicked
+09:13:02.752 INFO  controller.BookDetailController : Audit trail for The Great Gatsby accessed.
+09:13:08.178 INFO  controller.AppController : Book list menu item clicked
+09:13:09.107 INFO  controller.BookListController : The Martian clicked
+09:13:12.597 INFO  assignment4.Launcher : Closing connection...
+09:15:08.156 INFO  assignment4.Launcher : Creating connection...
+09:15:17.301 INFO  controller.AppController : Author list menu item clicked
+09:15:18.915 INFO  controller.AuthorListController : John clicked
+09:15:19.484 INFO  controller.AuthorDetailController : Audit trail for John Smith accessed.
+09:15:25.621 INFO  controller.AuthorDetailController : Model's name is John
+09:15:38.272 INFO  controller.AuthorListController : Mary deleted
+09:15:39.859 INFO  controller.AuthorListController : Ted deleted
+09:15:42.341 INFO  controller.AppController : Author list menu item clicked
+09:15:43.887 INFO  controller.AppController : Add Author menu item clicked
+09:16:00.421 INFO  controller.AuthorDetailController : Model's name is Mary
+09:16:00.423 ERROR controller.AuthorDetailController : Invalid date: null
+09:16:04.821 INFO  controller.AuthorDetailController : Model's name is Mary
+09:16:06.824 INFO  controller.AppController : Add Author menu item clicked
+09:16:26.311 INFO  controller.AuthorDetailController : Model's name is Ted
+09:16:28.649 INFO  controller.AppController : Add Author menu item clicked
+09:16:37.663 INFO  controller.AuthorDetailController : Model's name is test
+09:16:50.694 INFO  controller.AuthorListController : test clicked
+09:16:58.632 INFO  controller.AuthorDetailController : Model's name is test
+09:16:59.960 INFO  controller.AuthorListController : test clicked
+09:17:00.536 INFO  controller.AuthorDetailController : Audit trail for test e accessed.
+09:17:09.803 INFO  controller.AppController : Author list menu item clicked
+09:17:12.202 INFO  controller.AuthorListController : test deleted
+09:17:18.283 INFO  assignment4.Launcher : Closing connection...
