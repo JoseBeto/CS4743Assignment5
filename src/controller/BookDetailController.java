@@ -2,6 +2,7 @@ package controller;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.util.converter.NumberStringConverter;
@@ -31,6 +32,7 @@ public class BookDetailController implements Initializable, MyController {
     @FXML private TextField yearPublished;
     @FXML private TextField isbn;
     @FXML private ComboBox<Publisher> publisher;
+    @FXML private ListView<?> authorList;
     
 	private Book book;
 	private PublisherTableGateway pubGateway;
@@ -87,6 +89,16 @@ public class BookDetailController implements Initializable, MyController {
 		AppController controller = AppController.getInstance();
 		controller.changeView(AppController.AUDIT_TRAIL, book);
 	}
+	
+	@FXML
+    void addAuthorClicked(ActionEvent event) {
+
+    }
+
+    @FXML
+    void deleteAuthorClicked(ActionEvent event) {
+
+    }
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {

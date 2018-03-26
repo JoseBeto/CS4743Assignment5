@@ -16,7 +16,9 @@ public class AuthorBook {
 	public AuthorBook(int authorId, Book book, BigDecimal royalty, Connection conn) {
 		this.author = new AuthorTableGateway(conn).getAuthorById(authorId);
 		this.book = book;
-		this.royalty = 100000 * royalty;
+		//this.royalty = 100000 * royalty;
+		this.royalty = 1;
+		System.out.println(royalty);
 		
 		newRecord = false;
 	}
