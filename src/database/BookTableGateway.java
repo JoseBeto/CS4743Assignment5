@@ -5,10 +5,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.AuditTrailEntry;
+import model.AuthorBook;
 import model.Book;
 
 public class BookTableGateway {
@@ -270,5 +270,33 @@ public class BookTableGateway {
 			}
 		}
 		return auditTrailEntries;
+	}
+
+	public ObservableList<AuthorBook> getAuthorsForBook(Book book) {
+		ObservableList<AuthorBook> authorBooks = FXCollections.observableArrayList();
+
+		PreparedStatement st = null;
+		try {
+			st = conn.prepareStatement("select * from author_book where book_id = ?");
+			st.setInt(1, book.getId());
+			ResultSet rs = st.executeQuery();
+			while(rs.next()) {
+				AuthorBook authorBook = new AuthorBook(rs.getInt("author_id"), book
+						, rs.getBigDecimal("royalty"), conn);
+				authorBooks.add(authorBook);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new AppException(e);
+		} finally {
+			try {
+				if(st != null)
+					st.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				throw new AppException(e);
+			}
+		}
+		return authorBooks;
 	}
 }

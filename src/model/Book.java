@@ -183,6 +183,11 @@ public class Book {
 		gateway.addAuditEntry(this, message);
 	}
 	
+	public ObservableList<AuthorBook> getAuthors() {
+		
+		return null;
+	}
+	
 	public BookTableGateway getGateway() {
 		return gateway;
 	}
