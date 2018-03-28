@@ -154,7 +154,7 @@ public class BookDetailController implements Initializable, MyController {
     	royaltyList.setOnEditCommit(
     	    new EventHandler<CellEditEvent<AuthorBook, String>>() {
     	    	public void handle(CellEditEvent<AuthorBook, String> t) {
-    	    		double x = Double.parseDouble(t.getNewValue().toString().substring(0, t.getNewValue().length()-1));
+    	    		double x = Double.parseDouble(t.getNewValue().toString().substring(0, t.getNewValue().length()));
     	            x /= 100;
     	    		((AuthorBook) t.getTableView().getItems().get(
     	                t.getTablePosition().getRow())

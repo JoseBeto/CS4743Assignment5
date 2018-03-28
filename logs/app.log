@@ -3493,3 +3493,17 @@
 15:23:53.833 INFO  controller.BookListController : The Great Gatsby clicked
 15:23:54.797 INFO  controller.BookDetailController : Audit trail for The Great Gatsby accessed.
 15:23:59.731 INFO  assignment4.Launcher : Closing connection...
+18:09:51.817 INFO  assignment4.Launcher : Creating connection...
+18:09:56.082 INFO  controller.AppController : Book list menu item clicked
+18:09:57.960 INFO  controller.BookListController : The Martian clicked
+18:10:05.478 INFO  controller.BookDetailController : Model's name is The Martian
+18:10:06.820 INFO  controller.BookListController : The Martian clicked
+18:10:08.631 INFO  controller.BookDetailController : Audit trail for The Martian accessed.
+18:10:12.560 INFO  assignment4.Launcher : Closing connection...
+18:10:20.295 INFO  assignment4.Launcher : Creating connection...
+18:10:24.296 INFO  controller.AppController : Book list menu item clicked
+18:10:25.633 INFO  controller.BookListController : The Martian clicked
+18:10:30.770 INFO  controller.BookDetailController : Model's name is The Martian
+18:10:32.301 INFO  controller.BookListController : The Martian clicked
+18:10:33.762 INFO  controller.BookDetailController : Audit trail for The Martian accessed.
+18:10:44.280 INFO  assignment4.Launcher : Closing connection...
