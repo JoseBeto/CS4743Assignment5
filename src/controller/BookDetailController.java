@@ -3,14 +3,18 @@ package controller;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableColumn.CellEditEvent;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.util.converter.NumberStringConverter;
 import model.AuthorBook;
 import model.Book;
 import model.Publisher;
+
+import java.math.BigDecimal;
 import java.net.URL;
 import java.util.ResourceBundle;
 import org.apache.logging.log4j.LogManager;
@@ -22,6 +26,7 @@ import javafx.beans.binding.Bindings;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
@@ -42,6 +47,7 @@ public class BookDetailController implements Initializable, MyController {
 	private Book book;
 	private PublisherTableGateway pubGateway;
 	private BookTableGateway bookGateway;
+	private String x;
 
 	public BookDetailController(Book book, PublisherTableGateway pubGateway, BookTableGateway gateway) {
 		this.book = book;
@@ -78,6 +84,7 @@ public class BookDetailController implements Initializable, MyController {
     				+ "than 13 characters");
     		return;
     	}
+    	book.updateTable(authorRoyaltyList.getSelectionModel().getSelectedItem());
     	book.save();
 	}
 	
@@ -106,11 +113,13 @@ public class BookDetailController implements Initializable, MyController {
     	
     	authorRoyaltyList.setItems(bookGateway.getAuthorsForBook(book));
     }
+
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		title.textProperty().bindBidirectional(book.titleProperty());
 		summary.textProperty().bindBidirectional(book.summaryProperty());
+		royaltyList.setEditable(true);
 		
 		//Prevents user from entering a non digit
 		yearPublished.textProperty().addListener(new ChangeListener<String>() {
@@ -145,6 +154,18 @@ public class BookDetailController implements Initializable, MyController {
 		
 		authorList.setCellValueFactory(new PropertyValueFactory<>("author"));
 		royaltyList.setCellValueFactory(new PropertyValueFactory<>("royaltyPercent"));
+		royaltyList.setCellFactory(TextFieldTableCell.forTableColumn());
+
+    	royaltyList.setOnEditCommit(
+    	    new EventHandler<CellEditEvent<AuthorBook, String>>() {
+    	    	public void handle(CellEditEvent<AuthorBook, String> t) {
+    	            ((AuthorBook) t.getTableView().getItems().get(
+    	                t.getTablePosition().getRow())
+    	                ).setRoyalty(new BigDecimal((x = ((t.getNewValue()).toString())).substring(0, x.length() - 1)));
+    	        }
+    	    }
+    	);
+    	
 		
 		authorRoyaltyList.setItems(bookGateway.getAuthorsForBook(book));
 	}

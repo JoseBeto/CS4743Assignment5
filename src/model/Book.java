@@ -184,8 +184,11 @@ public class Book {
 	}
 	
 	public ObservableList<AuthorBook> getAuthors() {
-		
-		return null;
+		return gateway.getAuthorsForBook(this);
+	}
+	
+	public void updateTable(AuthorBook authorBook){
+		gateway.updateAuthorBook(authorBook);
 	}
 	
 	public BookTableGateway getGateway() {

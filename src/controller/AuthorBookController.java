@@ -37,6 +37,7 @@ public class AuthorBookController implements Initializable, MyController {
 		AuthorBook authorBook = new AuthorBook(authorBox.getSelectionModel().getSelectedItem(),
 				book, BigDecimal.valueOf(Double.valueOf(royalty.getText())));
 		gateway.addAuthorBook(authorBook);
+
 		
 		AppController.getInstance().changeView(AppController.BOOK_DETAIL, book);
     }
@@ -45,6 +46,7 @@ public class AuthorBookController implements Initializable, MyController {
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		ObservableList<Author> existingAuthors = FXCollections.observableArrayList();
 		ObservableList<Author> authors = authorGateway.getAuthors();
+
 		
 		for(AuthorBook authorBook : gateway.getAuthorsForBook(book)) {
 			existingAuthors.add(authorBook.getAuthor());
