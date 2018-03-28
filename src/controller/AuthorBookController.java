@@ -3,10 +3,7 @@ package controller;
 import java.math.BigDecimal;
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import database.AuthorTableGateway;
-import database.BookTableGateway;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,14 +19,12 @@ public class AuthorBookController implements Initializable, MyController {
 	@FXML private TextField royalty;
     @FXML private ComboBox<Author> authorBox;
 
-	private BookTableGateway gateway;
-	private AuthorTableGateway authorGateway;
 	private Book book;
+	private AuthorTableGateway authorGateway;
 
-	public AuthorBookController(BookTableGateway gateway, AuthorTableGateway authorGateway, Book book) {
-		this.gateway = gateway;
-		this.authorGateway = authorGateway;
+	public AuthorBookController(Book book, AuthorTableGateway authorGateway) {
 		this.book = book;
+		this.authorGateway = authorGateway;
 	}
 	
 	@FXML
@@ -43,22 +38,17 @@ public class AuthorBookController implements Initializable, MyController {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		ObservableList<Author> existingAuthors = FXCollections.observableArrayList();
+		ObservableList<AuthorBook> existingAuthors = book.getAuthors();
 		ObservableList<Author> authors = authorGateway.getAuthors();
-
 		
-		for(AuthorBook authorBook : gateway.getAuthorsForBook(book)) {
-			existingAuthors.add(authorBook.getAuthor());
-		}
-		Boolean flag = true;
 		for(Author author : authors) {
-			for(Author author2 : existingAuthors) {
-				if(author.getId() == author2.getId())
+			Boolean flag = true;
+			for(AuthorBook authorBook : existingAuthors) {
+				if(author.getId() == authorBook.getAuthor().getId())
 					flag = false;
 			}
 			if(flag)
 				authorBox.getItems().add(author);
-			flag = true;
 		}
 	}
 }

@@ -81,9 +81,6 @@ public class BookDetailController implements Initializable, MyController {
     				+ "than 13 characters");
     		return;
     	}
-    	
-    	//book.updateTable(authorRoyaltyList.getSelectionModel().getSelectedItem());
-    	//book.updateAuthors()
     	book.save();
 	}
 	
