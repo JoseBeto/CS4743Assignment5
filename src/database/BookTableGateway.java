@@ -1,5 +1,6 @@
 package database;
 
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -24,7 +25,8 @@ public class BookTableGateway {
 	}
 	
 	public void updateBook(Book book) throws AppException {
-		createAuditTrails(book);
+		createBookAuditTrails(book);
+		createAuthorBookAuditTrails(book);
 		
 		PreparedStatement st = null;
 		try {
@@ -194,7 +196,7 @@ public class BookTableGateway {
 		return book;
 	}
 	
-	public void createAuditTrails(Book book) throws AppException {
+	public void createBookAuditTrails(Book book) throws AppException {
 		PreparedStatement st = null;
 		try {
 			st = conn.prepareStatement("select * from book where id = ?");
@@ -224,6 +226,32 @@ public class BookTableGateway {
 			} catch (SQLException e) {
 				e.printStackTrace();
 				throw new AppException(e);
+			}
+		}
+	}
+	
+	public void createAuthorBookAuditTrails(Book book) throws AppException {
+		ObservableList<AuthorBook> localAuthorBooks = book.getAuthors();
+		ObservableList<AuthorBook> dbAuthorBooks = getAuthorsForBook(book);
+		
+		for(AuthorBook dbAuthorBook : dbAuthorBooks) {
+			int index = dbAuthorBooks.indexOf(dbAuthorBook);
+			AuthorBook localAuthorBook = null;
+			
+			try {
+				localAuthorBook = localAuthorBooks.get(index);
+			} catch(IndexOutOfBoundsException e) {
+				//This means dbAuthorBook was deleted from localAuthorBook
+				continue;
+			}
+			
+			if(!dbAuthorBook.getRoyalty().equals(localAuthorBook.getRoyalty())) {
+				BigDecimal rounded = dbAuthorBook.getRoyalty().setScale(2);
+				String dbRoyaltyPercent = rounded.multiply(new BigDecimal(100)) + "%";
+				
+				addAuditEntry(book, "Author " + dbAuthorBook.getAuthor().toString() + 
+						" royalties changed from " + dbRoyaltyPercent + " to "
+						+ localAuthorBook.getRoyaltyPercent());
 			}
 		}
 	}
