@@ -36,8 +36,7 @@ public class AuthorBookController implements Initializable, MyController {
     void handleSaveButton(ActionEvent event) {
 		AuthorBook authorBook = new AuthorBook(authorBox.getSelectionModel().getSelectedItem(),
 				book, BigDecimal.valueOf(Double.valueOf(royalty.getText())));
-		gateway.addAuthorBook(authorBook);
-
+		book.addAuthor(authorBook);
 		
 		AppController.getInstance().changeView(AppController.BOOK_DETAIL, book);
     }

@@ -46,13 +46,10 @@ public class BookDetailController implements Initializable, MyController {
     
 	private Book book;
 	private PublisherTableGateway pubGateway;
-	private BookTableGateway bookGateway;
-	private String x;
 
 	public BookDetailController(Book book, PublisherTableGateway pubGateway, BookTableGateway gateway) {
 		this.book = book;
 		this.pubGateway = pubGateway;
-		this.bookGateway = gateway;
     }
 	
 	@FXML
@@ -84,7 +81,9 @@ public class BookDetailController implements Initializable, MyController {
     				+ "than 13 characters");
     		return;
     	}
-    	book.updateTable(authorRoyaltyList.getSelectionModel().getSelectedItem());
+    	
+    	//book.updateTable(authorRoyaltyList.getSelectionModel().getSelectedItem());
+    	//book.updateAuthors()
     	book.save();
 	}
 	
@@ -109,9 +108,7 @@ public class BookDetailController implements Initializable, MyController {
 
     @FXML
     void deleteAuthorClicked(ActionEvent event) {
-    	bookGateway.deleteAuthorBook(authorRoyaltyList.getSelectionModel().getSelectedItem());
-    	
-    	authorRoyaltyList.setItems(bookGateway.getAuthorsForBook(book));
+    	authorRoyaltyList.getItems().remove(authorRoyaltyList.getSelectionModel().getSelectedItem());
     }
 
 	
@@ -154,19 +151,21 @@ public class BookDetailController implements Initializable, MyController {
 		
 		authorList.setCellValueFactory(new PropertyValueFactory<>("author"));
 		royaltyList.setCellValueFactory(new PropertyValueFactory<>("royaltyPercent"));
+		
 		royaltyList.setCellFactory(TextFieldTableCell.forTableColumn());
 
     	royaltyList.setOnEditCommit(
     	    new EventHandler<CellEditEvent<AuthorBook, String>>() {
     	    	public void handle(CellEditEvent<AuthorBook, String> t) {
-    	            ((AuthorBook) t.getTableView().getItems().get(
+    	    		double x = Integer.parseInt(t.getNewValue().toString().substring(0, t.getNewValue().length()));
+    	            x /= 100;
+    	    		((AuthorBook) t.getTableView().getItems().get(
     	                t.getTablePosition().getRow())
-    	                ).setRoyalty(new BigDecimal((x = ((t.getNewValue()).toString())).substring(0, x.length() - 1)));
+    	                ).setRoyalty(new BigDecimal(x));
     	        }
     	    }
     	);
-    	
 		
-		authorRoyaltyList.setItems(bookGateway.getAuthorsForBook(book));
+		authorRoyaltyList.setItems(book.getAuthors());
 	}
 }

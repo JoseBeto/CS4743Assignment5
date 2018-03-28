@@ -2907,3 +2907,296 @@
 21:55:05.798 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
 22:10:09.122 INFO  assignment4.Launcher : Closing connection...
 22:10:11.453 INFO  assignment4.Launcher : Closing connection...
+07:30:23.729 INFO  assignment4.Launcher : Creating connection...
+07:30:26.759 INFO  controller.AppController : Book list menu item clicked
+07:30:28.050 INFO  controller.BookListController : The Martian clicked
+07:30:44.913 INFO  controller.AppController : Book list menu item clicked
+07:30:45.931 INFO  controller.BookListController : The Great Gatsby clicked
+07:30:47.353 INFO  controller.AppController : Book list menu item clicked
+07:30:48.375 INFO  controller.BookListController : The Martian clicked
+07:31:09.919 INFO  controller.BookDetailController : Model's name is The Martian
+07:31:16.637 INFO  assignment4.Launcher : Closing connection...
+07:35:39.875 INFO  assignment4.Launcher : Creating connection...
+07:35:58.173 INFO  controller.AppController : Book list menu item clicked
+07:35:59.950 INFO  controller.BookListController : To Kill a Mockingbird clicked
+07:36:28.033 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+07:36:29.891 INFO  controller.BookListController : To Kill a Mockingbird clicked
+07:36:48.848 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+07:37:00.343 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+07:37:05.689 INFO  controller.AppController : Book list menu item clicked
+07:37:06.872 INFO  controller.BookListController : The Martian clicked
+07:37:09.009 INFO  controller.AppController : Book list menu item clicked
+07:37:09.920 INFO  controller.BookListController : To Kill a Mockingbird clicked
+07:37:15.606 INFO  controller.BookDetailController : Audit trail for To Kill a Mockingbird accessed.
+07:37:20.625 INFO  assignment4.Launcher : Closing connection...
+07:38:55.207 INFO  assignment4.Launcher : Creating connection...
+07:38:57.490 INFO  controller.AppController : Book list menu item clicked
+07:38:59.104 INFO  controller.BookListController : The Martian clicked
+07:39:03.018 INFO  assignment4.Launcher : Closing connection...
+07:48:31.161 INFO  assignment4.Launcher : Creating connection...
+07:48:33.636 INFO  controller.AppController : Book list menu item clicked
+07:48:34.954 INFO  controller.BookListController : To Kill a Mockingbird clicked
+07:48:46.699 INFO  assignment4.Launcher : Closing connection...
+08:43:05.543 INFO  assignment4.Launcher : Creating connection...
+08:43:08.102 INFO  controller.AppController : Book list menu item clicked
+08:43:09.316 INFO  controller.BookListController : The Great Gatsby clicked
+08:43:18.026 INFO  assignment4.Launcher : Closing connection...
+08:43:23.615 INFO  assignment4.Launcher : Creating connection...
+08:43:25.791 INFO  controller.AppController : Book list menu item clicked
+08:43:27.064 INFO  controller.BookListController : The Martian clicked
+08:43:34.443 INFO  assignment4.Launcher : Closing connection...
+08:45:29.411 INFO  assignment4.Launcher : Creating connection...
+08:45:32.830 INFO  controller.AppController : Book list menu item clicked
+08:45:34.164 INFO  controller.BookListController : To Kill a Mockingbird clicked
+08:46:00.300 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+08:46:02.604 INFO  controller.BookListController : To Kill a Mockingbird clicked
+08:46:14.001 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+08:46:15.377 INFO  controller.BookListController : To Kill a Mockingbird clicked
+08:46:18.673 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+08:46:20.065 INFO  controller.BookListController : To Kill a Mockingbird clicked
+08:46:25.594 INFO  assignment4.Launcher : Closing connection...
+08:46:39.326 INFO  assignment4.Launcher : Creating connection...
+08:46:41.663 INFO  controller.AppController : Book list menu item clicked
+08:46:42.893 INFO  controller.BookListController : To Kill a Mockingbird clicked
+08:46:51.819 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+08:46:53.325 INFO  controller.BookListController : To Kill a Mockingbird clicked
+08:47:00.414 INFO  assignment4.Launcher : Closing connection...
+08:47:16.278 INFO  assignment4.Launcher : Creating connection...
+08:47:18.654 INFO  controller.AppController : Book list menu item clicked
+08:47:19.879 INFO  controller.BookListController : To Kill a Mockingbird clicked
+08:47:23.287 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+08:47:24.607 INFO  controller.BookListController : To Kill a Mockingbird clicked
+08:47:38.429 INFO  assignment4.Launcher : Closing connection...
+08:47:47.111 INFO  assignment4.Launcher : Creating connection...
+08:47:49.333 INFO  controller.AppController : Book list menu item clicked
+08:47:50.826 INFO  controller.BookListController : To Kill a Mockingbird clicked
+08:47:55.082 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+08:47:56.858 INFO  controller.BookListController : To Kill a Mockingbird clicked
+08:48:03.803 INFO  assignment4.Launcher : Closing connection...
+08:51:35.727 INFO  assignment4.Launcher : Creating connection...
+08:51:37.910 INFO  controller.AppController : Book list menu item clicked
+08:51:39.456 INFO  controller.BookListController : To Kill a Mockingbird clicked
+08:51:43.266 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+08:51:44.655 INFO  controller.BookListController : To Kill a Mockingbird clicked
+08:51:56.129 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+08:51:57.552 INFO  controller.BookListController : To Kill a Mockingbird clicked
+08:52:04.777 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+08:52:06.138 INFO  controller.BookListController : To Kill a Mockingbird clicked
+08:52:11.212 INFO  assignment4.Launcher : Closing connection...
+08:53:09.870 INFO  assignment4.Launcher : Creating connection...
+08:53:14.591 INFO  controller.AppController : Book list menu item clicked
+08:53:15.809 INFO  controller.BookListController : The Martian clicked
+08:53:18.121 INFO  controller.AppController : Book list menu item clicked
+08:53:19.134 INFO  controller.BookListController : To Kill a Mockingbird clicked
+08:53:22.381 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+08:53:23.581 INFO  controller.BookListController : To Kill a Mockingbird clicked
+08:53:29.222 INFO  assignment4.Launcher : Closing connection...
+08:55:08.509 INFO  assignment4.Launcher : Creating connection...
+08:55:11.376 INFO  controller.AppController : Book list menu item clicked
+08:55:12.550 INFO  controller.BookListController : To Kill a Mockingbird clicked
+08:55:20.391 INFO  assignment4.Launcher : Closing connection...
+08:55:24.256 INFO  assignment4.Launcher : Creating connection...
+08:55:26.807 INFO  controller.AppController : Book list menu item clicked
+08:55:27.943 INFO  controller.BookListController : To Kill a Mockingbird clicked
+08:55:40.933 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+08:55:42.305 INFO  controller.BookListController : To Kill a Mockingbird clicked
+08:55:49.456 INFO  assignment4.Launcher : Closing connection...
+08:56:12.829 INFO  assignment4.Launcher : Creating connection...
+08:56:15.780 INFO  controller.AppController : Book list menu item clicked
+08:56:17.036 INFO  controller.BookListController : To Kill a Mockingbird clicked
+08:56:22.347 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+08:56:31.005 INFO  controller.AppController : Book list menu item clicked
+08:56:32.441 INFO  controller.BookListController : To Kill a Mockingbird clicked
+08:56:34.699 INFO  assignment4.Launcher : Closing connection...
+08:56:54.007 INFO  assignment4.Launcher : Creating connection...
+08:56:56.178 INFO  controller.AppController : Book list menu item clicked
+08:56:57.355 INFO  controller.BookListController : To Kill a Mockingbird clicked
+08:57:06.208 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+08:57:07.526 INFO  controller.BookListController : To Kill a Mockingbird clicked
+08:57:12.040 INFO  controller.BookDetailController : Audit trail for To Kill a Mockingbird accessed.
+08:57:17.607 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+08:57:23.767 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+08:57:25.007 INFO  controller.BookListController : To Kill a Mockingbird clicked
+08:57:25.591 INFO  controller.BookDetailController : Audit trail for To Kill a Mockingbird accessed.
+08:57:28.436 INFO  assignment4.Launcher : Closing connection...
+09:18:51.675 INFO  assignment4.Launcher : Creating connection...
+09:18:53.749 INFO  controller.AppController : Book list menu item clicked
+09:18:54.838 INFO  controller.BookListController : To Kill a Mockingbird clicked
+09:18:58.589 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+09:18:59.999 INFO  controller.BookListController : To Kill a Mockingbird clicked
+09:19:02.373 INFO  assignment4.Launcher : Closing connection...
+09:36:35.439 INFO  assignment4.Launcher : Creating connection...
+09:36:37.905 INFO  controller.AppController : Book list menu item clicked
+09:36:39.079 INFO  controller.BookListController : To Kill a Mockingbird clicked
+09:36:41.491 INFO  controller.AppController : Book list menu item clicked
+09:36:42.447 INFO  controller.BookListController : The Martian clicked
+09:36:43.502 INFO  assignment4.Launcher : Closing connection...
+09:38:14.955 INFO  assignment4.Launcher : Creating connection...
+09:38:17.508 INFO  controller.AppController : Book list menu item clicked
+09:38:19.369 INFO  controller.BookListController : To Kill a Mockingbird clicked
+09:38:22.947 INFO  assignment4.Launcher : Closing connection...
+09:39:41.469 INFO  assignment4.Launcher : Creating connection...
+09:39:43.816 INFO  controller.AppController : Book list menu item clicked
+09:39:47.046 INFO  assignment4.Launcher : Closing connection...
+09:40:55.960 INFO  assignment4.Launcher : Creating connection...
+09:40:58.476 INFO  controller.AppController : Book list menu item clicked
+09:41:01.242 INFO  assignment4.Launcher : Closing connection...
+09:43:01.079 INFO  assignment4.Launcher : Creating connection...
+09:43:06.521 INFO  controller.AppController : Book list menu item clicked
+09:43:08.365 INFO  assignment4.Launcher : Closing connection...
+09:43:18.477 INFO  assignment4.Launcher : Creating connection...
+09:43:21.810 INFO  controller.AppController : Book list menu item clicked
+09:43:23.260 INFO  controller.BookListController : To Kill a Mockingbird clicked
+09:43:26.712 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+09:43:27.793 INFO  controller.BookListController : To Kill a Mockingbird clicked
+09:43:35.777 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+09:43:37.195 INFO  controller.BookListController : To Kill a Mockingbird clicked
+09:43:38.402 INFO  assignment4.Launcher : Closing connection...
+09:43:49.186 INFO  assignment4.Launcher : Creating connection...
+09:43:53.515 INFO  controller.AppController : Book list menu item clicked
+09:43:55.102 INFO  controller.BookListController : To Kill a Mockingbird clicked
+09:43:55.754 INFO  controller.BookDetailController : Audit trail for To Kill a Mockingbird accessed.
+09:44:00.475 INFO  assignment4.Launcher : Closing connection...
+09:48:58.483 INFO  assignment4.Launcher : Creating connection...
+09:49:01.105 INFO  controller.AppController : Book list menu item clicked
+09:49:03.340 INFO  controller.BookListController : To Kill a Mockingbird clicked
+09:49:07.442 INFO  controller.AppController : Book list menu item clicked
+09:49:08.454 INFO  controller.BookListController : To Kill a Mockingbird clicked
+09:49:11.272 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+09:49:31.523 INFO  controller.AppController : Add Book menu item clicked
+09:49:33.627 INFO  controller.AppController : Book list menu item clicked
+09:49:34.818 INFO  controller.BookListController : To Kill a Mockingbird clicked
+09:49:41.907 INFO  controller.AppController : Book list menu item clicked
+09:49:42.962 INFO  controller.BookListController : To Kill a Mockingbird clicked
+09:49:47.762 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+09:49:56.799 INFO  assignment4.Launcher : Closing connection...
+09:50:04.092 INFO  assignment4.Launcher : Creating connection...
+09:50:06.091 INFO  controller.AppController : Book list menu item clicked
+09:50:07.264 INFO  controller.BookListController : To Kill a Mockingbird clicked
+09:50:21.075 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+09:50:22.479 INFO  assignment4.Launcher : Closing connection...
+09:55:14.431 INFO  assignment4.Launcher : Creating connection...
+09:55:16.628 INFO  controller.AppController : Book list menu item clicked
+09:55:17.759 INFO  controller.BookListController : To Kill a Mockingbird clicked
+09:55:42.204 INFO  controller.AppController : Book list menu item clicked
+09:55:43.300 INFO  controller.BookListController : The Martian clicked
+09:55:44.755 INFO  controller.AppController : Book list menu item clicked
+09:55:45.769 INFO  controller.BookListController : To Kill a Mockingbird clicked
+09:55:49.841 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+09:56:04.557 INFO  assignment4.Launcher : Closing connection...
+09:56:52.249 INFO  assignment4.Launcher : Creating connection...
+09:56:54.806 INFO  controller.AppController : Book list menu item clicked
+09:56:56.047 INFO  controller.BookListController : To Kill a Mockingbird clicked
+09:57:00.229 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+09:57:01.877 INFO  controller.BookListController : To Kill a Mockingbird clicked
+09:57:05.412 INFO  controller.BookDetailController : Audit trail for To Kill a Mockingbird accessed.
+09:57:12.044 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+09:57:19.802 INFO  assignment4.Launcher : Closing connection...
+09:59:53.809 INFO  assignment4.Launcher : Creating connection...
+09:59:55.964 INFO  controller.AppController : Book list menu item clicked
+09:59:57.503 INFO  controller.BookListController : To Kill a Mockingbird clicked
+10:00:01.818 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+10:00:03.469 INFO  assignment4.Launcher : Closing connection...
+10:02:28.628 INFO  assignment4.Launcher : Creating connection...
+10:02:30.619 INFO  controller.AppController : Book list menu item clicked
+10:02:31.887 INFO  controller.BookListController : To Kill a Mockingbird clicked
+10:02:37.177 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+10:02:39.806 INFO  controller.BookListController : To Kill a Mockingbird clicked
+10:02:41.882 INFO  assignment4.Launcher : Closing connection...
+10:02:55.215 INFO  assignment4.Launcher : Creating connection...
+10:02:57.176 INFO  controller.AppController : Book list menu item clicked
+10:02:58.623 INFO  controller.BookListController : To Kill a Mockingbird clicked
+10:03:04.567 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+10:03:05.295 INFO  assignment4.Launcher : Closing connection...
+10:25:56.207 INFO  assignment4.Launcher : Creating connection...
+10:25:58.201 INFO  controller.AppController : Book list menu item clicked
+10:26:04.655 INFO  assignment4.Launcher : Closing connection...
+10:28:59.815 INFO  assignment4.Launcher : Creating connection...
+10:29:02.329 INFO  controller.AppController : Book list menu item clicked
+10:29:03.770 INFO  controller.BookListController : To Kill a Mockingbird clicked
+10:29:05.568 INFO  assignment4.Launcher : Closing connection...
+10:29:38.278 INFO  assignment4.Launcher : Creating connection...
+10:29:40.158 INFO  controller.AppController : Book list menu item clicked
+10:29:41.580 INFO  controller.BookListController : To Kill a Mockingbird clicked
+10:29:48.847 INFO  controller.AppController : Book list menu item clicked
+10:29:49.730 INFO  controller.BookListController : To Kill a Mockingbird clicked
+10:29:54.212 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+10:29:56.491 INFO  controller.BookListController : To Kill a Mockingbird clicked
+10:29:59.693 INFO  assignment4.Launcher : Closing connection...
+10:30:50.437 INFO  assignment4.Launcher : Creating connection...
+10:30:52.831 INFO  controller.AppController : Book list menu item clicked
+10:30:54.103 INFO  controller.BookListController : To Kill a Mockingbird clicked
+10:30:58.943 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+10:31:01.240 INFO  controller.BookListController : The Martian clicked
+10:31:02.417 INFO  controller.AppController : Book list menu item clicked
+10:31:03.294 INFO  controller.BookListController : To Kill a Mockingbird clicked
+10:31:07.607 INFO  assignment4.Launcher : Closing connection...
+10:33:49.957 INFO  assignment4.Launcher : Creating connection...
+10:33:52.401 INFO  controller.AppController : Book list menu item clicked
+10:33:53.588 INFO  controller.BookListController : To Kill a Mockingbird clicked
+10:33:54.842 INFO  controller.BookDetailController : Audit trail for To Kill a Mockingbird accessed.
+10:34:00.272 INFO  assignment4.Launcher : Closing connection...
+10:36:45.996 INFO  assignment4.Launcher : Creating connection...
+10:36:48.490 INFO  controller.AppController : Book list menu item clicked
+10:36:50.345 INFO  controller.BookListController : The Martian clicked
+10:36:51.682 INFO  controller.AppController : Add Book menu item clicked
+10:36:53.469 INFO  controller.AppController : Add Book menu item clicked
+10:36:55.083 INFO  controller.AppController : Book list menu item clicked
+10:36:56.146 INFO  controller.BookListController : To Kill a Mockingbird clicked
+10:37:05.368 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+10:37:08.004 INFO  controller.BookListController : To Kill a Mockingbird clicked
+10:37:09.112 INFO  controller.BookDetailController : Audit trail for To Kill a Mockingbird accessed.
+10:37:23.774 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+10:37:26.193 INFO  controller.AppController : Book list menu item clicked
+10:37:28.293 INFO  controller.BookListController : To Kill a Mockingbird clicked
+10:37:29.278 INFO  controller.BookDetailController : Audit trail for To Kill a Mockingbird accessed.
+10:37:33.600 INFO  assignment4.Launcher : Closing connection...
+10:37:59.970 INFO  assignment4.Launcher : Creating connection...
+10:38:01.966 INFO  controller.AppController : Book list menu item clicked
+10:38:03.262 INFO  controller.BookListController : To Kill a Mockingbird clicked
+10:38:04.404 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+10:38:05.948 INFO  controller.BookListController : To Kill a Mockingbird clicked
+10:38:10.940 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+10:38:12.229 INFO  controller.BookListController : To Kill a Mockingbird clicked
+10:38:14.732 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+10:38:16.288 INFO  controller.BookListController : To Kill a Mockingbird clicked
+10:38:25.542 INFO  controller.AppController : Book list menu item clicked
+10:38:26.572 INFO  controller.BookListController : To Kill a Mockingbird clicked
+10:38:27.315 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+10:38:28.951 INFO  controller.BookListController : To Kill a Mockingbird clicked
+10:38:36.603 INFO  assignment4.Launcher : Closing connection...
+10:40:02.899 INFO  assignment4.Launcher : Creating connection...
+10:40:04.736 INFO  controller.AppController : Book list menu item clicked
+10:40:05.831 INFO  controller.BookListController : To Kill a Mockingbird clicked
+10:40:09.702 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+10:40:11.007 INFO  controller.BookListController : To Kill a Mockingbird clicked
+10:40:20.974 INFO  assignment4.Launcher : Closing connection...
+10:40:46.530 INFO  assignment4.Launcher : Creating connection...
+10:40:48.629 INFO  controller.AppController : Book list menu item clicked
+10:40:49.833 INFO  controller.BookListController : To Kill a Mockingbird clicked
+10:40:53.619 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+10:40:56.026 INFO  assignment4.Launcher : Closing connection...
+10:41:14.244 INFO  assignment4.Launcher : Creating connection...
+10:41:16.291 INFO  controller.AppController : Book list menu item clicked
+10:41:17.718 INFO  controller.BookListController : To Kill a Mockingbird clicked
+10:41:20.369 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+10:41:21.775 INFO  assignment4.Launcher : Closing connection...
+10:41:44.004 INFO  assignment4.Launcher : Creating connection...
+10:41:46.252 INFO  controller.AppController : Book list menu item clicked
+10:41:47.721 INFO  controller.BookListController : To Kill a Mockingbird clicked
+10:41:52.808 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+10:41:54.190 INFO  controller.BookListController : To Kill a Mockingbird clicked
+10:41:56.799 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+10:41:58.025 INFO  controller.BookListController : To Kill a Mockingbird clicked
+10:42:03.223 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+10:42:04.617 INFO  controller.BookListController : To Kill a Mockingbird clicked
+10:42:07.127 INFO  controller.BookDetailController : Audit trail for To Kill a Mockingbird accessed.
+10:42:18.092 INFO  assignment4.Launcher : Closing connection...
+10:43:23.097 INFO  assignment4.Launcher : Creating connection...
+10:43:28.834 INFO  controller.AppController : Author list menu item clicked
+10:43:29.792 INFO  controller.AuthorListController : Ted clicked
+10:43:30.627 INFO  controller.AuthorDetailController : Audit trail for Ted Lane accessed.
+10:43:35.642 INFO  controller.AuthorDetailController : Model's name is Ted
+10:43:41.925 INFO  controller.AuthorListController : Ted clicked
+10:43:43.154 INFO  controller.AuthorDetailController : Audit trail for Ted Lane accessed.
+10:43:47.903 INFO  assignment4.Launcher : Closing connection...

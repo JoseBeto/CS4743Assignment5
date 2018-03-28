@@ -10,6 +10,7 @@ import database.AppException;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class Book {
@@ -21,6 +22,7 @@ public class Book {
 	private SimpleObjectProperty<Publisher> publisher;
 	private SimpleStringProperty isbn;
 	private SimpleObjectProperty<LocalDate> dateAdded;
+	private ObservableList<AuthorBook> authorBooks;
 	
 	private BookTableGateway gateway;
 	private PublisherTableGateway pubGateway;
@@ -34,6 +36,7 @@ public class Book {
 		this.publisher = new SimpleObjectProperty<Publisher>();
 		this.isbn = new SimpleStringProperty();
 		this.dateAdded = new SimpleObjectProperty<LocalDate>();
+		this.authorBooks = FXCollections.observableArrayList();
 		
 		setTitle("");
 		setSummary("");
@@ -42,7 +45,8 @@ public class Book {
 		setIsbn("");
 	}
 	
-	public Book(PublisherTableGateway pubGateway, String title, String summary, int yearPublished, Integer publisherId, String isbn, LocalDate dateAdded) {
+	public Book(PublisherTableGateway pubGateway, String title, String summary, int yearPublished, 
+			Integer publisherId, String isbn, LocalDate dateAdded) {
 		this.pubGateway = pubGateway;
 		
 		this.title = new SimpleStringProperty();
@@ -51,6 +55,7 @@ public class Book {
 		this.publisher = new SimpleObjectProperty<Publisher>();
 		this.isbn = new SimpleStringProperty();
 		this.dateAdded = new SimpleObjectProperty<LocalDate>();
+		this.authorBooks = FXCollections.observableArrayList();
 		
 		if(!isValidTitle(title))
 			throw new IllegalArgumentException("Title must be between 1 and 255 characters!");
@@ -72,16 +77,54 @@ public class Book {
 		
 		setDateAdded(dateAdded);
 	}
-	
+
 	public void save() throws AppException {
 		if(id == 0)
 			gateway.addBook(this);
-		else
+		else 
 			gateway.updateBook(this);
+		
+		updateAuthors();
 
 		AppController.getInstance().changeView(AppController.BOOK_LIST, null);
 	}
 	
+	private void updateAuthors() {
+		ObservableList<AuthorBook> AuthorsInDB = gateway.getAuthorsForBook(this);
+		for(AuthorBook localAuthorBook : getAuthors()) {
+			Boolean foundInDB = false;
+			for(AuthorBook authorInDB : AuthorsInDB) {
+				if(isEqual(authorInDB, localAuthorBook)) {
+					foundInDB = true;
+					gateway.updateAuthorBook(localAuthorBook);
+					break;
+				}
+			}
+			if(!foundInDB)
+				gateway.addAuthorBook(localAuthorBook);
+		}
+		
+		for(AuthorBook authorInDB : AuthorsInDB) {
+			Boolean localFound = false;
+			for(AuthorBook localAuthorBook : getAuthors()) {
+				if(isEqual(authorInDB, localAuthorBook)) {
+					localFound = true;
+					break;
+				}
+			}
+			if(!localFound)
+				gateway.deleteAuthorBook(authorInDB);
+		}
+	}
+	
+	private Boolean isEqual(AuthorBook book1, AuthorBook book2) {
+		if(book1.getAuthor().getId() != book2.getAuthor().getId())
+			return false;
+		if(book1.getBook().getId() != book2.getBook().getId())
+			return false;
+		return true;
+	}
+
 	public void delete() {
 		gateway.deleteBook(this);
 	}
@@ -184,11 +227,15 @@ public class Book {
 	}
 	
 	public ObservableList<AuthorBook> getAuthors() {
-		return gateway.getAuthorsForBook(this);
+		return authorBooks;
 	}
 	
-	public void updateTable(AuthorBook authorBook){
-		gateway.updateAuthorBook(authorBook);
+	public void setAuthors(ObservableList<AuthorBook> authorBooks) {
+		this.authorBooks.setAll(authorBooks);
+	}
+	
+	public void addAuthor(AuthorBook authorBook) {
+		this.authorBooks.add(authorBook);
 	}
 	
 	public BookTableGateway getGateway() {

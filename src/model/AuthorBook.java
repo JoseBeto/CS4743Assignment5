@@ -2,9 +2,6 @@ package model;
 
 import java.math.BigDecimal;
 
-import controller.AppController;
-import database.AppException;
-
 public class AuthorBook {
 
 	private Author author;
@@ -16,8 +13,8 @@ public class AuthorBook {
 	public AuthorBook(Author author, Book book, BigDecimal royalty) {
 		this.author = author;
 		this.book = book;
-		this.royalty = royalty.multiply(new BigDecimal(100));
-		this.royaltyPercent = this.royalty + "%";
+		this.royalty = royalty;
+		this.royaltyPercent = this.royalty.multiply(new BigDecimal(100)) + "%";
 		
 		newRecord = false;
 	}
@@ -39,7 +36,6 @@ public class AuthorBook {
 	public void setRoyalty(BigDecimal royalty) {
 		this.royalty = royalty;
 		this.royaltyPercent = this.royalty + "%";
-
 	}
 	
 	public BigDecimal getRoyalty() {

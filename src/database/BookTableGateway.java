@@ -113,6 +113,7 @@ public class BookTableGateway {
 						rs.getInt("year_published"), rs.getInt("publisher_id"), rs.getString("isbn"), rs.getDate("date_added").toLocalDate());
 				book.setGateway(this);
 				book.setId(rs.getInt("id"));
+				book.setAuthors(getAuthorsForBook(book));
 				books.add(book);
 			}
 		} catch (SQLException e) {
@@ -143,6 +144,7 @@ public class BookTableGateway {
 						rs.getInt("year_published"), rs.getInt("publisher_id"), rs.getString("isbn"), rs.getDate("date_added").toLocalDate());
 				book.setGateway(this);
 				book.setId(rs.getInt("id"));
+				book.setAuthors(getAuthorsForBook(book));
 				books.add(book);
 			}
 		} catch (SQLException e) {
@@ -171,9 +173,11 @@ public class BookTableGateway {
 			
 			while(rs.next()) {
 				book = new Book(pubGateway, rs.getString("title"), rs.getString("summary"),
-						rs.getInt("year_published"), rs.getInt("publisher_id"), rs.getString("isbn"), rs.getDate("date_added").toLocalDate());
+						rs.getInt("year_published"), rs.getInt("publisher_id"), 
+						rs.getString("isbn"), rs.getDate("date_added").toLocalDate());
 				book.setGateway(this);
 				book.setId(rs.getInt("id"));
+				book.setAuthors(getAuthorsForBook(book));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -305,7 +309,7 @@ public class BookTableGateway {
 		PreparedStatement st = null;
 		try {
 			st = conn.prepareStatement("update author_book set author_id = ?, royalty = ? "
-					+ "where book_id = ?, author_id = ?");
+					+ "where book_id = ? and author_id = ?");
 			st.setInt(1, authorBook.getAuthor().getId());
 			st.setBigDecimal(2, authorBook.getRoyalty());
 			st.setInt(3, authorBook.getBook().getId());
