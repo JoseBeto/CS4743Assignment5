@@ -20,7 +20,8 @@ public class AuthorTableGateway {
 	}
 	
 	public void updateAuthor(Author author) throws AppException {
-		createAuditTrails(author);
+		Author newAuthor = author;
+		Author oldAuthor = getAuthorById(author.getId());
 		
 		PreparedStatement st = null;
 		try {
@@ -39,6 +40,7 @@ public class AuthorTableGateway {
 			st.executeUpdate();
 			
 			author.setLastModified(getLastModified(author));
+			createAuditTrails(oldAuthor, newAuthor);
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new AppException(e);
@@ -195,40 +197,21 @@ public class AuthorTableGateway {
 		}
 		return author;
 	}
-	
-	public void createAuditTrails(Author author) throws AppException {
-		PreparedStatement st = null;
-		try {
-			st = conn.prepareStatement("select * from author where id = ?");
-			st.setInt(1, author.getId());
-			ResultSet rs = st.executeQuery();
-			
-			while(rs.next()) {
-				if(!author.getFirstName().equals(rs.getString("first_name")))
-					addAuditEntry(author, "First name changed from " + rs.getString("first_name") + " to " + author.getFirstName());
-				if(!author.getLastName().equals(rs.getString("last_name")))
-					addAuditEntry(author, "Last name changed from " + rs.getString("last_name") + " to " + author.getLastName());
-				if(!author.getDoB().equals(rs.getString("dob")))
-					addAuditEntry(author, "Date of birth changed from " + rs.getString("dob") + " to " + author.getDoB());
-				if(!author.getGender().equals(rs.getString("gender")))
-					addAuditEntry(author, "Gender changed from " + rs.getString("gender") + " to " + author.getGender());
-				if(!author.getWebsite().equals(rs.getString("web_site")))
-					addAuditEntry(author, "Website changed from " + rs.getString("web_site") + " to " + author.getWebsite());
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-			throw new AppException(e);
-		} finally {
-			try {
-				if(st != null)
-					st.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-				throw new AppException(e);
-			}
-		}
+
+	public void createAuditTrails(Author oldAuthor, Author newAuthor) throws AppException {
+		if(!oldAuthor.getFirstName().equals(newAuthor.getFirstName()))
+			addAuditEntry(newAuthor, "First name changed from " + oldAuthor.getFirstName() + " to " + newAuthor.getFirstName());
+		if(!oldAuthor.getLastName().equals(newAuthor.getLastName()))
+			addAuditEntry(newAuthor, "Last name changed from " + oldAuthor.getLastName() + " to " + newAuthor.getLastName());
+		if(!oldAuthor.getDoB().equals(newAuthor.getDoB()))
+			addAuditEntry(newAuthor, "Date of birth changed from " + oldAuthor.getDoB() + " to " + newAuthor.getDoB());
+		if(!oldAuthor.getGender().equals(newAuthor.getGender()))
+			addAuditEntry(newAuthor, "Gender changed from " + oldAuthor.getGender() + " to " + newAuthor.getGender());
+		if(!oldAuthor.getWebsite().equals(newAuthor.getWebsite()))
+			addAuditEntry(newAuthor, "Website changed from " + oldAuthor.getWebsite() + " to " + newAuthor.getWebsite());
+
 	}
-	
+
 	public void addAuditEntry(Author author, String message) throws AppException {
 		PreparedStatement st = null;
 		try {

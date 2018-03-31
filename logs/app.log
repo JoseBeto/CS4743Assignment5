@@ -3964,3 +3964,18 @@
 16:53:03.138 INFO  controller.AppController : Author list menu item clicked
 16:53:05.352 INFO  controller.AuthorListController : test deleted
 16:53:06.696 INFO  assignment4.Launcher : Closing connection...
+17:09:08.301 INFO  assignment4.Launcher : Creating connection...
+17:09:11.617 INFO  assignment4.Launcher : Creating connection...
+17:09:15.998 INFO  controller.AppController : Author list menu item clicked
+17:09:16.992 INFO  controller.AppController : Author list menu item clicked
+17:09:17.850 INFO  controller.AuthorListController : Andy clicked
+17:09:20.128 INFO  controller.AuthorListController : Andy clicked
+17:09:25.197 INFO  controller.AuthorDetailController : Model's name is Andyer
+17:09:33.410 INFO  controller.AuthorDetailController : Model's name is Andy
+17:09:37.354 INFO  controller.AppController : Author list menu item clicked
+17:09:37.973 INFO  assignment4.Launcher : Closing connection...
+17:09:38.595 INFO  controller.AuthorListController : Andyer clicked
+17:09:42.197 INFO  controller.AuthorDetailController : Model's name is Andy
+17:09:43.802 INFO  controller.AuthorListController : Andy clicked
+17:09:44.401 INFO  controller.AuthorDetailController : Audit trail for Andy Weir accessed.
+17:09:52.867 INFO  assignment4.Launcher : Closing connection...
