@@ -31,8 +31,14 @@ public class AuthorBookController implements Initializable, MyController {
 	
 	@FXML
     void handleSaveButton(ActionEvent event) {
-		double x = Double.valueOf(royalty.getText());;
-		if(x < 0.0 || x > 1.0){
+		if(royalty.getText().equals("")) {
+			AlertHelper.showWarningMessage("Oops!", "Royalty is invalid", "Royalty must be "
+    				+ "between 0.0 and 1.0");
+			return;
+		}
+		
+		double x = Double.valueOf(royalty.getText());
+		if(x <= 0.0 || x > 1.0){
 			AlertHelper.showWarningMessage("Oops!", "Royalty is invalid", "Royalty must be "
     				+ "between 0.0 and 1.0");
 			return;

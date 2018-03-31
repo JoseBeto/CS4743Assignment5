@@ -69,6 +69,7 @@ public class BookTableGateway {
 			ResultSet rs = st.getGeneratedKeys();
 			rs.next();
 			addAuditEntry(getBookById(rs.getInt(1)), "Book added");
+			book.setId(rs.getInt(1));
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new AppException(e);

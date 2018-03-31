@@ -7,6 +7,8 @@ import javax.swing.JOptionPane;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import assignment4.AlertHelper;
 import database.AuthorTableGateway;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -42,24 +44,29 @@ public class AuthorListController implements Initializable, MyController {
     		}
     	}
     }
-	
-	@FXML void handleDeleteButton(ActionEvent event) {
-		Author author = authorList.getSelectionModel().getSelectedItem();
-		if(author != null) {
-			String title = "Warning";
-			String message = "Are you sure you want to delete author named " + author.getFirstName() + " ?";
-			int reply = JOptionPane.showConfirmDialog(null, message, title, JOptionPane.YES_NO_OPTION);
-			if(reply == JOptionPane.YES_OPTION){
-				author.delete();
-				logger.info(author.getFirstName() + " deleted");
-				authors.remove(author);
-			}
-		}
-	}
 
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		this.authorList.setItems(authors);
-	}
+    @FXML void handleDeleteButton(ActionEvent event) {
+    	Author author = authorList.getSelectionModel().getSelectedItem();
+    	if(author != null) {
+    		String title = "Warning";
+    		String message = "Are you sure you want to delete author named " + author.getFirstName() + " ?";
+    		int reply = JOptionPane.showConfirmDialog(null, message, title, JOptionPane.YES_NO_OPTION);
+    		if(reply == JOptionPane.YES_OPTION){
+    			if(author.delete()) { //Author deleted successfully
+    				logger.info(author.getFirstName() + " deleted");
+    				authors.remove(author);
+    			} else { //Author cannot be deleted since it is associated with a book
+    				AlertHelper.showWarningMessage("Oops!", "Cannot delete author!", "This author "
+    						+ "cannot be deleted because it is associated with a book!");
+    			}
+
+    		}
+    	}
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+    	this.authorList.setItems(authors);
+    }
 
 }

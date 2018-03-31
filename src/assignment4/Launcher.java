@@ -14,7 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-/* CS 4743 Assignment 4 by Jose Bocanegra and David Peek*/
+/* CS 4743 Assignment 4 by Jose Bocanegra and David Peek */
 
 public class Launcher extends Application {
 

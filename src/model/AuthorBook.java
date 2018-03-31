@@ -1,7 +1,6 @@
 package model;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 
 public class AuthorBook {
 
@@ -15,13 +14,6 @@ public class AuthorBook {
 		this.author = author;
 		this.book = book;
 		setRoyalty(royalty);
-		
-		newRecord = false;
-	}
-	
-	
-	public AuthorBook() {
-		
 	}
 	
 	public Author getAuthor() {
@@ -36,8 +28,8 @@ public class AuthorBook {
 	public void setRoyalty(BigDecimal royalty) {
 		this.royalty = royalty;
 		
-		BigDecimal rounded = royalty.multiply(new BigDecimal(100)).setScale(2, RoundingMode.FLOOR);
-		this.royaltyPercent = rounded + "%";
+		BigDecimal rounded = royalty.multiply(new BigDecimal(100));
+		this.royaltyPercent = String.format("%.2f%s", rounded, "%");
 	}
 	
 	public BigDecimal getRoyalty() {
@@ -46,5 +38,13 @@ public class AuthorBook {
 	
 	public String getRoyaltyPercent() {
 		return this.royaltyPercent;
+	}
+	
+	public Boolean isNewRecord() {
+		return newRecord;
+	}
+	
+	public void setSaved() {
+		this.newRecord = false;
 	}
 }

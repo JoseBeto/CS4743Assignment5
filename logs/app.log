@@ -3611,3 +3611,356 @@
 15:36:14.844 INFO  controller.AppController : Book list menu item clicked
 15:36:15.924 INFO  controller.BookListController : Neverness clicked
 15:36:59.777 INFO  assignment4.Launcher : Closing connection...
+15:44:47.856 INFO  assignment4.Launcher : Creating connection...
+15:44:51.136 INFO  controller.AppController : Author list menu item clicked
+15:44:52.923 INFO  controller.AppController : Book list menu item clicked
+15:44:54.230 INFO  controller.BookListController : Neverness clicked
+15:44:55.761 INFO  controller.BookDetailController : Audit trail for Neverness accessed.
+15:45:05.852 ERROR controller.BookDetailController$3 : Invalid Royalty: 80.00%
+15:45:12.935 ERROR controller.BookDetailController$3 : Invalid Royalty: 0.00%
+15:45:16.985 INFO  controller.BookDetailController : Model's name is Neverness
+15:45:19.789 INFO  controller.BookListController : To Kill a Mockingbird clicked
+15:45:25.658 INFO  controller.AppController : Book list menu item clicked
+15:45:27.005 INFO  controller.BookListController : Neverness clicked
+15:45:32.891 INFO  controller.BookDetailController : Model's name is Neverness
+15:45:34.501 INFO  controller.BookListController : Neverness clicked
+15:45:35.264 INFO  controller.BookDetailController : Audit trail for Neverness accessed.
+15:45:44.058 INFO  assignment4.Launcher : Closing connection...
+15:45:46.116 INFO  assignment4.Launcher : Creating connection...
+15:45:48.900 INFO  controller.AppController : Book list menu item clicked
+15:45:50.730 INFO  controller.BookListController : Neverness clicked
+15:45:51.940 INFO  controller.BookDetailController : Audit trail for Neverness accessed.
+15:46:00.978 INFO  controller.AppController : Book list menu item clicked
+15:46:02.260 INFO  controller.BookListController : Neverness clicked
+15:46:03.509 INFO  controller.AppController : Book list menu item clicked
+15:46:04.704 INFO  controller.BookListController : The Great Gatsby clicked
+15:46:06.023 INFO  controller.AppController : Book list menu item clicked
+15:46:07.274 INFO  controller.BookListController : The Martian clicked
+15:46:08.878 INFO  controller.AppController : Book list menu item clicked
+15:46:10.214 INFO  controller.BookListController : To Kill a Mockingbird clicked
+15:46:13.360 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+15:46:13.361 ERROR controller.BookDetailController : No authors entered
+15:46:16.365 INFO  controller.AppController : Book list menu item clicked
+15:46:17.729 INFO  controller.BookListController : To Kill a Mockingbird clicked
+15:46:18.626 INFO  controller.BookDetailController : Audit trail for To Kill a Mockingbird accessed.
+15:46:22.225 INFO  controller.AppController : Book list menu item clicked
+15:46:23.380 INFO  controller.BookListController : Neverness clicked
+15:46:24.921 INFO  controller.BookDetailController : Audit trail for Neverness accessed.
+15:46:27.265 INFO  controller.AppController : Book list menu item clicked
+15:46:31.979 INFO  controller.AppController : Add Book menu item clicked
+15:46:38.772 INFO  controller.BookDetailController : Model's name is test
+15:46:38.772 ERROR controller.BookDetailController : No authors entered
+15:46:57.669 INFO  controller.BookDetailController : Model's name is test
+15:47:38.928 INFO  controller.BookDetailController : Model's name is test
+15:47:42.297 INFO  controller.BookDetailController : Model's name is test
+15:47:46.351 INFO  controller.BookListController : Neverness clicked
+15:47:47.667 INFO  controller.AppController : Book list menu item clicked
+15:47:49.369 INFO  controller.BookListController : test clicked
+15:47:55.797 INFO  controller.AppController : Book list menu item clicked
+15:47:59.005 INFO  controller.BookListController : test deleted
+15:47:59.694 INFO  controller.BookListController : test clicked
+15:48:01.093 INFO  controller.AppController : Book list menu item clicked
+15:48:03.841 INFO  controller.BookListController : test deleted
+15:48:04.779 INFO  controller.BookListController : test clicked
+15:48:07.046 INFO  controller.AppController : Book list menu item clicked
+15:48:09.664 INFO  controller.BookListController : test deleted
+15:48:12.642 INFO  controller.AppController : Book list menu item clicked
+15:48:15.694 INFO  controller.AppController : Add Book menu item clicked
+15:48:23.221 INFO  controller.BookDetailController : Model's name is test
+15:48:23.221 ERROR controller.BookDetailController : No authors entered
+15:48:32.897 INFO  controller.BookDetailController : Model's name is test
+15:48:36.199 INFO  controller.AppController : Book list menu item clicked
+15:48:38.673 INFO  controller.BookListController : test clicked
+15:48:50.345 INFO  controller.BookDetailController : Model's name is test
+15:48:52.650 INFO  controller.BookListController : test clicked
+15:48:55.029 INFO  controller.AppController : Book list menu item clicked
+15:49:39.282 INFO  controller.BookListController : test clicked
+15:52:34.970 INFO  controller.AppController : Book list menu item clicked
+15:52:38.131 INFO  controller.AppController : Add Book menu item clicked
+15:52:41.929 INFO  controller.BookDetailController : Model's name is test2
+15:52:41.929 ERROR controller.BookDetailController : No authors entered
+15:52:49.576 INFO  controller.BookDetailController : Model's name is test2
+15:53:04.134 INFO  controller.BookDetailController : Model's name is test2
+15:53:04.134 ERROR controller.BookDetailController : No authors entered
+15:53:10.788 INFO  controller.BookDetailController : Model's name is test2
+15:53:18.635 INFO  controller.AppController : Book list menu item clicked
+15:53:21.221 INFO  controller.BookListController : test2 clicked
+15:53:22.514 INFO  controller.AppController : Book list menu item clicked
+15:53:25.233 INFO  controller.BookListController : test2 deleted
+15:53:33.215 INFO  controller.BookListController : test2 deleted
+15:54:19.868 INFO  controller.BookListController : test clicked
+15:54:22.319 INFO  controller.AppController : Book list menu item clicked
+15:54:24.564 INFO  controller.BookListController : test clicked
+15:54:25.178 INFO  controller.BookDetailController : Audit trail for test accessed.
+15:54:27.513 INFO  controller.AppController : Book list menu item clicked
+15:54:49.434 INFO  controller.BookListController : test clicked
+15:54:52.126 INFO  controller.BookDetailController : Audit trail for test accessed.
+15:55:02.155 INFO  controller.AppController : Book list menu item clicked
+15:55:22.930 INFO  controller.AppController : Author list menu item clicked
+15:55:24.831 INFO  controller.AuthorListController : Andy clicked
+15:55:26.500 INFO  controller.AuthorDetailController : Audit trail for Andy Weir accessed.
+15:55:29.823 INFO  controller.AppController : Book list menu item clicked
+15:55:38.342 INFO  controller.AppController : Book list menu item clicked
+15:55:40.902 INFO  controller.BookListController : Neverness clicked
+15:55:42.139 INFO  controller.AppController : Book list menu item clicked
+15:55:44.231 INFO  controller.BookListController : test clicked
+15:55:58.397 INFO  controller.AppController : Book list menu item clicked
+15:56:00.761 INFO  controller.BookListController : test deleted
+15:56:32.138 INFO  controller.AppController : Book list menu item clicked
+15:56:34.974 INFO  controller.AppController : Add Book menu item clicked
+15:56:42.769 INFO  controller.BookDetailController : Model's name is test
+15:57:41.605 INFO  controller.BookDetailController : Model's name is test
+15:57:44.260 INFO  controller.AppController : Book list menu item clicked
+15:57:45.695 INFO  controller.BookListController : test clicked
+15:57:47.169 INFO  controller.AppController : Book list menu item clicked
+15:57:50.718 INFO  controller.BookListController : test deleted
+15:57:51.835 INFO  controller.BookListController : test deleted
+15:57:52.934 INFO  controller.AppController : Add Book menu item clicked
+15:57:57.909 INFO  controller.BookDetailController : Model's name is test
+15:58:00.087 INFO  controller.BookListController : test clicked
+15:58:11.110 INFO  assignment4.Launcher : Closing connection...
+15:58:12.586 INFO  assignment4.Launcher : Creating connection...
+15:58:15.182 INFO  controller.AppController : Book list menu item clicked
+15:58:17.625 INFO  controller.AppController : Add Book menu item clicked
+15:58:30.519 INFO  controller.BookDetailController : Model's name is test2
+15:58:43.503 ERROR controller.BookDetailController : Book needs to be saved into database before accessing audit trail
+15:58:57.871 INFO  controller.AppController : Book list menu item clicked
+15:59:00.896 INFO  controller.BookListController : test clicked
+15:59:02.175 INFO  controller.AppController : Book list menu item clicked
+15:59:04.949 INFO  controller.BookListController : test deleted
+15:59:06.685 INFO  controller.BookListController : test2 deleted
+15:59:23.054 INFO  assignment4.Launcher : Closing connection...
+16:01:14.716 INFO  assignment4.Launcher : Creating connection...
+16:01:18.448 INFO  controller.AppController : Add Author menu item clicked
+16:01:30.102 INFO  controller.AuthorDetailController : Model's name is test
+16:01:32.350 INFO  controller.AuthorListController : test clicked
+16:01:33.879 INFO  controller.AppController : Book list menu item clicked
+16:01:36.405 INFO  controller.AppController : Author list menu item clicked
+16:01:39.012 INFO  controller.AuthorListController : test deleted
+16:01:40.352 INFO  controller.AppController : Book list menu item clicked
+16:01:48.788 INFO  controller.AppController : Add Book menu item clicked
+16:02:12.511 INFO  controller.BookDetailController : Model's name is tset
+16:02:19.281 INFO  assignment4.Launcher : Closing connection...
+16:03:29.801 INFO  assignment4.Launcher : Creating connection...
+16:03:31.818 INFO  controller.AppController : Book list menu item clicked
+16:03:34.867 INFO  controller.BookListController : tset deleted
+16:03:36.461 INFO  controller.AppController : Add Book menu item clicked
+16:03:50.491 INFO  controller.BookDetailController : Model's name is test
+16:03:56.728 INFO  controller.AppController : Book list menu item clicked
+16:03:58.035 INFO  controller.BookListController : test clicked
+16:04:28.677 INFO  controller.AppController : Book list menu item clicked
+16:04:30.317 INFO  controller.BookListController : test clicked
+16:04:35.802 INFO  controller.BookDetailController : Model's name is test
+16:04:37.966 INFO  controller.BookListController : test clicked
+16:04:41.096 INFO  controller.AppController : Book list menu item clicked
+16:04:42.313 INFO  controller.BookListController : test clicked
+16:04:45.363 INFO  controller.BookDetailController : Model's name is test
+16:04:45.364 ERROR controller.BookDetailController : No authors entered
+16:04:47.603 INFO  controller.AppController : Book list menu item clicked
+16:04:48.957 INFO  controller.BookListController : test clicked
+16:04:50.715 INFO  controller.AppController : Book list menu item clicked
+16:04:54.094 INFO  controller.BookListController : test deleted
+16:04:54.965 INFO  controller.AppController : Book list menu item clicked
+16:04:58.791 INFO  controller.AppController : Add Book menu item clicked
+16:06:35.964 INFO  assignment4.Launcher : Closing connection...
+16:06:38.171 INFO  assignment4.Launcher : Creating connection...
+16:06:40.650 INFO  controller.AppController : Book list menu item clicked
+16:06:42.824 INFO  controller.AppController : Add Book menu item clicked
+16:06:48.115 INFO  controller.BookDetailController : Model's name is test
+16:06:51.732 INFO  controller.BookListController : test deleted
+16:12:36.836 INFO  assignment4.Launcher : Creating connection...
+16:12:39.362 INFO  controller.AppController : Add Book menu item clicked
+16:12:47.111 INFO  assignment4.Launcher : Closing connection...
+16:14:22.191 INFO  assignment4.Launcher : Creating connection...
+16:14:25.721 INFO  assignment4.Launcher : Closing connection...
+16:14:50.847 INFO  assignment4.Launcher : Creating connection...
+16:14:53.038 INFO  controller.AppController : Add Book menu item clicked
+16:14:57.428 INFO  controller.BookDetailController : Model's name is test
+16:15:11.598 INFO  controller.AppController : Book list menu item clicked
+16:15:12.761 INFO  controller.BookListController : test clicked
+16:15:14.312 INFO  controller.AppController : Book list menu item clicked
+16:15:16.616 INFO  controller.BookListController : test deleted
+16:15:30.281 INFO  assignment4.Launcher : Closing connection...
+16:17:30.745 INFO  assignment4.Launcher : Closing connection...
+16:17:32.413 INFO  assignment4.Launcher : Creating connection...
+16:17:34.755 INFO  controller.AppController : Book list menu item clicked
+16:17:36.727 INFO  controller.AppController : Add Book menu item clicked
+16:17:42.024 INFO  controller.BookDetailController : Model's name is test
+16:17:47.413 INFO  controller.AppController : Book list menu item clicked
+16:17:48.661 INFO  controller.BookListController : test clicked
+16:18:05.275 INFO  assignment4.Launcher : Closing connection...
+16:18:59.933 INFO  assignment4.Launcher : Creating connection...
+16:19:02.668 INFO  controller.AppController : Book list menu item clicked
+16:19:06.131 INFO  controller.BookListController : test deleted
+16:19:07.857 INFO  controller.AppController : Add Book menu item clicked
+16:19:13.219 INFO  controller.BookDetailController : Model's name is test
+16:19:15.680 INFO  controller.BookListController : test clicked
+16:19:32.077 INFO  controller.BookDetailController : Model's name is test
+16:19:34.329 INFO  controller.BookListController : test clicked
+16:19:35.417 INFO  controller.BookDetailController : Audit trail for test accessed.
+16:19:52.545 INFO  controller.BookDetailController : Model's name is test
+16:20:03.446 INFO  controller.AppController : Book list menu item clicked
+16:20:04.403 INFO  assignment4.Launcher : Closing connection...
+16:20:23.723 INFO  assignment4.Launcher : Creating connection...
+16:20:26.027 INFO  controller.AppController : Book list menu item clicked
+16:20:27.245 INFO  controller.BookListController : test clicked
+16:20:27.989 INFO  controller.BookDetailController : Audit trail for test accessed.
+16:20:37.061 INFO  controller.BookDetailController : Model's name is test
+16:20:39.453 INFO  controller.BookListController : test clicked
+16:20:46.279 INFO  controller.BookDetailController : Model's name is test
+16:20:48.154 INFO  controller.BookListController : test clicked
+16:20:51.189 INFO  controller.BookDetailController : Audit trail for test accessed.
+16:20:53.397 INFO  controller.BookDetailController : Model's name is test
+16:20:55.477 INFO  controller.BookListController : test clicked
+16:20:56.117 INFO  controller.BookDetailController : Audit trail for test accessed.
+16:21:03.233 INFO  controller.BookDetailController : Model's name is test
+16:21:06.981 INFO  assignment4.Launcher : Closing connection...
+16:27:02.544 INFO  assignment4.Launcher : Creating connection...
+16:27:04.804 INFO  controller.AppController : Book list menu item clicked
+16:27:05.903 INFO  controller.BookListController : Neverness clicked
+16:27:11.712 INFO  controller.BookDetailController : Model's name is Neverness
+16:27:15.162 INFO  controller.BookListController : Neverness clicked
+16:27:15.893 INFO  controller.BookDetailController : Audit trail for Neverness accessed.
+16:28:23.195 INFO  assignment4.Launcher : Closing connection...
+16:28:26.889 INFO  assignment4.Launcher : Creating connection...
+16:28:28.744 INFO  assignment4.Launcher : Closing connection...
+16:30:32.977 INFO  assignment4.Launcher : Creating connection...
+16:30:35.736 INFO  controller.AppController : Book list menu item clicked
+16:30:37.185 INFO  controller.BookListController : Neverness clicked
+16:30:44.590 INFO  assignment4.Launcher : Closing connection...
+16:31:40.240 INFO  assignment4.Launcher : Creating connection...
+16:31:45.546 INFO  controller.AppController : Book list menu item clicked
+16:31:48.748 INFO  assignment4.Launcher : Closing connection...
+16:32:29.876 INFO  assignment4.Launcher : Creating connection...
+16:32:34.188 INFO  controller.AppController : Book list menu item clicked
+16:32:35.554 INFO  assignment4.Launcher : Closing connection...
+16:32:38.971 INFO  assignment4.Launcher : Creating connection...
+16:32:41.229 INFO  controller.AppController : Book list menu item clicked
+16:32:43.046 INFO  controller.BookListController : Neverness clicked
+16:32:50.257 INFO  controller.BookDetailController : Model's name is Neverness
+16:32:53.506 INFO  controller.BookListController : test clicked
+16:32:56.259 INFO  controller.AppController : Book list menu item clicked
+16:32:59.105 INFO  controller.BookListController : test deleted
+16:33:00.416 INFO  controller.BookListController : Neverness clicked
+16:33:01.242 INFO  controller.BookDetailController : Audit trail for Neverness accessed.
+16:33:04.534 INFO  assignment4.Launcher : Closing connection...
+16:33:25.567 INFO  assignment4.Launcher : Creating connection...
+16:33:27.528 INFO  controller.AppController : Book list menu item clicked
+16:33:28.395 INFO  assignment4.Launcher : Closing connection...
+16:33:46.569 INFO  assignment4.Launcher : Creating connection...
+16:33:48.518 INFO  controller.AppController : Book list menu item clicked
+16:33:49.867 INFO  controller.BookListController : Neverness clicked
+16:33:56.530 INFO  controller.BookDetailController : Audit trail for Neverness accessed.
+16:34:07.826 INFO  controller.BookDetailController : Model's name is Neverness
+16:34:09.190 INFO  controller.BookListController : Neverness clicked
+16:34:10.123 INFO  controller.BookDetailController : Audit trail for Neverness accessed.
+16:34:13.336 INFO  controller.AppController : Book list menu item clicked
+16:34:14.614 INFO  controller.BookListController : The Great Gatsby clicked
+16:34:33.897 INFO  controller.BookDetailController : Model's name is The Great Gatsby
+16:34:35.289 INFO  controller.BookListController : The Great Gatsby clicked
+16:34:35.778 INFO  controller.BookDetailController : Audit trail for The Great Gatsby accessed.
+16:34:37.850 INFO  controller.AppController : Book list menu item clicked
+16:34:39.330 INFO  controller.BookListController : The Martian clicked
+16:34:47.641 INFO  controller.BookDetailController : Model's name is The Martian
+16:34:49.083 INFO  controller.BookListController : To Kill a Mockingbird clicked
+16:34:56.416 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+16:34:58.240 INFO  controller.BookListController : To Kill a Mockingbird clicked
+16:35:01.812 INFO  controller.AppController : Book list menu item clicked
+16:35:03.386 INFO  controller.AppController : Add Book menu item clicked
+16:35:12.114 INFO  controller.BookDetailController : Model's name is test
+16:35:14.003 INFO  controller.BookListController : test clicked
+16:35:14.703 INFO  controller.BookDetailController : Audit trail for test accessed.
+16:35:17.863 INFO  controller.AppController : Book list menu item clicked
+16:35:23.874 INFO  controller.AppController : Author list menu item clicked
+16:35:30.259 INFO  controller.AppController : Add Author menu item clicked
+16:35:39.418 INFO  controller.AuthorDetailController : Model's name is test
+16:35:42.602 INFO  controller.AppController : Book list menu item clicked
+16:35:44.291 INFO  controller.BookListController : test clicked
+16:35:53.935 INFO  controller.BookDetailController : Model's name is test
+16:35:56.037 INFO  controller.BookListController : test clicked
+16:35:56.702 INFO  controller.BookDetailController : Audit trail for test accessed.
+16:36:01.130 INFO  controller.AppController : Author list menu item clicked
+16:36:13.540 INFO  controller.AppController : Book list menu item clicked
+16:36:15.540 INFO  controller.BookListController : test clicked
+16:36:17.662 INFO  controller.BookDetailController : Audit trail for test accessed.
+16:36:26.269 INFO  controller.BookDetailController : Audit trail for test accessed.
+16:36:43.406 INFO  controller.AppController : Book list menu item clicked
+16:37:24.081 INFO  assignment4.Launcher : Closing connection...
+16:37:25.876 INFO  assignment4.Launcher : Creating connection...
+16:37:28.100 INFO  controller.AppController : Book list menu item clicked
+16:37:54.636 INFO  controller.BookListController : test deleted
+16:38:01.648 INFO  controller.AppController : Author list menu item clicked
+16:38:04.487 INFO  controller.AuthorListController : test deleted
+16:38:05.611 INFO  controller.AppController : Author list menu item clicked
+16:38:07.412 INFO  controller.AppController : Add Author menu item clicked
+16:38:19.863 INFO  controller.AuthorDetailController : Model's name is test
+16:38:19.863 ERROR controller.AuthorDetailController : Invalid date: null
+16:38:25.659 INFO  controller.AuthorDetailController : Model's name is test
+16:38:28.120 INFO  controller.AppController : Add Book menu item clicked
+16:38:32.919 INFO  controller.BookDetailController : Model's name is test
+16:38:50.872 INFO  controller.AppController : Add Book menu item clicked
+16:38:53.722 INFO  controller.AppController : Book list menu item clicked
+16:39:20.981 INFO  assignment4.Launcher : Closing connection...
+16:39:22.573 INFO  assignment4.Launcher : Creating connection...
+16:39:24.640 INFO  controller.AppController : Author list menu item clicked
+16:39:26.725 INFO  controller.AuthorListController : test clicked
+16:39:29.698 INFO  controller.AuthorDetailController : Model's name is test
+16:39:29.698 ERROR controller.AuthorDetailController : Invalid date: null
+16:39:32.949 INFO  assignment4.Launcher : Closing connection...
+16:39:35.089 INFO  assignment4.Launcher : Creating connection...
+16:39:37.208 INFO  controller.AppController : Author list menu item clicked
+16:41:15.473 INFO  controller.AppController : Book list menu item clicked
+16:41:24.793 INFO  controller.BookListController : test deleted
+16:41:31.524 INFO  controller.AppController : Book list menu item clicked
+16:41:34.591 INFO  controller.AppController : Add Book menu item clicked
+16:41:42.206 INFO  controller.BookDetailController : Model's name is test
+16:41:53.099 INFO  controller.BookListController : test clicked
+16:41:54.296 INFO  controller.AppController : Book list menu item clicked
+16:41:57.037 INFO  controller.BookListController : test deleted
+16:42:01.547 INFO  controller.AppController : Add Book menu item clicked
+16:42:06.395 INFO  controller.BookDetailController : Model's name is test
+16:42:08.827 INFO  controller.AppController : Add Author menu item clicked
+16:42:10.294 INFO  controller.AppController : Author list menu item clicked
+16:42:47.380 INFO  assignment4.Launcher : Creating connection...
+16:42:49.967 INFO  controller.AppController : Author list menu item clicked
+16:42:53.239 INFO  assignment4.Launcher : Closing connection...
+16:42:58.219 INFO  assignment4.Launcher : Closing connection...
+16:43:19.756 INFO  assignment4.Launcher : Creating connection...
+16:43:22.527 INFO  controller.AppController : Author list menu item clicked
+16:43:26.030 INFO  assignment4.Launcher : Closing connection...
+16:44:15.620 INFO  assignment4.Launcher : Creating connection...
+16:44:18.570 INFO  controller.AppController : Author list menu item clicked
+16:44:22.064 INFO  assignment4.Launcher : Closing connection...
+16:45:13.728 INFO  assignment4.Launcher : Creating connection...
+16:45:42.959 INFO  controller.AppController : Author list menu item clicked
+16:45:46.199 INFO  assignment4.Launcher : Closing connection...
+16:47:31.641 INFO  assignment4.Launcher : Creating connection...
+16:47:33.857 INFO  controller.AppController : Author list menu item clicked
+16:47:36.193 INFO  controller.AuthorListController : test deleted
+16:47:49.644 INFO  assignment4.Launcher : Closing connection...
+16:48:00.493 INFO  assignment4.Launcher : Creating connection...
+16:48:02.783 INFO  controller.AppController : Add Author menu item clicked
+16:48:07.459 INFO  controller.AuthorDetailController : Model's name is test
+16:48:07.465 ERROR controller.AuthorDetailController : Invalid date: null
+16:48:12.492 INFO  controller.AuthorDetailController : Model's name is test
+16:48:12.493 ERROR controller.AuthorDetailController : Invalid gender: test
+16:48:16.818 INFO  controller.AuthorDetailController : Model's name is test
+16:48:21.420 INFO  controller.AuthorListController : test deleted
+16:48:25.577 INFO  controller.AppController : Author list menu item clicked
+16:48:38.062 INFO  controller.AuthorListController : test deleted
+16:48:40.368 INFO  controller.AuthorListController : test deleted
+16:48:47.588 INFO  assignment4.Launcher : Closing connection...
+16:49:28.207 INFO  assignment4.Launcher : Creating connection...
+16:49:30.406 INFO  controller.AppController : Author list menu item clicked
+16:49:32.758 INFO  controller.AuthorListController : test deleted
+16:49:36.590 INFO  controller.AppController : Author list menu item clicked
+16:49:41.066 INFO  controller.AuthorListController : test deleted
+16:49:48.643 INFO  controller.AuthorListController : Francis Scott deleted
+16:49:51.651 INFO  assignment4.Launcher : Closing connection...
+16:52:48.740 INFO  assignment4.Launcher : Creating connection...
+16:52:51.742 INFO  controller.AppController : Author list menu item clicked
+16:52:59.378 INFO  controller.AppController : Book list menu item clicked
+16:53:01.766 INFO  controller.BookListController : test deleted
+16:53:03.138 INFO  controller.AppController : Author list menu item clicked
+16:53:05.352 INFO  controller.AuthorListController : test deleted
+16:53:06.696 INFO  assignment4.Launcher : Closing connection...

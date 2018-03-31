@@ -53,7 +53,7 @@ public class AuthorDetailController implements Initializable, MyController {
     		logger.error("Invalid date: " + author.getDoB());
     		
     		AlertHelper.showWarningMessage("Oops!", "Date is invalid", "Date of birth must be "
-    				+ "a date before the current system date");
+    				+ "a date before the current system date using format mm/dd/yyyy");
     		return;
     	} else if(!author.isValidGender(author.getGender())) {
     		logger.error("Invalid gender: " + author.getGender());

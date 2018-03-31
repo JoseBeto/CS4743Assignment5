@@ -111,12 +111,16 @@ public class AuthorTableGateway {
 		}
 	}
 	
-	public void deleteAuthor(Author author) throws AppException {
+	public Boolean deleteAuthor(Author author) throws AppException {
 		PreparedStatement st = null;
 		try {
 			st = conn.prepareStatement("delete from author where id = ?");
 			st.setInt(1, author.getId());
 			st.executeUpdate();
+			
+			return true;
+		} catch(com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException e) {
+			return false;
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new AppException(e);

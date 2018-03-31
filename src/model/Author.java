@@ -77,8 +77,8 @@ public class Author {
 		AppController.getInstance().changeView(AppController.AUTHOR_LIST, null);
 	}
 	
-	public void delete() {
-		gateway.deleteAuthor(this);
+	public Boolean delete() {
+		return gateway.deleteAuthor(this);
 	}
 
 	//biz logic
