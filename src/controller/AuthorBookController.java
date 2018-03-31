@@ -3,6 +3,8 @@ package controller;
 import java.math.BigDecimal;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import assignment4.AlertHelper;
 import database.AuthorTableGateway;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -29,6 +31,12 @@ public class AuthorBookController implements Initializable, MyController {
 	
 	@FXML
     void handleSaveButton(ActionEvent event) {
+		double x = Double.valueOf(royalty.getText());;
+		if(x < 0.0 || x > 1.0){
+			AlertHelper.showWarningMessage("Oops!", "Royalty is invalid", "Royalty must be "
+    				+ "between 0.0 and 1.0");
+			return;
+		}
 		AuthorBook authorBook = new AuthorBook(authorBox.getSelectionModel().getSelectedItem(),
 				book, BigDecimal.valueOf(Double.valueOf(royalty.getText())));
 		book.addAuthor(authorBook);

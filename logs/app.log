@@ -3507,3 +3507,107 @@
 18:10:32.301 INFO  controller.BookListController : The Martian clicked
 18:10:33.762 INFO  controller.BookDetailController : Audit trail for The Martian accessed.
 18:10:44.280 INFO  assignment4.Launcher : Closing connection...
+14:38:01.276 INFO  assignment4.Launcher : Creating connection...
+14:38:11.307 INFO  controller.AppController : Book list menu item clicked
+14:38:15.015 INFO  controller.BookListController : To Kill a Mockingbird clicked
+14:45:40.307 INFO  controller.AppController : Book list menu item clicked
+14:45:46.261 INFO  controller.AppController : Author list menu item clicked
+14:45:47.298 INFO  controller.AuthorListController : David clicked
+14:45:54.721 INFO  controller.AuthorDetailController : Model's name is David
+14:45:58.339 INFO  controller.AuthorListController : Andy clicked
+14:46:09.529 INFO  controller.AuthorDetailController : Model's name is Andyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
+14:46:33.380 INFO  controller.AuthorListController : Andyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy clicked
+14:46:39.085 INFO  controller.AuthorDetailController : Model's name is Andy
+14:46:40.980 INFO  controller.AuthorListController : David clicked
+14:46:58.426 INFO  controller.AuthorDetailController : Model's name is David
+14:46:58.427 ERROR controller.AuthorDetailController : Invalid gender: yes
+14:48:29.346 INFO  controller.AuthorDetailController : Model's name is David
+14:48:29.347 ERROR controller.AuthorDetailController : Invalid gender: yes
+14:48:33.458 INFO  assignment4.Launcher : Closing connection...
+14:48:36.943 INFO  assignment4.Launcher : Creating connection...
+14:48:41.483 INFO  controller.AppController : Book list menu item clicked
+14:48:42.897 INFO  controller.BookListController : To Kill a Mockingbird clicked
+14:53:02.949 INFO  assignment4.Launcher : Closing connection...
+14:53:05.662 INFO  assignment4.Launcher : Creating connection...
+14:53:10.361 INFO  controller.AppController : Book list menu item clicked
+14:53:12.005 INFO  controller.BookListController : To Kill a Mockingbird clicked
+14:53:37.561 INFO  controller.BookDetailController : Model's name is To Kill a Mockingbird
+14:53:39.792 INFO  controller.BookListController : To Kill a Mockingbird clicked
+14:54:12.695 INFO  assignment4.Launcher : Creating connection...
+14:54:17.502 INFO  controller.AppController : Book list menu item clicked
+14:54:22.315 INFO  controller.BookListController : Neverness clicked
+14:54:45.963 INFO  controller.BookDetailController : Model's name is Neverness
+14:54:47.258 INFO  controller.BookListController : Neverness clicked
+14:54:50.284 INFO  controller.BookDetailController : Audit trail for Neverness accessed.
+14:54:58.341 INFO  controller.BookDetailController : Model's name is Neverness
+14:58:59.541 INFO  assignment4.Launcher : Creating connection...
+14:59:04.558 INFO  controller.AppController : Book list menu item clicked
+14:59:06.056 INFO  controller.BookListController : Neverness clicked
+14:59:10.931 ERROR controller.BookDetailController$3 : Invalid Royalty: model.AuthorBook@7d06e990
+14:59:21.004 ERROR controller.BookDetailController$3 : Invalid Royalty: model.AuthorBook@7d06e990
+14:59:29.081 INFO  controller.BookDetailController : Model's name is Neverness
+14:59:30.481 INFO  controller.BookListController : Neverness clicked
+15:03:03.095 INFO  assignment4.Launcher : Creating connection...
+15:03:17.108 INFO  controller.AppController : Book list menu item clicked
+15:03:18.986 INFO  controller.BookListController : Neverness clicked
+15:03:26.852 ERROR controller.BookDetailController$3 : Invalid Royalty: model.AuthorBook@115d0109
+15:04:40.079 INFO  assignment4.Launcher : Closing connection...
+15:06:58.290 INFO  assignment4.Launcher : Closing connection...
+15:07:00.584 INFO  assignment4.Launcher : Closing connection...
+15:07:02.790 INFO  assignment4.Launcher : Closing connection...
+15:07:09.637 INFO  assignment4.Launcher : Creating connection...
+15:07:16.012 INFO  controller.AppController : Book list menu item clicked
+15:07:17.922 INFO  controller.BookListController : Neverness clicked
+15:08:51.623 ERROR controller.BookDetailController$3 : Invalid Royalty: j0.00
+15:11:44.450 INFO  controller.BookDetailController : Model's name is Neverness
+15:11:45.600 INFO  controller.BookListController : Neverness clicked
+15:11:47.020 INFO  controller.BookDetailController : Audit trail for Neverness accessed.
+15:11:54.773 INFO  controller.BookDetailController : Model's name is Neverness
+15:11:56.375 INFO  controller.BookListController : Neverness clicked
+15:12:01.606 ERROR controller.BookDetailController$3 : Invalid Royalty: 80.00%
+15:12:10.851 INFO  controller.BookDetailController : Model's name is Neverness
+15:13:21.569 INFO  assignment4.Launcher : Closing connection...
+15:13:41.364 INFO  assignment4.Launcher : Creating connection...
+15:13:47.043 INFO  controller.AppController : Book list menu item clicked
+15:13:48.984 INFO  controller.BookListController : Neverness clicked
+15:19:03.168 INFO  assignment4.Launcher : Creating connection...
+15:19:09.376 INFO  controller.AppController : Book list menu item clicked
+15:19:10.877 INFO  controller.BookListController : To Kill a Mockingbird clicked
+15:20:11.749 INFO  assignment4.Launcher : Closing connection...
+15:20:14.253 INFO  assignment4.Launcher : Closing connection...
+15:20:16.970 INFO  assignment4.Launcher : Creating connection...
+15:20:23.199 INFO  controller.AppController : Book list menu item clicked
+15:20:25.351 INFO  controller.BookListController : Neverness clicked
+15:21:46.464 INFO  controller.AppController : Author list menu item clicked
+15:21:48.765 INFO  controller.AuthorListController : John clicked
+15:21:52.289 INFO  controller.AuthorDetailController : Model's name is John
+15:21:52.290 ERROR controller.AuthorDetailController : Invalid gender: yes
+15:22:00.956 INFO  controller.AuthorDetailController : Model's name is John
+15:22:00.957 ERROR controller.AuthorDetailController : Invalid gender: yes
+15:22:46.039 INFO  assignment4.Launcher : Creating connection...
+15:22:50.338 INFO  controller.AppController : Book list menu item clicked
+15:22:51.942 INFO  controller.BookListController : Neverness clicked
+15:23:04.309 INFO  assignment4.Launcher : Closing connection...
+15:24:11.296 INFO  controller.AppController : Book list menu item clicked
+15:24:19.539 INFO  controller.BookListController : Neverness clicked
+15:24:23.158 INFO  controller.AppController : Book list menu item clicked
+15:24:31.506 INFO  controller.AppController : Author list menu item clicked
+15:24:32.551 INFO  controller.AuthorListController : Harper clicked
+15:24:37.953 INFO  controller.AppController : Add Book menu item clicked
+15:33:38.560 INFO  assignment4.Launcher : Closing connection...
+15:33:41.208 INFO  assignment4.Launcher : Creating connection...
+15:33:46.115 INFO  controller.AppController : Add Book menu item clicked
+15:34:04.469 INFO  controller.AppController : Book list menu item clicked
+15:34:05.365 INFO  controller.BookListController : Neverness clicked
+15:34:09.277 INFO  controller.AppController : Add Book menu item clicked
+15:34:26.127 INFO  controller.BookDetailController : Model's name is failed
+15:34:26.128 ERROR controller.BookDetailController : Invalid isbn: 3516890416540252
+15:34:44.339 INFO  controller.BookDetailController : Model's name is failed
+15:34:44.339 ERROR controller.BookDetailController : No authors entered
+15:35:47.169 INFO  controller.AppController : Book list menu item clicked
+15:35:48.303 INFO  controller.BookListController : Neverness clicked
+15:36:10.400 INFO  controller.BookDetailController : Model's name is Neverness
+15:36:10.401 ERROR controller.BookDetailController : No authors entered
+15:36:14.844 INFO  controller.AppController : Book list menu item clicked
+15:36:15.924 INFO  controller.BookListController : Neverness clicked
+15:36:59.777 INFO  assignment4.Launcher : Closing connection...

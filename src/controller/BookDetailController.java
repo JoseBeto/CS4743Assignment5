@@ -80,7 +80,14 @@ public class BookDetailController implements Initializable, MyController {
     		AlertHelper.showWarningMessage("Oops!", "Isbn is invalid", "Isbn cannot be greater "
     				+ "than 13 characters");
     		return;
+    	} else if (!book.hasAuthors(book.getAuthors())){
+    		logger.error("No authors entered");
+    		
+    		AlertHelper.showWarningMessage("Oops!", "No authors added", "A book must have "
+    				+ "at least 1 author");
+    		return;
     	}
+    	
     	book.save();
 	}
 	
@@ -154,7 +161,15 @@ public class BookDetailController implements Initializable, MyController {
     	royaltyList.setOnEditCommit(
     	    new EventHandler<CellEditEvent<AuthorBook, String>>() {
     	    	public void handle(CellEditEvent<AuthorBook, String> t) {
-    	    		double x = Double.parseDouble(t.getNewValue().toString().substring(0, t.getNewValue().length()));
+    	    		double x = 0.0;
+    	    		try {
+    	    			x = Double.parseDouble(t.getNewValue().toString().substring(0, t.getNewValue().length()));
+    	    		} catch (NumberFormatException e) {
+    	    			logger.error("Invalid Royalty: " + (t.getNewValue().toString().substring(0, t.getNewValue().length())));
+    	    			AlertHelper.showWarningMessage("Oops!", "Royalty is invalid", "Royalty must not "
+    	        				+ "contain any characters or symbols.");
+    	    		}
+    	    		
     	            x /= 100;
     	    		((AuthorBook) t.getTableView().getItems().get(
     	                t.getTablePosition().getRow())

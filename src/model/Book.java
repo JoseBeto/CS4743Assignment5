@@ -161,6 +161,12 @@ public class Book {
 			return false;
 		return true;
 	}
+	
+	public boolean hasAuthors(ObservableList<AuthorBook> authors) {
+		if(authors.size() < 1)
+			return false;
+		return true;
+	}
 
 	public String getTitle() {
 		return title.get();
