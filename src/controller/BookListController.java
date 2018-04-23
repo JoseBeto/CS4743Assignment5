@@ -11,6 +11,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import model.Book;
@@ -20,12 +21,13 @@ public class BookListController implements Initializable, MyController {
 	private static Logger logger = LogManager.getLogger();
 	@FXML private ListView<Book> bookList;
 	@FXML private TextField searchBook;
+	@FXML private Label fetchedLabel;
 	private ObservableList<Book> books;
 	private BookTableGateway gateway;
 
 	public BookListController(BookTableGateway gateway) {
     	this.gateway = gateway;
-    	books = this.gateway.getBooks();
+    	//books = this.gateway.getBooks();
     }
 	
 	public BookListController(ObservableList<Book> books) {
@@ -56,6 +58,26 @@ public class BookListController implements Initializable, MyController {
 			}
 		}
 	}
+	
+	@FXML
+    void firstButtonClicked(ActionEvent event) {
+
+    }
+	
+	@FXML
+    void lastButtonClicked(ActionEvent event) {
+
+    }
+
+    @FXML
+    void nextButtonClicked(ActionEvent event) {
+
+    }
+
+    @FXML
+    void prevButtonClicked(ActionEvent event) {
+
+    }
 	
 	@FXML
     void handleSearchBook(ActionEvent event) {
