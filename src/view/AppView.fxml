@@ -26,6 +26,11 @@
                   <MenuItem mnemonicParsing="false" onAction="#clickMenuAddBook" text="Add Book" />
                </items>
             </Menu>
+            <Menu mnemonicParsing="false" text="Reports">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#clickMenuCreateReport" text="Create Report" />
+               </items>
+            </Menu>
         </menus>
       </MenuBar>
    </top>

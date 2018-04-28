@@ -162,6 +162,37 @@ public class BookTableGateway {
 		return books;
 	}
 	
+	public ObservableList<Book> getBooksByPublisher(int id) throws AppException {
+		ObservableList<Book> books = FXCollections.observableArrayList();
+		
+		PreparedStatement st = null;
+		try {
+			st = conn.prepareStatement("select * from book where publisher_id = ? order by title");
+			st.setInt(1, id);
+			ResultSet rs = st.executeQuery();
+			while(rs.next()) {
+				Book book = new Book(pubGateway, rs.getString("title"), rs.getString("summary"),
+						rs.getInt("year_published"), rs.getInt("publisher_id"), rs.getString("isbn"), rs.getDate("date_added").toLocalDate());
+				book.setGateway(this);
+				book.setId(rs.getInt("id"));
+				book.setAuthors(getAuthorsForBook(book));
+				books.add(book);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new AppException(e);
+		} finally {
+			try {
+				if(st != null)
+					st.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				throw new AppException(e);
+			}
+		}
+		return books;
+	}
+	
 	public Book getBookById(int id) {
 		PreparedStatement st = null;
 		Book book = null;

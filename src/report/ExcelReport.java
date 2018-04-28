@@ -3,9 +3,9 @@ package report;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-
 import org.apache.poi.hssf.usermodel.HSSFCellStyle;
 import org.apache.poi.hssf.usermodel.HSSFFont;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
@@ -14,18 +14,17 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
 import org.apache.poi.ss.usermodel.Row;
 
+import database.BookTableGateway;
+import javafx.collections.ObservableList;
+import model.AuthorBook;
+import model.Book;
+
 /**
  * Build an XLS report using Apache POI
  *
- * and then output to a file simple2.xls
- * 
- * @author marcos
- *
  */
 public class ExcelReport {
-	public static final String DEST_FILE_PATH = "C:\\Users\\Beto\\Desktop\\test.xls";
-
-	public static void main(String[] args) {
+	public ExcelReport(String path, ObservableList<Book> books, BookTableGateway bGateway, String publisher) {
 		HSSFWorkbook workbook = new HSSFWorkbook();
 		HSSFSheet sheet = workbook.createSheet("Royalty Report");
 
@@ -53,7 +52,7 @@ public class ExcelReport {
 
 		row = sheet.createRow(1);
 		cell = row.createCell(0);
-		cell.setCellValue("Publisher: test");
+		cell.setCellValue("Publisher: " + publisher);
 		cell.setCellStyle(titleStyle);
 		
 		DateTimeFormatter format = DateTimeFormatter.ofPattern("MMMM dd, yyyy HH:mm");
@@ -102,52 +101,48 @@ public class ExcelReport {
 		cell.setCellValue("Royalty");
 		cell.setCellStyle(boldStyle);
 
-		//row 1
-		row = sheet.createRow(rowNum++);
-		//add cells 0 to 3
-		cellNum = 0;
-		cell = row.createCell(cellNum++);
-		cell.setCellValue("Book 1");
-		cell = row.createCell(cellNum++);
-		cell.setCellValue("0");
-		cell = row.createCell(cellNum++);
-		cell.setCellValue("Bob");
-		cell = row.createCell(cellNum++);
-		cell.setCellValue("4.25%");
-
-		//row 2
-		rowNum += 1;
-		row = sheet.createRow(rowNum);
-		//add cells 0 to 3
-		cellNum = 0;
-		cell = row.createCell(cellNum++);
-		cell.setCellValue("Sweetie");
-		cell = row.createCell(cellNum++);
-		cell.setCellValue("Dog");
-		cell = row.createCell(cellNum++);
-		cell.setCellValue("Unknown");
-		cell = row.createCell(cellNum++);
-		cell.setCellValue("Female");
-		
-		//row 3
-		rowNum += 2;
-		row = sheet.createRow(rowNum);
-		//add cells 0 to 3
-		cellNum = 0;
-		cell = row.createCell(cellNum++);
-		cell.setCellValue("Psycho");
-		cell = row.createCell(cellNum++);
-		cell.setCellValue("Cat");
-		cell = row.createCell(cellNum++);
-		cell.setCellValue(7);
-		cell = row.createCell(cellNum++);
-		cell.setCellValue("Male");
-		
+		for(Book book : books) {
+			row = sheet.createRow(rowNum);
+			
+			cell = row.createCell(0);
+			cell.setCellValue(book.getTitle());
+			cell = row.createCell(1);
+			cell.setCellValue(book.getIsbn());
+			
+			BigDecimal totalRoyalty = BigDecimal.ZERO;
+			int count = 0;
+			for(AuthorBook author : book.getAuthors()) {
+				cell = row.createCell(2);
+				cell.setCellValue(author.getAuthor().toString());
+				
+				totalRoyalty = totalRoyalty.add(author.getRoyalty());
+				cell = row.createCell(3);
+				cell.setCellValue(author.getRoyaltyPercent());
+				
+				if(++count < book.getAuthors().size()) {
+					rowNum += 1;
+					row = sheet.createRow(rowNum);
+				}
+			}
+			rowNum += 1;
+			row = sheet.createRow(rowNum);
+			
+			cell = row.createCell(2);
+			cell.setCellValue("Total Royalty");
+			cell.setCellStyle(boldStyle);
+			
+			cell = row.createCell(3);
+			BigDecimal rounded = totalRoyalty.multiply(new BigDecimal(100));
+			cell.setCellValue(String.format("%.2f%s", rounded, "%"));
+			cell.setCellStyle(boldStyle);
+			
+			rowNum = rowNum + 2;
+		}
 		
 		sheet.autoSizeColumn(0);
 
 		//write to a file
-		try (FileOutputStream f = new FileOutputStream(new File(DEST_FILE_PATH))) {
+		try (FileOutputStream f = new FileOutputStream(new File(path))) {
 			workbook.write(f);
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -160,5 +155,4 @@ public class ExcelReport {
 			}
 		}
 	}
-
 }

@@ -34,6 +34,8 @@ public class AppController implements Initializable {
 	public static final int AUDIT_TRAIL = 5;
 	
 	public static final int AUTHOR_BOOK = 6;
+	
+	public static final int CREATE_REPORT = 7;
 
 	private static AppController myInstance = null;
 	private BorderPane rootPane = null;
@@ -73,6 +75,10 @@ public class AppController implements Initializable {
 					fxmlFile = this.getClass().getResource("/view/AuthorBookView.fxml");
 					controller = new AuthorBookController((Book) arg, new AuthorTableGateway(conn));
 					break;
+				case CREATE_REPORT:
+					fxmlFile = this.getClass().getResource("/view/CreateReportView.fxml");
+					controller = new CreateReportController(new PublisherTableGateway(conn), new BookTableGateway(conn));
+					break;
 			}
 		
 			FXMLLoader loader = new FXMLLoader(fxmlFile);
@@ -111,6 +117,12 @@ public class AppController implements Initializable {
 		Book book = new Book(new PublisherTableGateway(conn));
 		book.setGateway(new BookTableGateway(conn));
 		changeView(BOOK_DETAIL, book);
+    }
+	
+	@FXML
+    void clickMenuCreateReport(ActionEvent event) {
+		logger.info("Create Report menu item clicked");
+		changeView(CREATE_REPORT, null);
     }
 	
 	@FXML
