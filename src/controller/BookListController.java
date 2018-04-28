@@ -90,7 +90,7 @@ public class BookListController implements Initializable, MyController {
     void lastButtonClicked(ActionEvent event) {
 		if(page != ((totalCount / 50) + 1)) {
 			page = (totalCount / 50) + 1;
-		updateBooks();
+			updateBooks();
 		}
     }
 
