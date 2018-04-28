@@ -24,15 +24,35 @@ public class BookListController implements Initializable, MyController {
 	@FXML private Label fetchedLabel;
 	private ObservableList<Book> books;
 	private BookTableGateway gateway;
+	private int page = 1;
+	private int totalCount;
 
 	public BookListController(BookTableGateway gateway) {
     	this.gateway = gateway;
-    	//books = this.gateway.getBooks();
+    	books = this.gateway.getBooks(getOffset());
     }
 	
 	public BookListController(ObservableList<Book> books) {
     	this.books = books;
     }
+	
+	public int getOffset() {
+		return (page - 1) * 50;
+	}
+	
+	void updateLabel() {
+		this.totalCount = gateway.getTotalCount();
+		int numberOfBooks = (50 * (page - 1)) + books.size();
+		fetchedLabel.setText("Fetched records " + (getOffset() + 1) 
+				+ " to " + numberOfBooks + " out of " + totalCount);
+	}
+	
+	void updateBooks() {
+		books = this.gateway.getBooks(getOffset());
+		this.bookList.setItems(books);
+		updateLabel();
+		bookList.scrollTo(0);
+	}
 	
     @FXML
     void bookListClicked(MouseEvent event) {
@@ -61,34 +81,41 @@ public class BookListController implements Initializable, MyController {
 	
 	@FXML
     void firstButtonClicked(ActionEvent event) {
-
+		page = 1;
+		updateBooks();
     }
 	
 	@FXML
     void lastButtonClicked(ActionEvent event) {
-
+		page = (totalCount / 50) + 1;
+		updateBooks();
     }
 
     @FXML
     void nextButtonClicked(ActionEvent event) {
-
+    	page++;
+    	updateBooks();
     }
 
     @FXML
     void prevButtonClicked(ActionEvent event) {
-
+    	if(page > 1) {
+    		page--;
+    		updateBooks();
+    	}
     }
 	
 	@FXML
     void handleSearchBook(ActionEvent event) {
+		page = 1;
 		logger.info("Searching for \"" + searchBook.getText() + "\"");
-		ObservableList<Book> books = gateway.getBooks(searchBook.getText());
+		ObservableList<Book> books = gateway.getBooks(searchBook.getText(), getOffset());
 		this.bookList.setItems(books);
     }
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		this.bookList.setItems(books);
+		updateLabel();
 	}
-
 }

@@ -104,12 +104,38 @@ public class BookTableGateway {
 		}
 	}
 	
-	public ObservableList<Book> getBooks() throws AppException {
+	public int getTotalCount() throws AppException {
+		int count = 0;
+		
+		PreparedStatement st = null;
+		try {
+			st = conn.prepareStatement("select count(*) as count from book");
+			ResultSet rs = st.executeQuery();
+			while(rs.next()) {
+				count = rs.getInt("count");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new AppException(e);
+		} finally {
+			try {
+				if(st != null)
+					st.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				throw new AppException(e);
+			}
+		}
+		return count;
+	}
+	
+	public ObservableList<Book> getBooks(int offset) throws AppException {
 		ObservableList<Book> books = FXCollections.observableArrayList();
 		
 		PreparedStatement st = null;
 		try {
-			st = conn.prepareStatement("select * from book order by title");
+			st = conn.prepareStatement("select * from book order by title LIMIT 50 OFFSET ?");
+			st.setInt(1, offset);
 			ResultSet rs = st.executeQuery();
 			while(rs.next()) {
 				Book book = new Book(pubGateway, rs.getString("title"), rs.getString("summary"),
@@ -134,13 +160,14 @@ public class BookTableGateway {
 		return books;
 	}
 	
-	public ObservableList<Book> getBooks(String search) throws AppException {
+	public ObservableList<Book> getBooks(String search, int offset) throws AppException {
 		ObservableList<Book> books = FXCollections.observableArrayList();
 		
 		PreparedStatement st = null;
 		try {
-			st = conn.prepareStatement("select * from book where title like ?");
+			st = conn.prepareStatement("select * from book where title like ? LIMIT 50 OFFSET ?");
 			st.setString(1, "%" + search + "%");
+			st.setInt(2,  offset);
 			ResultSet rs = st.executeQuery();
 			while(rs.next()) {
 				Book book = new Book(pubGateway, rs.getString("title"), rs.getString("summary"),

@@ -40,22 +40,22 @@
                </font></Label>
             <HBox prefHeight="43.0" prefWidth="600.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#firstButtonClicked" prefHeight="25.0" prefWidth="45.0" text="First">
+                  <Button mnemonicParsing="false" onAction="#firstButtonClicked" prefHeight="25.0" prefWidth="50.0" text="First">
                      <HBox.margin>
                         <Insets left="5.0" />
                      </HBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#prevButtonClicked" prefHeight="25.0" prefWidth="45.0" text="Prev.">
+                  <Button mnemonicParsing="false" onAction="#prevButtonClicked" prefHeight="25.0" prefWidth="55.0" text="Prev.">
                      <HBox.margin>
                         <Insets left="20.0" />
                      </HBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#nextButtonClicked" prefHeight="25.0" prefWidth="45.0" text="Next">
+                  <Button mnemonicParsing="false" onAction="#nextButtonClicked" prefHeight="25.0" prefWidth="55.0" text="Next">
                      <HBox.margin>
                         <Insets left="20.0" />
                      </HBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#lastButtonClicked" prefHeight="25.0" prefWidth="45.0" text="Last">
+                  <Button mnemonicParsing="false" onAction="#lastButtonClicked" prefHeight="25.0" prefWidth="50.0" text="Last">
                      <HBox.margin>
                         <Insets left="20.0" />
                      </HBox.margin>
@@ -65,7 +65,7 @@
                         <Insets />
                      </opaqueInsets>
                      <HBox.margin>
-                        <Insets left="293.0" />
+                        <Insets left="258.0" />
                      </HBox.margin>
                   </Button>
                </children>
