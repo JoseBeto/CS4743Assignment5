@@ -130,37 +130,6 @@ public class BookTableGateway {
 		return count;
 	}
 	
-	/*public ObservableList<Book> getBooks(int offset) throws AppException {
-		ObservableList<Book> books = FXCollections.observableArrayList();
-		
-		PreparedStatement st = null;
-		try {
-			st = conn.prepareStatement("select * from book order by title LIMIT 50 OFFSET ?");
-			st.setInt(1, offset);
-			ResultSet rs = st.executeQuery();
-			while(rs.next()) {
-				Book book = new Book(pubGateway, rs.getString("title"), rs.getString("summary"),
-						rs.getInt("year_published"), rs.getInt("publisher_id"), rs.getString("isbn"), rs.getDate("date_added").toLocalDate());
-				book.setGateway(this);
-				book.setId(rs.getInt("id"));
-				book.setAuthors(getAuthorsForBook(book));
-				books.add(book);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-			throw new AppException(e);
-		} finally {
-			try {
-				if(st != null)
-					st.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-				throw new AppException(e);
-			}
-		}
-		return books;
-	}*/
-	
 	public ObservableList<Book> getBooks(String search, int offset) throws AppException {
 		ObservableList<Book> books = FXCollections.observableArrayList();
 		

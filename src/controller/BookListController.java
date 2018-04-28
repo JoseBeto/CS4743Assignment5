@@ -80,14 +80,18 @@ public class BookListController implements Initializable, MyController {
 	
 	@FXML
     void firstButtonClicked(ActionEvent event) {
-		page = 1;
-		updateBooks();
+		if(page != 1) {
+			page = 1;
+			updateBooks();
+		}
     }
 	
 	@FXML
     void lastButtonClicked(ActionEvent event) {
-		page = (totalCount / 50) + 1;
+		if(page != ((totalCount / 50) + 1)) {
+			page = (totalCount / 50) + 1;
 		updateBooks();
+		}
     }
 
     @FXML
