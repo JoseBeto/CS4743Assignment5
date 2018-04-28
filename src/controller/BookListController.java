@@ -29,7 +29,6 @@ public class BookListController implements Initializable, MyController {
 
 	public BookListController(BookTableGateway gateway) {
     	this.gateway = gateway;
-    	books = this.gateway.getBooks(getOffset());
     }
 	
 	public BookListController(ObservableList<Book> books) {
@@ -41,14 +40,14 @@ public class BookListController implements Initializable, MyController {
 	}
 	
 	void updateLabel() {
-		this.totalCount = gateway.getTotalCount();
+		this.totalCount = gateway.getTotalCount(searchBook.getText());
 		int numberOfBooks = (50 * (page - 1)) + books.size();
 		fetchedLabel.setText("Fetched records " + (getOffset() + 1) 
 				+ " to " + numberOfBooks + " out of " + totalCount);
 	}
 	
 	void updateBooks() {
-		books = this.gateway.getBooks(getOffset());
+		books = this.gateway.getBooks(searchBook.getText(), getOffset());
 		this.bookList.setItems(books);
 		updateLabel();
 		bookList.scrollTo(0);
@@ -93,8 +92,10 @@ public class BookListController implements Initializable, MyController {
 
     @FXML
     void nextButtonClicked(ActionEvent event) {
-    	page++;
-    	updateBooks();
+    	if((page * 50) < totalCount) {
+    		page++;
+    		updateBooks();
+    	}
     }
 
     @FXML
@@ -108,13 +109,12 @@ public class BookListController implements Initializable, MyController {
 	@FXML
     void handleSearchBook(ActionEvent event) {
 		page = 1;
-		logger.info("Searching for \"" + searchBook.getText() + "\"");
-		ObservableList<Book> books = gateway.getBooks(searchBook.getText(), getOffset());
-		this.bookList.setItems(books);
+		updateBooks();
     }
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+    	books = this.gateway.getBooks(searchBook.getText(), getOffset());
 		this.bookList.setItems(books);
 		updateLabel();
 	}
