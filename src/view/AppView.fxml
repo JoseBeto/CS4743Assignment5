@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.layout.BorderPane?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
@@ -11,24 +12,27 @@
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#clickMenuQuit" text="Quit" />
+              <MenuItem fx:id="loginChoice" mnemonicParsing="false" onAction="#clickMenuLogin" text="Log In" />
+                  <MenuItem fx:id="logoutChoice" mnemonicParsing="false" onAction="#clickMenuLogout" text="Log Out" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#clickMenuQuit" text="Quit" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Authors">
+          <Menu fx:id="authorMenu" mnemonicParsing="false" text="Authors">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#clickMenuAuthorList" text="Author List" />
-                  <MenuItem mnemonicParsing="false" onAction="#clickMenuAddAuthor" text="Add Author" />
+              <MenuItem fx:id="authorList" mnemonicParsing="false" onAction="#clickMenuAuthorList" text="Author List" />
+                  <MenuItem fx:id="addAuthor" mnemonicParsing="false" onAction="#clickMenuAddAuthor" text="Add Author" />
             </items>
           </Menu>
             <Menu mnemonicParsing="false" text="Books">
                <items>
-                  <MenuItem mnemonicParsing="false" onAction="#clickMenuBookList" text="Book List" />
-                  <MenuItem mnemonicParsing="false" onAction="#clickMenuAddBook" text="Add Book" />
+                  <MenuItem fx:id="bookList" mnemonicParsing="false" onAction="#clickMenuBookList" text="Book List" />
+                  <MenuItem fx:id="addBook" mnemonicParsing="false" onAction="#clickMenuAddBook" text="Add Book" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Reports">
                <items>
-                  <MenuItem mnemonicParsing="false" onAction="#clickMenuCreateReport" text="Create Report" />
+                  <MenuItem fx:id="createReport" mnemonicParsing="false" onAction="#clickMenuCreateReport" text="Create Report" />
                </items>
             </Menu>
         </menus>

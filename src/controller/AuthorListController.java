@@ -14,6 +14,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import model.Author;
@@ -22,6 +23,7 @@ public class AuthorListController implements Initializable, MyController {
 
 	private static Logger logger = LogManager.getLogger();
 	@FXML private ListView<Author> authorList;
+	@FXML private Button deleteAuthor;
 	private ObservableList<Author> authors;
 	private AuthorTableGateway gateway;
 
