@@ -30,7 +30,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.BorderPane;
 import javafx.util.Pair;
-//import misc.CryptoStuff;
+import authentication.CryptoStuff;
 import model.Author;
 import model.Book;
 
@@ -49,8 +49,7 @@ public class AppController implements Initializable {
 	
 	public static final int CREATE_REPORT = 7;
 	
-	public static final int LOGIN_CHOICE = 8;
-	public static final int LOGOUT_CHOICE = 9;
+	public static final int HOME = 8;
 	@FXML private MenuItem loginChoice, logoutChoice, authorList, addAuthor
 	, bookList, addBook,  createReport;
 
@@ -59,7 +58,7 @@ public class AppController implements Initializable {
 	private BorderPane rootPane = null;
 	private Connection conn;
 	
-	int sessionId;
+	public int sessionId;
 	private Authenticator auth;
 	
 	public AppController() {
@@ -75,9 +74,11 @@ public class AppController implements Initializable {
 			MyController controller = null;
 			URL fxmlFile = null;
 			switch(viewType) {
+				case HOME:
+					fxmlFile = this.getClass().getResource("/view/AppView.fxml");
 				case AUTHOR_LIST:
 					fxmlFile = this.getClass().getResource("/view/AuthorListView.fxml");
-					controller = new AuthorListController(new AuthorTableGateway(conn));
+					controller = new AuthorListController(new AuthorTableGateway(conn), (AuthenticatorLocal) auth, sessionId);
 					break;
 				case AUTHOR_DETAIL:
 					fxmlFile = this.getClass().getResource("/view/AuthorDetailView.fxml");
@@ -128,6 +129,7 @@ public class AppController implements Initializable {
 		
 		//restrict access to GUI controls based on current login session
 		updateGUIAccess();
+		changeView(HOME, null);
 		
 	}
 
@@ -165,6 +167,7 @@ public class AppController implements Initializable {
 			createReport.setDisable(false);
 		else 
 			createReport.setDisable(true);
+
 		
 	}
 
@@ -188,8 +191,8 @@ public class AppController implements Initializable {
 		logger.info("userName is " + userName + ", password is " + pw);
 
 		//hash password
-		//String pwHash = CryptoStuff.sha256(pw);
-		String pwHash = pw;
+		String pwHash = CryptoStuff.sha256(pw);
+		
 
 		logger.info("sha256 hash of password is " + pwHash);
 
@@ -215,6 +218,7 @@ public class AppController implements Initializable {
 
 		//restrict access to GUI controls based on current login session
 		updateGUIAccess();
+		changeView(HOME, null);
 
 	}
 
