@@ -21,6 +21,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import assignment5.AlertHelper;
+import authentication.ABACPolicyAuth;
+import authentication.AuthenticatorLocal;
 import database.BookTableGateway;
 import database.PublisherTableGateway;
 import javafx.beans.binding.Bindings;
@@ -44,14 +46,36 @@ public class BookDetailController implements Initializable, MyController {
     @FXML private TableView<AuthorBook> authorRoyaltyList;
     @FXML private TableColumn<AuthorBook, String> authorList;
     @FXML private TableColumn<AuthorBook, String> royaltyList;
+    @FXML private Button deleteAuthorBook;
+   	@FXML private Button addAuthorBook;
+   	@FXML private Button saveAuthorBook;
     
 	private Book book;
 	private PublisherTableGateway pubGateway;
+	AuthenticatorLocal auth;
+	int sessionId;
 
-	public BookDetailController(Book book, PublisherTableGateway pubGateway, BookTableGateway gateway) {
+	public BookDetailController(Book book, PublisherTableGateway pubGateway, BookTableGateway gateway, AuthenticatorLocal auth, int sessionId) {
 		this.book = book;
 		this.pubGateway = pubGateway;
+		this.auth = auth;
+		this.sessionId = sessionId;
     }
+	
+	void updateGUIAccess() {
+		if(auth.hasAccess(sessionId, ABACPolicyAuth.CAN_ACCESS_CHOICE_ABD))
+			deleteAuthorBook.setDisable(false);
+		else 
+			deleteAuthorBook.setDisable(true);
+		if(auth.hasAccess(sessionId, ABACPolicyAuth.CAN_ACCESS_CHOICE_ABA))
+			addAuthorBook.setDisable(false);
+		else 
+			addAuthorBook.setDisable(true);
+		if(auth.hasAccess(sessionId, ABACPolicyAuth.CAN_ACCESS_CHOICE_ABS))
+			saveAuthorBook.setDisable(false);
+		else 
+			saveAuthorBook.setDisable(true);
+	}
 	
 	@FXML
 	void handleSaveButton(ActionEvent event) {
@@ -180,5 +204,6 @@ public class BookDetailController implements Initializable, MyController {
     	);
 		
 		authorRoyaltyList.setItems(book.getAuthors());
+		updateGUIAccess();
 	}
 }

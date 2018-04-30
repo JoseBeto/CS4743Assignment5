@@ -82,16 +82,16 @@ public class AppController implements Initializable {
 					break;
 				case AUTHOR_DETAIL:
 					fxmlFile = this.getClass().getResource("/view/AuthorDetailView.fxml");
-					controller = new AuthorDetailController((Author) arg);
+					controller = new AuthorDetailController((Author) arg, (AuthenticatorLocal) auth, sessionId);
 					break;
 				case BOOK_LIST:
 					fxmlFile = this.getClass().getResource("/view/BookListView.fxml");
-					controller = new BookListController(new BookTableGateway(conn));
+					controller = new BookListController(new BookTableGateway(conn), (AuthenticatorLocal) auth, sessionId);
 					break;
 				case BOOK_DETAIL:
 					fxmlFile = this.getClass().getResource("/view/BookDetailView.fxml");
 					controller = new BookDetailController((Book) arg, new PublisherTableGateway(conn),
-							new BookTableGateway(conn));
+							new BookTableGateway(conn),(AuthenticatorLocal) auth, sessionId );
 					break;
 				case AUDIT_TRAIL:
 					fxmlFile = this.getClass().getResource("/view/AuditTrailView.fxml");
@@ -99,7 +99,7 @@ public class AppController implements Initializable {
 					break;
 				case AUTHOR_BOOK:
 					fxmlFile = this.getClass().getResource("/view/AuthorBookView.fxml");
-					controller = new AuthorBookController((Book) arg, new AuthorTableGateway(conn));
+					controller = new AuthorBookController((Book) arg, new AuthorTableGateway(conn), (AuthenticatorLocal) auth, sessionId);
 					break;
 				case CREATE_REPORT:
 					fxmlFile = this.getClass().getResource("/view/CreateReportView.fxml");
@@ -129,8 +129,7 @@ public class AppController implements Initializable {
 		
 		//restrict access to GUI controls based on current login session
 		updateGUIAccess();
-		changeView(HOME, null);
-		
+		rootPane.setCenter(null);	
 	}
 
 	private void updateGUIAccess() {
@@ -218,7 +217,7 @@ public class AppController implements Initializable {
 
 		//restrict access to GUI controls based on current login session
 		updateGUIAccess();
-		changeView(HOME, null);
+		rootPane.setCenter(null);
 
 	}
 

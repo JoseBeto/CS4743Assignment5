@@ -6,11 +6,15 @@ import javafx.scene.control.TextField;
 import javax.swing.JOptionPane;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import authentication.ABACPolicyAuth;
+import authentication.AuthenticatorLocal;
 import database.BookTableGateway;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
@@ -22,14 +26,28 @@ public class BookListController implements Initializable, MyController {
 	@FXML private ListView<Book> bookList;
 	@FXML private TextField searchBook;
 	@FXML private Label fetchedLabel;
+	@FXML private Button deleteBook;
 	private ObservableList<Book> books;
 	private BookTableGateway gateway;
 	private int page = 1;
 	private int totalCount;
+	
+	AuthenticatorLocal auth;
+	int sessionId;
 
-	public BookListController(BookTableGateway gateway) {
+	public BookListController(BookTableGateway gateway, AuthenticatorLocal auth, int sessionId) {
     	this.gateway = gateway;
+    	this.auth = auth;
+		this.sessionId = sessionId;
     }
+	void updateGUIAccess() {
+
+		if(auth.hasAccess(sessionId, ABACPolicyAuth.CAN_ACCESS_CHOICE_AD))
+			deleteBook.setDisable(false);
+		else 
+			deleteBook.setDisable(true);
+	}
+
 	
 	public BookListController(ObservableList<Book> books) {
     	this.books = books;
@@ -121,5 +139,6 @@ public class BookListController implements Initializable, MyController {
     	books = this.gateway.getBooks(searchBook.getText(), getOffset());
 		this.bookList.setItems(books);
 		updateLabel();
+		updateGUIAccess();
 	}
 }

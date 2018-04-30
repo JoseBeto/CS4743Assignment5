@@ -36,9 +36,7 @@ public class AuthorListController implements Initializable, MyController {
 	public AuthorListController(AuthorTableGateway gateway, AuthenticatorLocal auth, int sessionId) {
 		this.gateway = gateway;
 		authors = this.gateway.getAuthors();
-
 		this.auth = auth;
-
 		//default to no session
 		this.sessionId = sessionId;
 	}

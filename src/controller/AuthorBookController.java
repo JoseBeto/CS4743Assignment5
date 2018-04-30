@@ -5,11 +5,14 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import assignment5.AlertHelper;
+import authentication.ABACPolicyAuth;
+import authentication.AuthenticatorLocal;
 import database.AuthorTableGateway;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import model.Author;
@@ -20,13 +23,36 @@ public class AuthorBookController implements Initializable, MyController {
 	
 	@FXML private TextField royalty;
     @FXML private ComboBox<Author> authorBox;
+    @FXML private Button deleteAuthorBook;
+	@FXML private Button addAuthorBook;
+	@FXML private Button saveAuthorBook;
 
 	private Book book;
 	private AuthorTableGateway authorGateway;
+	AuthenticatorLocal auth;
+	int sessionId;
+	
 
-	public AuthorBookController(Book book, AuthorTableGateway authorGateway) {
+	public AuthorBookController(Book book, AuthorTableGateway authorGateway, AuthenticatorLocal auth, int sessionId) {
 		this.book = book;
 		this.authorGateway = authorGateway;
+		this.auth = auth;
+		this.sessionId = sessionId;
+	}
+	
+	void updateGUIAccess() {
+		if(auth.hasAccess(sessionId, ABACPolicyAuth.CAN_ACCESS_CHOICE_ABD))
+			deleteAuthorBook.setDisable(false);
+		else 
+			deleteAuthorBook.setDisable(true);
+		if(auth.hasAccess(sessionId, ABACPolicyAuth.CAN_ACCESS_CHOICE_ABA))
+			addAuthorBook.setDisable(false);
+		else 
+			addAuthorBook.setDisable(true);
+		if(auth.hasAccess(sessionId, ABACPolicyAuth.CAN_ACCESS_CHOICE_ABS))
+			saveAuthorBook.setDisable(false);
+		else 
+			saveAuthorBook.setDisable(true);
 	}
 	
 	@FXML
@@ -55,7 +81,7 @@ public class AuthorBookController implements Initializable, MyController {
 		ObservableList<AuthorBook> existingAuthors = book.getAuthors();
 		ObservableList<Author> authors = authorGateway.getAuthors();
 		
-		for(Author author : authors) {
+		for(Author author : authors) { 
 			Boolean flag = true;
 			for(AuthorBook authorBook : existingAuthors) {
 				if(author.getId() == authorBook.getAuthor().getId())
@@ -64,5 +90,7 @@ public class AuthorBookController implements Initializable, MyController {
 			if(flag)
 				authorBox.getItems().add(author);
 		}
+		//updateGUIAccess();
+
 	}
 }

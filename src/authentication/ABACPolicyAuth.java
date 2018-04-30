@@ -5,11 +5,18 @@ import java.util.HashMap;
 public class ABACPolicyAuth {
 	public static final String CAN_ACCESS_CHOICE_AL = "authorList";
 	public static final String CAN_ACCESS_CHOICE_AA = "addAuthor";
+	public static final String CAN_ACCESS_CHOICE_AS = "saveAuthor";
 	public static final String CAN_ACCESS_CHOICE_BL = "bookList";
 	public static final String CAN_ACCESS_CHOICE_AB = "addBook";
 	public static final String CAN_ACCESS_CHOICE_CR = "createReport";
 	public static final String CAN_ACCESS_CHOICE_AD = "deleteAuthor";
 	public static final String CAN_ACCESS_CHOICE_BD = "deleteBook";
+	public static final String CAN_ACCESS_CHOICE_ABD = "deleteAuthorBook";
+	public static final String CAN_ACCESS_CHOICE_ABA = "addAuthorBook";
+	public static final String CAN_ACCESS_CHOICE_ABS = "saveAuthorBook";
+
+
+
 
 
 
@@ -43,11 +50,15 @@ public class ABACPolicyAuth {
 		case "Administrator":
 			userTable.put(CAN_ACCESS_CHOICE_AL, true);
 			userTable.put(CAN_ACCESS_CHOICE_AA, true);
+			userTable.put(CAN_ACCESS_CHOICE_AS, true);
 			userTable.put(CAN_ACCESS_CHOICE_BL, true);
 			userTable.put(CAN_ACCESS_CHOICE_AB, true);
 			userTable.put(CAN_ACCESS_CHOICE_CR, true);
 			userTable.put(CAN_ACCESS_CHOICE_AD, true);
 			userTable.put(CAN_ACCESS_CHOICE_BD, true);
+			userTable.put(CAN_ACCESS_CHOICE_ABD, true);
+			userTable.put(CAN_ACCESS_CHOICE_ABA, true);
+			userTable.put(CAN_ACCESS_CHOICE_ABS, true);
 			//add user table to acl
 			acl.put(login, userTable);
 			break;
@@ -56,17 +67,35 @@ public class ABACPolicyAuth {
 			//can add, change, and delete AuthorBook associations
 			userTable.put(CAN_ACCESS_CHOICE_AL, true);
 			userTable.put(CAN_ACCESS_CHOICE_AA, true);
+			userTable.put(CAN_ACCESS_CHOICE_AS, true);
 			userTable.put(CAN_ACCESS_CHOICE_BL, true);
 			userTable.put(CAN_ACCESS_CHOICE_AB, true);
 			userTable.put(CAN_ACCESS_CHOICE_CR, true);
 			userTable.put(CAN_ACCESS_CHOICE_AD, false);
 			userTable.put(CAN_ACCESS_CHOICE_BD, false);
+			userTable.put(CAN_ACCESS_CHOICE_ABD, true);
+			userTable.put(CAN_ACCESS_CHOICE_ABA, true);
+			userTable.put(CAN_ACCESS_CHOICE_ABS, true);
 			//add user table to acl
 			acl.put(login, userTable);
 			break;
 		case "Intern":
 			//can view lists/details, cannot change any data or generate
 			//spreadsheet, so all save/delete functions/buttons disabled
+			userTable.put(CAN_ACCESS_CHOICE_AL, true);
+			userTable.put(CAN_ACCESS_CHOICE_AA, false);
+			userTable.put(CAN_ACCESS_CHOICE_AS, false);
+			userTable.put(CAN_ACCESS_CHOICE_BL, true);
+			userTable.put(CAN_ACCESS_CHOICE_AB, false);
+			userTable.put(CAN_ACCESS_CHOICE_CR, false);
+			userTable.put(CAN_ACCESS_CHOICE_AD, false);
+			userTable.put(CAN_ACCESS_CHOICE_BD, false);
+			userTable.put(CAN_ACCESS_CHOICE_ABD, false);
+			userTable.put(CAN_ACCESS_CHOICE_ABA, false);
+			userTable.put(CAN_ACCESS_CHOICE_ABS, false);
+			//add user table to acl
+			acl.put(login, userTable);
+			break;
 		}
 	}
 	

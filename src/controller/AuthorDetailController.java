@@ -1,5 +1,6 @@
 package controller;
 
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.util.converter.LocalDateStringConverter;
 import model.Author;
@@ -12,6 +13,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import assignment5.AlertHelper;
+import authentication.ABACPolicyAuth;
+import authentication.AuthenticatorLocal;
 import database.AppException;
 import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
@@ -27,11 +30,24 @@ public class AuthorDetailController implements Initializable, MyController {
 	@FXML private TextField doB;
 	@FXML private TextField website;
 	@FXML private TextField gender;
+	@FXML private Button saveAuthor;
 	private Author author;
+	AuthenticatorLocal auth;
+	int sessionId;
 
-	public AuthorDetailController(Author author) {
+	public AuthorDetailController(Author author, AuthenticatorLocal auth, int sessionId) {
 		this.author = author;
+		this.auth = auth;
+		this.sessionId = sessionId;
     }
+	
+	void updateGUIAccess() {
+		if(auth.hasAccess(sessionId, ABACPolicyAuth.CAN_ACCESS_CHOICE_ABD))
+			saveAuthor.setDisable(false);
+		else 
+			saveAuthor.setDisable(true);
+		
+	}
 	
 	@FXML
 	void handleSaveButton(ActionEvent event) {
@@ -124,5 +140,6 @@ public class AuthorDetailController implements Initializable, MyController {
 		
 		website.textProperty().bindBidirectional(author.websiteProperty());
 		gender.textProperty().bindBidirectional(author.genderProperty());
+		updateGUIAccess();
 	}
 }
