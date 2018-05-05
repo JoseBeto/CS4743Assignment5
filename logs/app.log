@@ -4965,3 +4965,36 @@
 17:26:06.560 INFO  controller.BookListController : book 10000 clicked
 17:26:09.314 INFO  controller.AppController : Add Book menu item clicked
 17:26:13.261 INFO  assignment5.Launcher : Closing connection...
+19:59:32.550 INFO  assignment5.Launcher : Creating connection...
+19:59:48.336 INFO  controller.AppController : Login menu item clicked
+20:00:00.162 INFO  controller.AppController : userName is wilma, password is arugula
+20:00:00.163 INFO  controller.AppController : sha256 hash of password is 60eaa666b850cfa979b6f7741fbf60aa4d1173c73d6663069b301bce44b77f0e
+20:00:00.167 INFO  controller.AppController : session id is 1
+20:00:10.542 INFO  controller.AppController : Author list menu item clicked
+20:00:12.152 INFO  controller.AppController : Book list menu item clicked
+20:00:21.638 INFO  controller.AppController : Logout menu item clicked
+20:00:22.960 INFO  controller.AppController : Login menu item clicked
+20:00:28.118 INFO  controller.AppController : Login menu item clicked
+20:00:34.796 INFO  controller.AppController : userName is leroy, password is wipeout
+20:00:34.797 INFO  controller.AppController : sha256 hash of password is 1bba89b7d1b6776386f9fae3b069c49edac216e2c07a9f3365910d65b74816b6
+20:00:34.797 INFO  controller.AppController : session id is 2
+20:00:38.055 INFO  controller.AppController : Book list menu item clicked
+20:00:43.602 INFO  controller.AppController : Author list menu item clicked
+20:00:47.522 INFO  controller.AppController : Logout menu item clicked
+20:00:48.488 INFO  controller.AppController : Login menu item clicked
+20:00:54.270 INFO  controller.AppController : userName is sasquatch, password is jerky
+20:00:54.270 INFO  controller.AppController : sha256 hash of password is 4e605ba19bb9781a2af0f2b04256b7af1b2d9923a3d9f91837f33afee13b24e8
+20:00:54.271 INFO  controller.AppController : session id is 3
+20:01:00.505 INFO  controller.AppController : Author list menu item clicked
+20:01:07.592 INFO  controller.AuthorListController : Andy clicked
+20:01:10.024 INFO  controller.AppController : Book list menu item clicked
+20:01:18.501 INFO  controller.BookListController : book 10000 clicked
+20:01:27.074 INFO  controller.AppController : Book list menu item clicked
+20:01:32.749 INFO  assignment5.Launcher : Closing connection...
+20:02:35.676 INFO  assignment5.Launcher : Creating connection...
+20:02:42.341 INFO  controller.AppController : Login menu item clicked
+20:02:47.780 INFO  controller.AppController : userName is leroy, password is wipeout
+20:02:47.781 INFO  controller.AppController : sha256 hash of password is 1bba89b7d1b6776386f9fae3b069c49edac216e2c07a9f3365910d65b74816b6
+20:02:47.782 INFO  controller.AppController : session id is 1
+20:02:51.380 INFO  controller.AppController : Book list menu item clicked
+20:03:09.448 INFO  assignment5.Launcher : Closing connection...

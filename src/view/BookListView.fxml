@@ -60,12 +60,12 @@
                         <Insets left="20.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="deleteBook" alignment="CENTER" contentDisplay="CENTER" maxWidth="100.0" mnemonicParsing="false" onAction="#handleDeleteButton" prefHeight="25.0" prefWidth="55.0" text="Delete" textAlignment="CENTER">
+                  <Button fx:id="deleteBook" alignment="CENTER" contentDisplay="CENTER" maxWidth="100.0" mnemonicParsing="false" onAction="#handleDeleteButton" prefHeight="25.0" prefWidth="65.0" text="Delete" textAlignment="CENTER">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
                      <HBox.margin>
-                        <Insets left="258.0" />
+                        <Insets left="250.0" />
                      </HBox.margin>
                   </Button>
                </children>
