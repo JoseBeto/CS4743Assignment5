@@ -1,6 +1,5 @@
 package authentication;
 
-//import misc.CryptoStuff;
 
 public class User {
 	private String login;

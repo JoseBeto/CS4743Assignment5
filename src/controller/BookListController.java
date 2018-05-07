@@ -8,7 +8,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import authentication.ABACPolicyAuth;
-import authentication.AuthenticatorLocal;
+import authentication.AuthBeanRemote;
 import database.BookTableGateway;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -32,10 +32,10 @@ public class BookListController implements Initializable, MyController {
 	private int page = 1;
 	private int totalCount;
 	
-	AuthenticatorLocal auth;
+	AuthBeanRemote auth;
 	int sessionId;
 
-	public BookListController(BookTableGateway gateway, AuthenticatorLocal auth, int sessionId) {
+	public BookListController(BookTableGateway gateway, AuthBeanRemote auth, int sessionId) {
     	this.gateway = gateway;
     	this.auth = auth;
 		this.sessionId = sessionId;

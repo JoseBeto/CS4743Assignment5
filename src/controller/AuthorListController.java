@@ -10,8 +10,7 @@ import org.apache.logging.log4j.Logger;
 
 import assignment5.AlertHelper;
 import authentication.ABACPolicyAuth;
-import authentication.Authenticator;
-import authentication.AuthenticatorLocal;
+import authentication.AuthBeanRemote;
 import database.AuthorTableGateway;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -30,10 +29,10 @@ public class AuthorListController implements Initializable, MyController {
 	private ObservableList<Author> authors;
 	private AuthorTableGateway gateway;
 
-	AuthenticatorLocal auth;
+	AuthBeanRemote auth;
 	int sessionId;
 
-	public AuthorListController(AuthorTableGateway gateway, AuthenticatorLocal auth, int sessionId) {
+	public AuthorListController(AuthorTableGateway gateway, AuthBeanRemote auth, int sessionId) {
 		this.gateway = gateway;
 		authors = this.gateway.getAuthors();
 		this.auth = auth;

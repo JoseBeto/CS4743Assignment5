@@ -6,7 +6,8 @@ import java.util.ResourceBundle;
 
 import assignment5.AlertHelper;
 import authentication.ABACPolicyAuth;
-import authentication.AuthenticatorLocal;
+import authentication.AuthBeanRemote;
+import authentication.AuthBean;
 import database.AuthorTableGateway;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -29,11 +30,11 @@ public class AuthorBookController implements Initializable, MyController {
 
 	private Book book;
 	private AuthorTableGateway authorGateway;
-	AuthenticatorLocal auth;
+	private AuthBeanRemote auth;
 	int sessionId;
 	
 
-	public AuthorBookController(Book book, AuthorTableGateway authorGateway, AuthenticatorLocal auth, int sessionId) {
+	public AuthorBookController(Book book, AuthorTableGateway authorGateway, AuthBeanRemote auth, int sessionId) {
 		this.book = book;
 		this.authorGateway = authorGateway;
 		this.auth = auth;

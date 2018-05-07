@@ -3,16 +3,22 @@ package controller;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
+import java.util.Properties;
 import java.util.ResourceBundle;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import assignment5.Launcher;
 import authentication.LoginDialog;
 import authentication.LoginException;
-import authentication.AuthenticatorLocal;
 import authentication.ABACPolicyAuth;
-import authentication.Authenticator;
+import authentication.AuthBean;
+import authentication.AuthBeanRemote;
 import database.AppException;
 import database.AuthorTableGateway;
 import database.BookTableGateway;
@@ -25,7 +31,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.BorderPane;
@@ -58,15 +63,37 @@ public class AppController implements Initializable {
 	private BorderPane rootPane = null;
 	private Connection conn;
 	
+
+	//private AuthBeanRemote bean;
+	//NOTE: InitialContext MUST have same scope as the bean variable
+	private InitialContext context;
+	
 	public int sessionId;
-	private Authenticator auth;
+	private AuthBeanRemote auth;
 	
 	public AppController() {
 		//create an authenticator
-		auth = new AuthenticatorLocal();
+		//auth = new AuthBean();
 
 		//default to no session
-		sessionId = Authenticator.INVALID_SESSION;
+		sessionId = AuthBeanRemote.INVALID_SESSION;
+		
+		Properties props = new Properties();
+		//use the jboss factory for context to lookup the EJB remote methods 
+		props.put(Context.INITIAL_CONTEXT_FACTORY, "org.jboss.naming.remote.client.InitialContextFactory");
+		//URL is the jboss server; port 8080 is jboss default for remote corba access 
+		props.put(Context.PROVIDER_URL, "http-remoting://localhost:8080");
+		//below statement triggers the creation of a EJBClientContext containing a EJBReceiver capable of handling the EJB invocations 		
+		props.put("jboss.naming.client.ejb.context", "true");
+		try {
+			//create and save context as instance var
+			context = new InitialContext(props);
+			//grab ref to bean’s remote interface
+			auth = (AuthBeanRemote) context.lookup("AuthenticationEJB/AuthBean!authentication.AuthBeanRemote");
+		} catch (NamingException e) {
+			e.printStackTrace();
+			Platform.exit();
+		}
 	}
 
 	public void changeView(int viewType, Object arg) throws AppException {
@@ -78,20 +105,20 @@ public class AppController implements Initializable {
 					fxmlFile = this.getClass().getResource("/view/AppView.fxml");
 				case AUTHOR_LIST:
 					fxmlFile = this.getClass().getResource("/view/AuthorListView.fxml");
-					controller = new AuthorListController(new AuthorTableGateway(conn), (AuthenticatorLocal) auth, sessionId);
+					controller = new AuthorListController(new AuthorTableGateway(conn), auth, sessionId);
 					break;
 				case AUTHOR_DETAIL:
 					fxmlFile = this.getClass().getResource("/view/AuthorDetailView.fxml");
-					controller = new AuthorDetailController((Author) arg, (AuthenticatorLocal) auth, sessionId);
+					controller = new AuthorDetailController((Author) arg, auth, sessionId);
 					break;
 				case BOOK_LIST:
 					fxmlFile = this.getClass().getResource("/view/BookListView.fxml");
-					controller = new BookListController(new BookTableGateway(conn), (AuthenticatorLocal) auth, sessionId);
+					controller = new BookListController(new BookTableGateway(conn), auth, sessionId);
 					break;
 				case BOOK_DETAIL:
 					fxmlFile = this.getClass().getResource("/view/BookDetailView.fxml");
 					controller = new BookDetailController((Book) arg, new PublisherTableGateway(conn),
-							new BookTableGateway(conn),(AuthenticatorLocal) auth, sessionId );
+							new BookTableGateway(conn), auth, sessionId );
 					break;
 				case AUDIT_TRAIL:
 					fxmlFile = this.getClass().getResource("/view/AuditTrailView.fxml");
@@ -99,7 +126,7 @@ public class AppController implements Initializable {
 					break;
 				case AUTHOR_BOOK:
 					fxmlFile = this.getClass().getResource("/view/AuthorBookView.fxml");
-					controller = new AuthorBookController((Book) arg, new AuthorTableGateway(conn), (AuthenticatorLocal) auth, sessionId);
+					controller = new AuthorBookController((Book) arg, new AuthorTableGateway(conn), auth, sessionId);
 					break;
 				case CREATE_REPORT:
 					fxmlFile = this.getClass().getResource("/view/CreateReportView.fxml");
@@ -125,7 +152,7 @@ public class AppController implements Initializable {
 	}
 
 	private void doLogout() {
-		sessionId = Authenticator.INVALID_SESSION;
+		sessionId = AuthBeanRemote.INVALID_SESSION;
 		
 		//restrict access to GUI controls based on current login session
 		updateGUIAccess();
@@ -134,13 +161,13 @@ public class AppController implements Initializable {
 
 	private void updateGUIAccess() {
 		//if logged in, login should be disabled
-		if(sessionId == Authenticator.INVALID_SESSION)
+		if(sessionId == AuthBeanRemote.INVALID_SESSION)
 			loginChoice.setDisable(false);
 		else
 			loginChoice.setDisable(true);
 
 		//if not logged in, logout should be disabled
-		if(sessionId == Authenticator.INVALID_SESSION) {
+		if(sessionId == AuthBeanRemote.INVALID_SESSION) {
 			logoutChoice.setDisable(true);
 		}else
 			logoutChoice.setDisable(false);	

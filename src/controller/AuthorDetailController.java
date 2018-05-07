@@ -14,7 +14,7 @@ import org.apache.logging.log4j.Logger;
 
 import assignment5.AlertHelper;
 import authentication.ABACPolicyAuth;
-import authentication.AuthenticatorLocal;
+import authentication.AuthBeanRemote;
 import database.AppException;
 import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
@@ -32,10 +32,10 @@ public class AuthorDetailController implements Initializable, MyController {
 	@FXML private TextField gender;
 	@FXML private Button saveAuthor;
 	private Author author;
-	AuthenticatorLocal auth;
+	AuthBeanRemote auth;
 	int sessionId;
 
-	public AuthorDetailController(Author author, AuthenticatorLocal auth, int sessionId) {
+	public AuthorDetailController(Author author, AuthBeanRemote auth, int sessionId) {
 		this.author = author;
 		this.auth = auth;
 		this.sessionId = sessionId;

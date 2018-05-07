@@ -22,7 +22,7 @@ import org.apache.logging.log4j.Logger;
 
 import assignment5.AlertHelper;
 import authentication.ABACPolicyAuth;
-import authentication.AuthenticatorLocal;
+import authentication.AuthBeanRemote;
 import database.BookTableGateway;
 import database.PublisherTableGateway;
 import javafx.beans.binding.Bindings;
@@ -52,10 +52,10 @@ public class BookDetailController implements Initializable, MyController {
     
 	private Book book;
 	private PublisherTableGateway pubGateway;
-	AuthenticatorLocal auth;
+	AuthBeanRemote auth;
 	int sessionId;
 
-	public BookDetailController(Book book, PublisherTableGateway pubGateway, BookTableGateway gateway, AuthenticatorLocal auth, int sessionId) {
+	public BookDetailController(Book book, PublisherTableGateway pubGateway, BookTableGateway gateway, AuthBeanRemote auth, int sessionId) {
 		this.book = book;
 		this.pubGateway = pubGateway;
 		this.auth = auth;

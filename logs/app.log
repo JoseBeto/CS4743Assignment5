@@ -4998,3 +4998,377 @@
 20:02:47.782 INFO  controller.AppController : session id is 1
 20:02:51.380 INFO  controller.AppController : Book list menu item clicked
 20:03:09.448 INFO  assignment5.Launcher : Closing connection...
+17:20:33.064 INFO  assignment5.Launcher : Creating connection...
+17:20:35.366 INFO  assignment5.Launcher : Closing connection...
+17:20:45.785 INFO  assignment5.Launcher : Creating connection...
+17:20:48.492 INFO  assignment5.Launcher : Closing connection...
+17:35:31.652 INFO  assignment5.Launcher : Creating connection...
+17:35:33.930 INFO  assignment5.Launcher : Closing connection...
+19:30:35.137 INFO  assignment5.Launcher : Creating connection...
+19:30:35.748 DEBUG client.InitialContextFactory : Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+19:30:35.765 DEBUG client.EJBClientPropertiesLoader : Looking for jboss-ejb-client.properties using classloader sun.misc.Launcher$AppClassLoader@73d16e93
+19:30:35.776 DEBUG client.InitialContextFactory : Looking for jboss-naming-client.properties using classloader sun.misc.Launcher$AppClassLoader@73d16e93
+19:30:35.778 DEBUG client.InitialContextFactory : jboss.naming.client.endpoint.create.options. has the following options {}
+19:30:35.778 DEBUG client.InitialContextFactory : jboss.naming.client.remote.connectionprovider.create.options. has the following options {}
+19:30:35.789 INFO  xnio.Xnio : XNIO version 3.4.0.Final
+19:30:35.797 INFO  nio.NioXnio : XNIO NIO Implementation Version 3.4.0.Final
+19:30:36.076 DEBUG nio.WorkerThread : Started channel thread 'Remoting "config-based-naming-client-endpoint" Accept', selector sun.nio.ch.WindowsSelectorImpl@17d32242
+19:30:36.076 DEBUG nio.WorkerThread : Started channel thread 'Remoting "config-based-naming-client-endpoint" I/O-1', selector sun.nio.ch.WindowsSelectorImpl@3e13318f
+19:30:36.088 INFO  remoting3.EndpointImpl : JBoss Remoting version 4.0.21.Final
+19:30:36.100 DEBUG client.InitialContextFactory : jboss.naming.client.connect.options. has the following options {}
+19:30:36.322 DEBUG remoting.RemotingConnectionEJBReceiver$1 : Channel Channel ID 82957f2c (outbound) of Remoting connection 2cf8b723 to localhost/127.0.0.1:8080 of endpoint "config-based-naming-client-endpoint" <32ba1bf6> opened for context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@509b54c2, receiver=Remoting connection EJB receiver [connection=Remoting connection <3bba8fa9> on endpoint "config-based-naming-client-endpoint" <32ba1bf6>,channel=jboss.ejb,nodename=desktop-5qi45b2]} Waiting for version handshake message from server
+19:30:36.325 INFO  remoting.VersionReceiver : EJBCLIENT000017: Received server version 2 and marshalling strategies [river]
+19:30:36.333 INFO  remoting.RemotingConnectionEJBReceiver : EJBCLIENT000013: Successful version handshake completed for receiver context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@509b54c2, receiver=Remoting connection EJB receiver [connection=Remoting connection <3bba8fa9> on endpoint "config-based-naming-client-endpoint" <32ba1bf6>,channel=jboss.ejb,nodename=desktop-5qi45b2]} on channel Channel ID 82957f2c (outbound) of Remoting connection 2cf8b723 to localhost/127.0.0.1:8080 of endpoint "config-based-naming-client-endpoint" <32ba1bf6>
+19:30:36.334 DEBUG remoting.RemotingConnectionEJBReceiver : Received module availability report for 2 modules
+19:30:36.335 DEBUG remoting.RemotingConnectionEJBReceiver : Registering module EJBModuleIdentifier{appName='', moduleName='MyEJB', distinctName=''} availability for receiver context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@509b54c2, receiver=Remoting connection EJB receiver [connection=Remoting connection <3bba8fa9> on endpoint "config-based-naming-client-endpoint" <32ba1bf6>,channel=jboss.ejb,nodename=desktop-5qi45b2]}
+19:30:36.336 DEBUG remoting.RemotingConnectionEJBReceiver : Registering module EJBModuleIdentifier{appName='', moduleName='AuthenticationEJB', distinctName=''} availability for receiver context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@509b54c2, receiver=Remoting connection EJB receiver [connection=Remoting connection <3bba8fa9> on endpoint "config-based-naming-client-endpoint" <32ba1bf6>,channel=jboss.ejb,nodename=desktop-5qi45b2]}
+19:30:36.356 DEBUG client.EJBClientContext : Skipping registration of receiver Remoting connection EJB receiver [connection=Remoting connection <3bba8fa9> on endpoint "config-based-naming-client-endpoint" <32ba1bf6>,channel=jboss.ejb,nodename=desktop-5qi45b2] since an EJB receiver already exists for node name desktop-5qi45b2 in client context org.jboss.ejb.client.EJBClientContext@509b54c2
+19:30:36.620 INFO  assignment5.Launcher : Closing connection...
+19:32:39.628 INFO  assignment5.Launcher : Creating connection...
+19:32:40.058 DEBUG client.InitialContextFactory : Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+19:32:40.075 DEBUG client.EJBClientPropertiesLoader : Looking for jboss-ejb-client.properties using classloader sun.misc.Launcher$AppClassLoader@73d16e93
+19:32:40.086 DEBUG client.InitialContextFactory : Looking for jboss-naming-client.properties using classloader sun.misc.Launcher$AppClassLoader@73d16e93
+19:32:40.087 DEBUG client.InitialContextFactory : jboss.naming.client.endpoint.create.options. has the following options {}
+19:32:40.087 DEBUG client.InitialContextFactory : jboss.naming.client.remote.connectionprovider.create.options. has the following options {}
+19:32:40.098 INFO  xnio.Xnio : XNIO version 3.4.0.Final
+19:32:40.106 INFO  nio.NioXnio : XNIO NIO Implementation Version 3.4.0.Final
+19:32:40.387 DEBUG nio.WorkerThread : Started channel thread 'Remoting "config-based-naming-client-endpoint" I/O-1', selector sun.nio.ch.WindowsSelectorImpl@741f490f
+19:32:40.387 DEBUG nio.WorkerThread : Started channel thread 'Remoting "config-based-naming-client-endpoint" Accept', selector sun.nio.ch.WindowsSelectorImpl@d5fc97c
+19:32:40.396 INFO  remoting3.EndpointImpl : JBoss Remoting version 4.0.21.Final
+19:32:40.409 DEBUG client.InitialContextFactory : jboss.naming.client.connect.options. has the following options {}
+19:32:40.580 DEBUG remoting.RemotingConnectionEJBReceiver$1 : Channel Channel ID af0b1339 (outbound) of Remoting connection 27fce2b8 to localhost/127.0.0.1:8080 of endpoint "config-based-naming-client-endpoint" <43890341> opened for context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@5ea24e8b, receiver=Remoting connection EJB receiver [connection=Remoting connection <6cb4a7d6> on endpoint "config-based-naming-client-endpoint" <43890341>,channel=jboss.ejb,nodename=desktop-5qi45b2]} Waiting for version handshake message from server
+19:32:40.585 INFO  remoting.VersionReceiver : EJBCLIENT000017: Received server version 2 and marshalling strategies [river]
+19:32:40.597 INFO  remoting.RemotingConnectionEJBReceiver : EJBCLIENT000013: Successful version handshake completed for receiver context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@5ea24e8b, receiver=Remoting connection EJB receiver [connection=Remoting connection <6cb4a7d6> on endpoint "config-based-naming-client-endpoint" <43890341>,channel=jboss.ejb,nodename=desktop-5qi45b2]} on channel Channel ID af0b1339 (outbound) of Remoting connection 27fce2b8 to localhost/127.0.0.1:8080 of endpoint "config-based-naming-client-endpoint" <43890341>
+19:32:40.597 DEBUG remoting.RemotingConnectionEJBReceiver : Received module availability report for 2 modules
+19:32:40.598 DEBUG remoting.RemotingConnectionEJBReceiver : Registering module EJBModuleIdentifier{appName='', moduleName='MyEJB', distinctName=''} availability for receiver context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@5ea24e8b, receiver=Remoting connection EJB receiver [connection=Remoting connection <6cb4a7d6> on endpoint "config-based-naming-client-endpoint" <43890341>,channel=jboss.ejb,nodename=desktop-5qi45b2]}
+19:32:40.599 DEBUG remoting.RemotingConnectionEJBReceiver : Registering module EJBModuleIdentifier{appName='', moduleName='AuthenticationEJB', distinctName=''} availability for receiver context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@5ea24e8b, receiver=Remoting connection EJB receiver [connection=Remoting connection <6cb4a7d6> on endpoint "config-based-naming-client-endpoint" <43890341>,channel=jboss.ejb,nodename=desktop-5qi45b2]}
+19:32:40.620 DEBUG client.EJBClientContext : Skipping registration of receiver Remoting connection EJB receiver [connection=Remoting connection <6cb4a7d6> on endpoint "config-based-naming-client-endpoint" <43890341>,channel=jboss.ejb,nodename=desktop-5qi45b2] since an EJB receiver already exists for node name desktop-5qi45b2 in client context org.jboss.ejb.client.EJBClientContext@5ea24e8b
+19:32:40.942 INFO  assignment5.Launcher : Closing connection...
+19:34:47.018 INFO  assignment5.Launcher : Creating connection...
+19:34:47.501 DEBUG client.InitialContextFactory : Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+19:34:47.518 DEBUG client.EJBClientPropertiesLoader : Looking for jboss-ejb-client.properties using classloader sun.misc.Launcher$AppClassLoader@73d16e93
+19:34:47.529 DEBUG client.InitialContextFactory : Looking for jboss-naming-client.properties using classloader sun.misc.Launcher$AppClassLoader@73d16e93
+19:34:47.530 DEBUG client.InitialContextFactory : jboss.naming.client.endpoint.create.options. has the following options {}
+19:34:47.531 DEBUG client.InitialContextFactory : jboss.naming.client.remote.connectionprovider.create.options. has the following options {}
+19:34:47.542 INFO  xnio.Xnio : XNIO version 3.4.0.Final
+19:34:47.550 INFO  nio.NioXnio : XNIO NIO Implementation Version 3.4.0.Final
+19:34:47.829 DEBUG nio.WorkerThread : Started channel thread 'Remoting "config-based-naming-client-endpoint" Accept', selector sun.nio.ch.WindowsSelectorImpl@d5fc97c
+19:34:47.829 DEBUG nio.WorkerThread : Started channel thread 'Remoting "config-based-naming-client-endpoint" I/O-1', selector sun.nio.ch.WindowsSelectorImpl@741f490f
+19:34:47.839 INFO  remoting3.EndpointImpl : JBoss Remoting version 4.0.21.Final
+19:34:47.850 DEBUG client.InitialContextFactory : jboss.naming.client.connect.options. has the following options {}
+19:34:48.034 DEBUG remoting.RemotingConnectionEJBReceiver$1 : Channel Channel ID fadfb325 (outbound) of Remoting connection 27fce2b8 to localhost/127.0.0.1:8080 of endpoint "config-based-naming-client-endpoint" <19a41f23> opened for context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@31fecf10, receiver=Remoting connection EJB receiver [connection=Remoting connection <6cb4a7d6> on endpoint "config-based-naming-client-endpoint" <19a41f23>,channel=jboss.ejb,nodename=desktop-5qi45b2]} Waiting for version handshake message from server
+19:34:48.037 INFO  remoting.VersionReceiver : EJBCLIENT000017: Received server version 2 and marshalling strategies [river]
+19:34:48.044 INFO  remoting.RemotingConnectionEJBReceiver : EJBCLIENT000013: Successful version handshake completed for receiver context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@31fecf10, receiver=Remoting connection EJB receiver [connection=Remoting connection <6cb4a7d6> on endpoint "config-based-naming-client-endpoint" <19a41f23>,channel=jboss.ejb,nodename=desktop-5qi45b2]} on channel Channel ID fadfb325 (outbound) of Remoting connection 27fce2b8 to localhost/127.0.0.1:8080 of endpoint "config-based-naming-client-endpoint" <19a41f23>
+19:34:48.045 DEBUG remoting.RemotingConnectionEJBReceiver : Received module availability report for 2 modules
+19:34:48.046 DEBUG remoting.RemotingConnectionEJBReceiver : Registering module EJBModuleIdentifier{appName='', moduleName='MyEJB', distinctName=''} availability for receiver context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@31fecf10, receiver=Remoting connection EJB receiver [connection=Remoting connection <6cb4a7d6> on endpoint "config-based-naming-client-endpoint" <19a41f23>,channel=jboss.ejb,nodename=desktop-5qi45b2]}
+19:34:48.046 DEBUG remoting.RemotingConnectionEJBReceiver : Registering module EJBModuleIdentifier{appName='', moduleName='AuthenticationEJB', distinctName=''} availability for receiver context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@31fecf10, receiver=Remoting connection EJB receiver [connection=Remoting connection <6cb4a7d6> on endpoint "config-based-naming-client-endpoint" <19a41f23>,channel=jboss.ejb,nodename=desktop-5qi45b2]}
+19:34:48.066 DEBUG client.EJBClientContext : Skipping registration of receiver Remoting connection EJB receiver [connection=Remoting connection <6cb4a7d6> on endpoint "config-based-naming-client-endpoint" <19a41f23>,channel=jboss.ejb,nodename=desktop-5qi45b2] since an EJB receiver already exists for node name desktop-5qi45b2 in client context org.jboss.ejb.client.EJBClientContext@31fecf10
+19:34:48.333 INFO  assignment5.Launcher : Closing connection...
+19:36:31.466 INFO  assignment5.Launcher : Creating connection...
+19:36:31.889 DEBUG client.InitialContextFactory : Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+19:36:31.905 DEBUG client.EJBClientPropertiesLoader : Looking for jboss-ejb-client.properties using classloader sun.misc.Launcher$AppClassLoader@73d16e93
+19:36:31.916 DEBUG client.InitialContextFactory : Looking for jboss-naming-client.properties using classloader sun.misc.Launcher$AppClassLoader@73d16e93
+19:36:31.917 DEBUG client.InitialContextFactory : jboss.naming.client.endpoint.create.options. has the following options {}
+19:36:31.918 DEBUG client.InitialContextFactory : jboss.naming.client.remote.connectionprovider.create.options. has the following options {}
+19:36:31.929 INFO  xnio.Xnio : XNIO version 3.4.0.Final
+19:36:31.937 INFO  nio.NioXnio : XNIO NIO Implementation Version 3.4.0.Final
+19:36:32.210 DEBUG nio.WorkerThread : Started channel thread 'Remoting "config-based-naming-client-endpoint" Accept', selector sun.nio.ch.WindowsSelectorImpl@6ee9c922
+19:36:32.210 DEBUG nio.WorkerThread : Started channel thread 'Remoting "config-based-naming-client-endpoint" I/O-1', selector sun.nio.ch.WindowsSelectorImpl@4df5906b
+19:36:32.222 INFO  remoting3.EndpointImpl : JBoss Remoting version 4.0.21.Final
+19:36:32.234 DEBUG client.InitialContextFactory : jboss.naming.client.connect.options. has the following options {}
+19:36:32.417 DEBUG remoting.RemotingConnectionEJBReceiver$1 : Channel Channel ID d4f25ab1 (outbound) of Remoting connection 2d74f521 to localhost/127.0.0.1:8080 of endpoint "config-based-naming-client-endpoint" <6fb50784> opened for context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@4aa67180, receiver=Remoting connection EJB receiver [connection=Remoting connection <20ee60ec> on endpoint "config-based-naming-client-endpoint" <6fb50784>,channel=jboss.ejb,nodename=desktop-5qi45b2]} Waiting for version handshake message from server
+19:36:32.421 INFO  remoting.VersionReceiver : EJBCLIENT000017: Received server version 2 and marshalling strategies [river]
+19:36:32.429 INFO  remoting.RemotingConnectionEJBReceiver : EJBCLIENT000013: Successful version handshake completed for receiver context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@4aa67180, receiver=Remoting connection EJB receiver [connection=Remoting connection <20ee60ec> on endpoint "config-based-naming-client-endpoint" <6fb50784>,channel=jboss.ejb,nodename=desktop-5qi45b2]} on channel Channel ID d4f25ab1 (outbound) of Remoting connection 2d74f521 to localhost/127.0.0.1:8080 of endpoint "config-based-naming-client-endpoint" <6fb50784>
+19:36:32.432 DEBUG remoting.RemotingConnectionEJBReceiver : Received module availability report for 2 modules
+19:36:32.432 DEBUG remoting.RemotingConnectionEJBReceiver : Registering module EJBModuleIdentifier{appName='', moduleName='MyEJB', distinctName=''} availability for receiver context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@4aa67180, receiver=Remoting connection EJB receiver [connection=Remoting connection <20ee60ec> on endpoint "config-based-naming-client-endpoint" <6fb50784>,channel=jboss.ejb,nodename=desktop-5qi45b2]}
+19:36:32.433 DEBUG remoting.RemotingConnectionEJBReceiver : Registering module EJBModuleIdentifier{appName='', moduleName='AuthenticationEJB', distinctName=''} availability for receiver context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@4aa67180, receiver=Remoting connection EJB receiver [connection=Remoting connection <20ee60ec> on endpoint "config-based-naming-client-endpoint" <6fb50784>,channel=jboss.ejb,nodename=desktop-5qi45b2]}
+19:36:32.453 DEBUG client.EJBClientContext : Skipping registration of receiver Remoting connection EJB receiver [connection=Remoting connection <20ee60ec> on endpoint "config-based-naming-client-endpoint" <6fb50784>,channel=jboss.ejb,nodename=desktop-5qi45b2] since an EJB receiver already exists for node name desktop-5qi45b2 in client context org.jboss.ejb.client.EJBClientContext@4aa67180
+19:36:32.778 INFO  assignment5.Launcher : Closing connection...
+19:43:23.997 INFO  assignment5.Launcher : Creating connection...
+19:43:24.479 DEBUG client.InitialContextFactory : Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+19:43:24.496 DEBUG client.EJBClientPropertiesLoader : Looking for jboss-ejb-client.properties using classloader sun.misc.Launcher$AppClassLoader@73d16e93
+19:43:24.507 DEBUG client.InitialContextFactory : Looking for jboss-naming-client.properties using classloader sun.misc.Launcher$AppClassLoader@73d16e93
+19:43:24.509 DEBUG client.InitialContextFactory : jboss.naming.client.endpoint.create.options. has the following options {}
+19:43:24.509 DEBUG client.InitialContextFactory : jboss.naming.client.remote.connectionprovider.create.options. has the following options {}
+19:43:24.521 INFO  xnio.Xnio : XNIO version 3.4.0.Final
+19:43:24.529 INFO  nio.NioXnio : XNIO NIO Implementation Version 3.4.0.Final
+19:43:24.807 DEBUG nio.WorkerThread : Started channel thread 'Remoting "config-based-naming-client-endpoint" I/O-1', selector sun.nio.ch.WindowsSelectorImpl@57fabc34
+19:43:24.807 DEBUG nio.WorkerThread : Started channel thread 'Remoting "config-based-naming-client-endpoint" Accept', selector sun.nio.ch.WindowsSelectorImpl@32501094
+19:43:24.817 INFO  remoting3.EndpointImpl : JBoss Remoting version 4.0.21.Final
+19:43:24.829 DEBUG client.InitialContextFactory : jboss.naming.client.connect.options. has the following options {}
+19:43:25.033 DEBUG remoting.RemotingConnectionEJBReceiver$1 : Channel Channel ID e492b730 (outbound) of Remoting connection 4f25bacb to localhost/127.0.0.1:8080 of endpoint "config-based-naming-client-endpoint" <6ceaa39a> opened for context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@790a5c0, receiver=Remoting connection EJB receiver [connection=Remoting connection <4282228c> on endpoint "config-based-naming-client-endpoint" <6ceaa39a>,channel=jboss.ejb,nodename=desktop-5qi45b2]} Waiting for version handshake message from server
+19:43:25.036 INFO  remoting.VersionReceiver : EJBCLIENT000017: Received server version 2 and marshalling strategies [river]
+19:43:25.045 INFO  remoting.RemotingConnectionEJBReceiver : EJBCLIENT000013: Successful version handshake completed for receiver context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@790a5c0, receiver=Remoting connection EJB receiver [connection=Remoting connection <4282228c> on endpoint "config-based-naming-client-endpoint" <6ceaa39a>,channel=jboss.ejb,nodename=desktop-5qi45b2]} on channel Channel ID e492b730 (outbound) of Remoting connection 4f25bacb to localhost/127.0.0.1:8080 of endpoint "config-based-naming-client-endpoint" <6ceaa39a>
+19:43:25.049 DEBUG remoting.RemotingConnectionEJBReceiver : Received module availability report for 2 modules
+19:43:25.049 DEBUG remoting.RemotingConnectionEJBReceiver : Registering module EJBModuleIdentifier{appName='', moduleName='MyEJB', distinctName=''} availability for receiver context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@790a5c0, receiver=Remoting connection EJB receiver [connection=Remoting connection <4282228c> on endpoint "config-based-naming-client-endpoint" <6ceaa39a>,channel=jboss.ejb,nodename=desktop-5qi45b2]}
+19:43:25.050 DEBUG remoting.RemotingConnectionEJBReceiver : Registering module EJBModuleIdentifier{appName='', moduleName='AuthenticationEJB', distinctName=''} availability for receiver context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@790a5c0, receiver=Remoting connection EJB receiver [connection=Remoting connection <4282228c> on endpoint "config-based-naming-client-endpoint" <6ceaa39a>,channel=jboss.ejb,nodename=desktop-5qi45b2]}
+19:43:25.085 DEBUG client.EJBClientContext : Skipping registration of receiver Remoting connection EJB receiver [connection=Remoting connection <4282228c> on endpoint "config-based-naming-client-endpoint" <6ceaa39a>,channel=jboss.ejb,nodename=desktop-5qi45b2] since an EJB receiver already exists for node name desktop-5qi45b2 in client context org.jboss.ejb.client.EJBClientContext@790a5c0
+19:43:25.349 INFO  assignment5.Launcher : Closing connection...
+19:49:21.122 INFO  assignment5.Launcher : Creating connection...
+19:49:21.568 DEBUG client.InitialContextFactory : Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+19:49:21.586 DEBUG client.EJBClientPropertiesLoader : Looking for jboss-ejb-client.properties using classloader sun.misc.Launcher$AppClassLoader@73d16e93
+19:49:21.597 DEBUG client.InitialContextFactory : Looking for jboss-naming-client.properties using classloader sun.misc.Launcher$AppClassLoader@73d16e93
+19:49:21.599 DEBUG client.InitialContextFactory : jboss.naming.client.endpoint.create.options. has the following options {}
+19:49:21.599 DEBUG client.InitialContextFactory : jboss.naming.client.remote.connectionprovider.create.options. has the following options {}
+19:49:21.610 INFO  xnio.Xnio : XNIO version 3.4.0.Final
+19:49:21.618 INFO  nio.NioXnio : XNIO NIO Implementation Version 3.4.0.Final
+19:49:21.894 DEBUG nio.WorkerThread : Started channel thread 'Remoting "config-based-naming-client-endpoint" I/O-1', selector sun.nio.ch.WindowsSelectorImpl@57fabc34
+19:49:21.894 DEBUG nio.WorkerThread : Started channel thread 'Remoting "config-based-naming-client-endpoint" Accept', selector sun.nio.ch.WindowsSelectorImpl@32501094
+19:49:21.904 INFO  remoting3.EndpointImpl : JBoss Remoting version 4.0.21.Final
+19:49:21.915 DEBUG client.InitialContextFactory : jboss.naming.client.connect.options. has the following options {}
+19:49:22.087 DEBUG remoting.RemotingConnectionEJBReceiver$1 : Channel Channel ID 891ab685 (outbound) of Remoting connection 545af39e to localhost/127.0.0.1:8080 of endpoint "config-based-naming-client-endpoint" <7377a80d> opened for context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@714bbd41, receiver=Remoting connection EJB receiver [connection=Remoting connection <5346a436> on endpoint "config-based-naming-client-endpoint" <7377a80d>,channel=jboss.ejb,nodename=desktop-5qi45b2]} Waiting for version handshake message from server
+19:49:22.090 INFO  remoting.VersionReceiver : EJBCLIENT000017: Received server version 2 and marshalling strategies [river]
+19:49:22.098 INFO  remoting.RemotingConnectionEJBReceiver : EJBCLIENT000013: Successful version handshake completed for receiver context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@714bbd41, receiver=Remoting connection EJB receiver [connection=Remoting connection <5346a436> on endpoint "config-based-naming-client-endpoint" <7377a80d>,channel=jboss.ejb,nodename=desktop-5qi45b2]} on channel Channel ID 891ab685 (outbound) of Remoting connection 545af39e to localhost/127.0.0.1:8080 of endpoint "config-based-naming-client-endpoint" <7377a80d>
+19:49:22.102 DEBUG remoting.RemotingConnectionEJBReceiver : Received module availability report for 1 modules
+19:49:22.103 DEBUG remoting.RemotingConnectionEJBReceiver : Registering module EJBModuleIdentifier{appName='', moduleName='AuthenticationEJB', distinctName=''} availability for receiver context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@714bbd41, receiver=Remoting connection EJB receiver [connection=Remoting connection <5346a436> on endpoint "config-based-naming-client-endpoint" <7377a80d>,channel=jboss.ejb,nodename=desktop-5qi45b2]}
+19:49:22.123 DEBUG client.EJBClientContext : Skipping registration of receiver Remoting connection EJB receiver [connection=Remoting connection <5346a436> on endpoint "config-based-naming-client-endpoint" <7377a80d>,channel=jboss.ejb,nodename=desktop-5qi45b2] since an EJB receiver already exists for node name desktop-5qi45b2 in client context org.jboss.ejb.client.EJBClientContext@714bbd41
+19:49:22.437 INFO  assignment5.Launcher : Closing connection...
+19:52:21.451 INFO  assignment5.Launcher : Creating connection...
+19:52:21.882 DEBUG client.InitialContextFactory : Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+19:52:21.898 DEBUG client.EJBClientPropertiesLoader : Looking for jboss-ejb-client.properties using classloader sun.misc.Launcher$AppClassLoader@73d16e93
+19:52:21.910 DEBUG client.InitialContextFactory : Looking for jboss-naming-client.properties using classloader sun.misc.Launcher$AppClassLoader@73d16e93
+19:52:21.911 DEBUG client.InitialContextFactory : jboss.naming.client.endpoint.create.options. has the following options {}
+19:52:21.911 DEBUG client.InitialContextFactory : jboss.naming.client.remote.connectionprovider.create.options. has the following options {}
+19:52:21.922 INFO  xnio.Xnio : XNIO version 3.4.0.Final
+19:52:21.930 INFO  nio.NioXnio : XNIO NIO Implementation Version 3.4.0.Final
+19:52:22.208 DEBUG nio.WorkerThread : Started channel thread 'Remoting "config-based-naming-client-endpoint" I/O-1', selector sun.nio.ch.WindowsSelectorImpl@6ee9c922
+19:52:22.208 DEBUG nio.WorkerThread : Started channel thread 'Remoting "config-based-naming-client-endpoint" Accept', selector sun.nio.ch.WindowsSelectorImpl@52ee07a5
+19:52:22.217 INFO  remoting3.EndpointImpl : JBoss Remoting version 4.0.21.Final
+19:52:22.229 DEBUG client.InitialContextFactory : jboss.naming.client.connect.options. has the following options {}
+19:52:22.406 DEBUG remoting.RemotingConnectionEJBReceiver$1 : Channel Channel ID 83b0e8e9 (outbound) of Remoting connection 2d74f521 to localhost/127.0.0.1:8080 of endpoint "config-based-naming-client-endpoint" <32ba1bf6> opened for context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@509b54c2, receiver=Remoting connection EJB receiver [connection=Remoting connection <20ee60ec> on endpoint "config-based-naming-client-endpoint" <32ba1bf6>,channel=jboss.ejb,nodename=desktop-5qi45b2]} Waiting for version handshake message from server
+19:52:22.409 INFO  remoting.VersionReceiver : EJBCLIENT000017: Received server version 2 and marshalling strategies [river]
+19:52:22.416 INFO  remoting.RemotingConnectionEJBReceiver : EJBCLIENT000013: Successful version handshake completed for receiver context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@509b54c2, receiver=Remoting connection EJB receiver [connection=Remoting connection <20ee60ec> on endpoint "config-based-naming-client-endpoint" <32ba1bf6>,channel=jboss.ejb,nodename=desktop-5qi45b2]} on channel Channel ID 83b0e8e9 (outbound) of Remoting connection 2d74f521 to localhost/127.0.0.1:8080 of endpoint "config-based-naming-client-endpoint" <32ba1bf6>
+19:52:22.421 DEBUG remoting.RemotingConnectionEJBReceiver : Received module availability report for 1 modules
+19:52:22.422 DEBUG remoting.RemotingConnectionEJBReceiver : Registering module EJBModuleIdentifier{appName='', moduleName='AuthenticationEJB', distinctName=''} availability for receiver context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@509b54c2, receiver=Remoting connection EJB receiver [connection=Remoting connection <20ee60ec> on endpoint "config-based-naming-client-endpoint" <32ba1bf6>,channel=jboss.ejb,nodename=desktop-5qi45b2]}
+19:52:22.442 DEBUG client.EJBClientContext : Skipping registration of receiver Remoting connection EJB receiver [connection=Remoting connection <20ee60ec> on endpoint "config-based-naming-client-endpoint" <32ba1bf6>,channel=jboss.ejb,nodename=desktop-5qi45b2] since an EJB receiver already exists for node name desktop-5qi45b2 in client context org.jboss.ejb.client.EJBClientContext@509b54c2
+19:52:22.771 INFO  assignment5.Launcher : Closing connection...
+19:58:20.318 INFO  assignment5.Launcher : Creating connection...
+19:58:20.754 DEBUG client.InitialContextFactory : Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+19:58:20.771 DEBUG client.EJBClientPropertiesLoader : Looking for jboss-ejb-client.properties using classloader sun.misc.Launcher$AppClassLoader@73d16e93
+19:58:20.783 DEBUG client.InitialContextFactory : Looking for jboss-naming-client.properties using classloader sun.misc.Launcher$AppClassLoader@73d16e93
+19:58:20.784 DEBUG client.InitialContextFactory : jboss.naming.client.endpoint.create.options. has the following options {}
+19:58:20.785 DEBUG client.InitialContextFactory : jboss.naming.client.remote.connectionprovider.create.options. has the following options {}
+19:58:20.796 INFO  xnio.Xnio : XNIO version 3.4.0.Final
+19:58:20.804 INFO  nio.NioXnio : XNIO NIO Implementation Version 3.4.0.Final
+19:58:21.080 DEBUG nio.WorkerThread : Started channel thread 'Remoting "config-based-naming-client-endpoint" Accept', selector sun.nio.ch.WindowsSelectorImpl@4df5906b
+19:58:21.080 DEBUG nio.WorkerThread : Started channel thread 'Remoting "config-based-naming-client-endpoint" I/O-1', selector sun.nio.ch.WindowsSelectorImpl@17d32242
+19:58:21.090 INFO  remoting3.EndpointImpl : JBoss Remoting version 4.0.21.Final
+19:58:21.102 DEBUG client.InitialContextFactory : jboss.naming.client.connect.options. has the following options {}
+19:58:21.275 DEBUG remoting.RemotingConnectionEJBReceiver$1 : Channel Channel ID f70ac55b (outbound) of Remoting connection 2d74f521 to localhost/127.0.0.1:8080 of endpoint "config-based-naming-client-endpoint" <66f36e88> opened for context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@12fbfdfe, receiver=Remoting connection EJB receiver [connection=Remoting connection <342298c> on endpoint "config-based-naming-client-endpoint" <66f36e88>,channel=jboss.ejb,nodename=desktop-5qi45b2]} Waiting for version handshake message from server
+19:58:21.279 INFO  remoting.VersionReceiver : EJBCLIENT000017: Received server version 2 and marshalling strategies [river]
+19:58:21.287 INFO  remoting.RemotingConnectionEJBReceiver : EJBCLIENT000013: Successful version handshake completed for receiver context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@12fbfdfe, receiver=Remoting connection EJB receiver [connection=Remoting connection <342298c> on endpoint "config-based-naming-client-endpoint" <66f36e88>,channel=jboss.ejb,nodename=desktop-5qi45b2]} on channel Channel ID f70ac55b (outbound) of Remoting connection 2d74f521 to localhost/127.0.0.1:8080 of endpoint "config-based-naming-client-endpoint" <66f36e88>
+19:58:21.291 DEBUG remoting.RemotingConnectionEJBReceiver : Received module availability report for 1 modules
+19:58:21.292 DEBUG remoting.RemotingConnectionEJBReceiver : Registering module EJBModuleIdentifier{appName='', moduleName='AuthenticationEJB', distinctName=''} availability for receiver context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@12fbfdfe, receiver=Remoting connection EJB receiver [connection=Remoting connection <342298c> on endpoint "config-based-naming-client-endpoint" <66f36e88>,channel=jboss.ejb,nodename=desktop-5qi45b2]}
+19:58:21.313 DEBUG client.EJBClientContext : Skipping registration of receiver Remoting connection EJB receiver [connection=Remoting connection <342298c> on endpoint "config-based-naming-client-endpoint" <66f36e88>,channel=jboss.ejb,nodename=desktop-5qi45b2] since an EJB receiver already exists for node name desktop-5qi45b2 in client context org.jboss.ejb.client.EJBClientContext@12fbfdfe
+19:58:21.670 INFO  assignment5.Launcher : Closing connection...
+20:10:07.039 INFO  assignment5.Launcher : Creating connection...
+20:10:07.468 DEBUG client.InitialContextFactory : Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+20:10:07.485 DEBUG client.EJBClientPropertiesLoader : Looking for jboss-ejb-client.properties using classloader sun.misc.Launcher$AppClassLoader@73d16e93
+20:10:07.496 DEBUG client.InitialContextFactory : Looking for jboss-naming-client.properties using classloader sun.misc.Launcher$AppClassLoader@73d16e93
+20:10:07.497 DEBUG client.InitialContextFactory : jboss.naming.client.endpoint.create.options. has the following options {}
+20:10:07.498 DEBUG client.InitialContextFactory : jboss.naming.client.remote.connectionprovider.create.options. has the following options {}
+20:10:07.509 INFO  xnio.Xnio : XNIO version 3.4.0.Final
+20:10:07.517 INFO  nio.NioXnio : XNIO NIO Implementation Version 3.4.0.Final
+20:10:07.793 DEBUG nio.WorkerThread : Started channel thread 'Remoting "config-based-naming-client-endpoint" I/O-1', selector sun.nio.ch.WindowsSelectorImpl@4df5906b
+20:10:07.793 DEBUG nio.WorkerThread : Started channel thread 'Remoting "config-based-naming-client-endpoint" Accept', selector sun.nio.ch.WindowsSelectorImpl@6ee9c922
+20:10:07.803 INFO  remoting3.EndpointImpl : JBoss Remoting version 4.0.21.Final
+20:10:07.815 DEBUG client.InitialContextFactory : jboss.naming.client.connect.options. has the following options {}
+20:10:07.991 DEBUG remoting.RemotingConnectionEJBReceiver$1 : Channel Channel ID 891afa1f (outbound) of Remoting connection 5d8f9c55 to localhost/127.0.0.1:8080 of endpoint "config-based-naming-client-endpoint" <6fb50784> opened for context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@4aa67180, receiver=Remoting connection EJB receiver [connection=Remoting connection <2e86abb6> on endpoint "config-based-naming-client-endpoint" <6fb50784>,channel=jboss.ejb,nodename=desktop-5qi45b2]} Waiting for version handshake message from server
+20:10:07.994 INFO  remoting.VersionReceiver : EJBCLIENT000017: Received server version 2 and marshalling strategies [river]
+20:10:08.002 INFO  remoting.RemotingConnectionEJBReceiver : EJBCLIENT000013: Successful version handshake completed for receiver context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@4aa67180, receiver=Remoting connection EJB receiver [connection=Remoting connection <2e86abb6> on endpoint "config-based-naming-client-endpoint" <6fb50784>,channel=jboss.ejb,nodename=desktop-5qi45b2]} on channel Channel ID 891afa1f (outbound) of Remoting connection 5d8f9c55 to localhost/127.0.0.1:8080 of endpoint "config-based-naming-client-endpoint" <6fb50784>
+20:10:08.003 DEBUG remoting.RemotingConnectionEJBReceiver : Received module availability report for 2 modules
+20:10:08.003 DEBUG remoting.RemotingConnectionEJBReceiver : Registering module EJBModuleIdentifier{appName='', moduleName='MyEJB', distinctName=''} availability for receiver context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@4aa67180, receiver=Remoting connection EJB receiver [connection=Remoting connection <2e86abb6> on endpoint "config-based-naming-client-endpoint" <6fb50784>,channel=jboss.ejb,nodename=desktop-5qi45b2]}
+20:10:08.004 DEBUG remoting.RemotingConnectionEJBReceiver : Registering module EJBModuleIdentifier{appName='', moduleName='AuthenticationEJB', distinctName=''} availability for receiver context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@4aa67180, receiver=Remoting connection EJB receiver [connection=Remoting connection <2e86abb6> on endpoint "config-based-naming-client-endpoint" <6fb50784>,channel=jboss.ejb,nodename=desktop-5qi45b2]}
+20:10:08.028 DEBUG client.EJBClientContext : Skipping registration of receiver Remoting connection EJB receiver [connection=Remoting connection <2e86abb6> on endpoint "config-based-naming-client-endpoint" <6fb50784>,channel=jboss.ejb,nodename=desktop-5qi45b2] since an EJB receiver already exists for node name desktop-5qi45b2 in client context org.jboss.ejb.client.EJBClientContext@4aa67180
+20:10:08.293 INFO  assignment5.Launcher : Closing connection...
+20:11:11.897 INFO  assignment5.Launcher : Creating connection...
+20:11:12.337 DEBUG client.InitialContextFactory : Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+20:11:12.355 DEBUG client.EJBClientPropertiesLoader : Looking for jboss-ejb-client.properties using classloader sun.misc.Launcher$AppClassLoader@73d16e93
+20:11:12.369 DEBUG client.InitialContextFactory : Looking for jboss-naming-client.properties using classloader sun.misc.Launcher$AppClassLoader@73d16e93
+20:11:12.370 DEBUG client.InitialContextFactory : jboss.naming.client.endpoint.create.options. has the following options {}
+20:11:12.371 DEBUG client.InitialContextFactory : jboss.naming.client.remote.connectionprovider.create.options. has the following options {}
+20:11:12.382 INFO  xnio.Xnio : XNIO version 3.4.0.Final
+20:11:12.389 INFO  nio.NioXnio : XNIO NIO Implementation Version 3.4.0.Final
+20:11:12.668 DEBUG nio.WorkerThread : Started channel thread 'Remoting "config-based-naming-client-endpoint" I/O-1', selector sun.nio.ch.WindowsSelectorImpl@741f490f
+20:11:12.668 DEBUG nio.WorkerThread : Started channel thread 'Remoting "config-based-naming-client-endpoint" Accept', selector sun.nio.ch.WindowsSelectorImpl@d5fc97c
+20:11:12.685 INFO  remoting3.EndpointImpl : JBoss Remoting version 4.0.21.Final
+20:11:12.696 DEBUG client.InitialContextFactory : jboss.naming.client.connect.options. has the following options {}
+20:11:12.878 DEBUG remoting.RemotingConnectionEJBReceiver$1 : Channel Channel ID d6242067 (outbound) of Remoting connection 4b615c95 to localhost/127.0.0.1:8080 of endpoint "config-based-naming-client-endpoint" <43890341> opened for context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@5ea24e8b, receiver=Remoting connection EJB receiver [connection=Remoting connection <6dc8d9> on endpoint "config-based-naming-client-endpoint" <43890341>,channel=jboss.ejb,nodename=desktop-5qi45b2]} Waiting for version handshake message from server
+20:11:12.881 INFO  remoting.VersionReceiver : EJBCLIENT000017: Received server version 2 and marshalling strategies [river]
+20:11:12.889 INFO  remoting.RemotingConnectionEJBReceiver : EJBCLIENT000013: Successful version handshake completed for receiver context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@5ea24e8b, receiver=Remoting connection EJB receiver [connection=Remoting connection <6dc8d9> on endpoint "config-based-naming-client-endpoint" <43890341>,channel=jboss.ejb,nodename=desktop-5qi45b2]} on channel Channel ID d6242067 (outbound) of Remoting connection 4b615c95 to localhost/127.0.0.1:8080 of endpoint "config-based-naming-client-endpoint" <43890341>
+20:11:12.890 DEBUG remoting.RemotingConnectionEJBReceiver : Received module availability report for 1 modules
+20:11:12.891 DEBUG remoting.RemotingConnectionEJBReceiver : Registering module EJBModuleIdentifier{appName='', moduleName='AuthenticationEJB', distinctName=''} availability for receiver context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@5ea24e8b, receiver=Remoting connection EJB receiver [connection=Remoting connection <6dc8d9> on endpoint "config-based-naming-client-endpoint" <43890341>,channel=jboss.ejb,nodename=desktop-5qi45b2]}
+20:11:12.912 DEBUG client.EJBClientContext : Skipping registration of receiver Remoting connection EJB receiver [connection=Remoting connection <6dc8d9> on endpoint "config-based-naming-client-endpoint" <43890341>,channel=jboss.ejb,nodename=desktop-5qi45b2] since an EJB receiver already exists for node name desktop-5qi45b2 in client context org.jboss.ejb.client.EJBClientContext@5ea24e8b
+20:11:13.257 INFO  assignment5.Launcher : Closing connection...
+20:24:01.588 INFO  assignment5.Launcher : Creating connection...
+20:24:02.080 DEBUG client.InitialContextFactory : Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+20:24:02.097 DEBUG client.EJBClientPropertiesLoader : Looking for jboss-ejb-client.properties using classloader sun.misc.Launcher$AppClassLoader@73d16e93
+20:24:02.108 DEBUG client.InitialContextFactory : Looking for jboss-naming-client.properties using classloader sun.misc.Launcher$AppClassLoader@73d16e93
+20:24:02.109 DEBUG client.InitialContextFactory : jboss.naming.client.endpoint.create.options. has the following options {}
+20:24:02.110 DEBUG client.InitialContextFactory : jboss.naming.client.remote.connectionprovider.create.options. has the following options {}
+20:24:02.121 INFO  xnio.Xnio : XNIO version 3.4.0.Final
+20:24:02.129 INFO  nio.NioXnio : XNIO NIO Implementation Version 3.4.0.Final
+20:24:02.408 DEBUG nio.WorkerThread : Started channel thread 'Remoting "config-based-naming-client-endpoint" I/O-1', selector sun.nio.ch.WindowsSelectorImpl@d5fc97c
+20:24:02.408 DEBUG nio.WorkerThread : Started channel thread 'Remoting "config-based-naming-client-endpoint" Accept', selector sun.nio.ch.WindowsSelectorImpl@57fabc34
+20:24:02.418 INFO  remoting3.EndpointImpl : JBoss Remoting version 4.0.21.Final
+20:24:02.430 DEBUG client.InitialContextFactory : jboss.naming.client.connect.options. has the following options {}
+20:24:02.604 DEBUG remoting.RemotingConnectionEJBReceiver$1 : Channel Channel ID b18132ab (outbound) of Remoting connection 5e18a640 to localhost/127.0.0.1:8080 of endpoint "config-based-naming-client-endpoint" <43890341> opened for context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@5ea24e8b, receiver=Remoting connection EJB receiver [connection=Remoting connection <5346a436> on endpoint "config-based-naming-client-endpoint" <43890341>,channel=jboss.ejb,nodename=desktop-5qi45b2]} Waiting for version handshake message from server
+20:24:02.607 INFO  remoting.VersionReceiver : EJBCLIENT000017: Received server version 2 and marshalling strategies [river]
+20:24:02.615 INFO  remoting.RemotingConnectionEJBReceiver : EJBCLIENT000013: Successful version handshake completed for receiver context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@5ea24e8b, receiver=Remoting connection EJB receiver [connection=Remoting connection <5346a436> on endpoint "config-based-naming-client-endpoint" <43890341>,channel=jboss.ejb,nodename=desktop-5qi45b2]} on channel Channel ID b18132ab (outbound) of Remoting connection 5e18a640 to localhost/127.0.0.1:8080 of endpoint "config-based-naming-client-endpoint" <43890341>
+20:24:02.616 DEBUG remoting.RemotingConnectionEJBReceiver : Received module availability report for 1 modules
+20:24:02.617 DEBUG remoting.RemotingConnectionEJBReceiver : Registering module EJBModuleIdentifier{appName='', moduleName='AuthenticationEJB', distinctName=''} availability for receiver context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@5ea24e8b, receiver=Remoting connection EJB receiver [connection=Remoting connection <5346a436> on endpoint "config-based-naming-client-endpoint" <43890341>,channel=jboss.ejb,nodename=desktop-5qi45b2]}
+20:24:02.638 DEBUG client.EJBClientContext : Skipping registration of receiver Remoting connection EJB receiver [connection=Remoting connection <5346a436> on endpoint "config-based-naming-client-endpoint" <43890341>,channel=jboss.ejb,nodename=desktop-5qi45b2] since an EJB receiver already exists for node name desktop-5qi45b2 in client context org.jboss.ejb.client.EJBClientContext@5ea24e8b
+20:24:02.927 INFO  assignment5.Launcher : Closing connection...
+20:25:35.940 INFO  assignment5.Launcher : Creating connection...
+20:25:36.369 DEBUG client.InitialContextFactory : Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+20:25:36.386 DEBUG client.EJBClientPropertiesLoader : Looking for jboss-ejb-client.properties using classloader sun.misc.Launcher$AppClassLoader@73d16e93
+20:25:36.398 DEBUG client.InitialContextFactory : Looking for jboss-naming-client.properties using classloader sun.misc.Launcher$AppClassLoader@73d16e93
+20:25:36.399 DEBUG client.InitialContextFactory : jboss.naming.client.endpoint.create.options. has the following options {}
+20:25:36.400 DEBUG client.InitialContextFactory : jboss.naming.client.remote.connectionprovider.create.options. has the following options {}
+20:25:36.411 INFO  xnio.Xnio : XNIO version 3.4.0.Final
+20:25:36.418 INFO  nio.NioXnio : XNIO NIO Implementation Version 3.4.0.Final
+20:25:36.699 DEBUG nio.WorkerThread : Started channel thread 'Remoting "config-based-naming-client-endpoint" I/O-1', selector sun.nio.ch.WindowsSelectorImpl@6ee9c922
+20:25:36.700 DEBUG nio.WorkerThread : Started channel thread 'Remoting "config-based-naming-client-endpoint" Accept', selector sun.nio.ch.WindowsSelectorImpl@52ee07a5
+20:25:36.709 INFO  remoting3.EndpointImpl : JBoss Remoting version 4.0.21.Final
+20:25:36.721 DEBUG client.InitialContextFactory : jboss.naming.client.connect.options. has the following options {}
+20:25:36.892 DEBUG remoting.RemotingConnectionEJBReceiver$1 : Channel Channel ID 97ebf456 (outbound) of Remoting connection 362d9554 to localhost/127.0.0.1:8080 of endpoint "config-based-naming-client-endpoint" <4f6aa0b> opened for context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@55be1109, receiver=Remoting connection EJB receiver [connection=Remoting connection <6ce02d6a> on endpoint "config-based-naming-client-endpoint" <4f6aa0b>,channel=jboss.ejb,nodename=desktop-5qi45b2]} Waiting for version handshake message from server
+20:25:36.896 INFO  remoting.VersionReceiver : EJBCLIENT000017: Received server version 2 and marshalling strategies [river]
+20:25:36.903 INFO  remoting.RemotingConnectionEJBReceiver : EJBCLIENT000013: Successful version handshake completed for receiver context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@55be1109, receiver=Remoting connection EJB receiver [connection=Remoting connection <6ce02d6a> on endpoint "config-based-naming-client-endpoint" <4f6aa0b>,channel=jboss.ejb,nodename=desktop-5qi45b2]} on channel Channel ID 97ebf456 (outbound) of Remoting connection 362d9554 to localhost/127.0.0.1:8080 of endpoint "config-based-naming-client-endpoint" <4f6aa0b>
+20:25:36.907 DEBUG remoting.RemotingConnectionEJBReceiver : Received module availability report for 1 modules
+20:25:36.908 DEBUG remoting.RemotingConnectionEJBReceiver : Registering module EJBModuleIdentifier{appName='', moduleName='AuthenticationEJB', distinctName=''} availability for receiver context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@55be1109, receiver=Remoting connection EJB receiver [connection=Remoting connection <6ce02d6a> on endpoint "config-based-naming-client-endpoint" <4f6aa0b>,channel=jboss.ejb,nodename=desktop-5qi45b2]}
+20:25:36.928 DEBUG client.EJBClientContext : Skipping registration of receiver Remoting connection EJB receiver [connection=Remoting connection <6ce02d6a> on endpoint "config-based-naming-client-endpoint" <4f6aa0b>,channel=jboss.ejb,nodename=desktop-5qi45b2] since an EJB receiver already exists for node name desktop-5qi45b2 in client context org.jboss.ejb.client.EJBClientContext@55be1109
+20:25:37.136 INFO  client.EJBClient : JBoss EJB Client version 2.1.4.Final
+20:25:37.272 DEBUG client.EJBClientContext : org.jboss.ejb.client.RandomDeploymentNodeSelector@1b92db64 deployment node selector selected desktop-5qi45b2 node for appname=,modulename=AuthenticationEJB,distinctname=
+20:25:37.273 DEBUG client.ReceiverInterceptor : Sending invocation to node desktop-5qi45b2
+20:25:37.325 DEBUG client.EJBClientContext : org.jboss.ejb.client.RandomDeploymentNodeSelector@1b92db64 deployment node selector selected desktop-5qi45b2 node for appname=,modulename=AuthenticationEJB,distinctname=
+20:25:37.325 DEBUG client.ReceiverInterceptor : Sending invocation to node desktop-5qi45b2
+20:25:37.328 DEBUG client.EJBClientContext : org.jboss.ejb.client.RandomDeploymentNodeSelector@1b92db64 deployment node selector selected desktop-5qi45b2 node for appname=,modulename=AuthenticationEJB,distinctname=
+20:25:37.329 DEBUG client.ReceiverInterceptor : Sending invocation to node desktop-5qi45b2
+20:25:37.331 DEBUG client.EJBClientContext : org.jboss.ejb.client.RandomDeploymentNodeSelector@1b92db64 deployment node selector selected desktop-5qi45b2 node for appname=,modulename=AuthenticationEJB,distinctname=
+20:25:37.331 DEBUG client.ReceiverInterceptor : Sending invocation to node desktop-5qi45b2
+20:25:37.333 DEBUG client.EJBClientContext : org.jboss.ejb.client.RandomDeploymentNodeSelector@1b92db64 deployment node selector selected desktop-5qi45b2 node for appname=,modulename=AuthenticationEJB,distinctname=
+20:25:37.334 DEBUG client.ReceiverInterceptor : Sending invocation to node desktop-5qi45b2
+20:32:59.803 DEBUG remoting.RemotingConnectionEJBReceiver : Received module un-availability report for 1 modules
+20:32:59.804 DEBUG remoting.RemotingConnectionEJBReceiver : Un-registering module EJBModuleIdentifier{appName='', moduleName='AuthenticationEJB', distinctName=''} from receiver context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@55be1109, receiver=Remoting connection EJB receiver [connection=Remoting connection <6ce02d6a> on endpoint "config-based-naming-client-endpoint" <4f6aa0b>,channel=jboss.ejb,nodename=desktop-5qi45b2]}
+20:33:00.094 DEBUG remoting.RemotingConnectionEJBReceiver : Received module availability report for 1 modules
+20:33:00.095 DEBUG remoting.RemotingConnectionEJBReceiver : Registering module EJBModuleIdentifier{appName='', moduleName='AuthenticationEJB', distinctName=''} availability for receiver context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@55be1109, receiver=Remoting connection EJB receiver [connection=Remoting connection <6ce02d6a> on endpoint "config-based-naming-client-endpoint" <4f6aa0b>,channel=jboss.ejb,nodename=desktop-5qi45b2]}
+20:38:16.270 DEBUG remoting.RemotingConnectionEJBReceiver : Received module un-availability report for 1 modules
+20:38:16.271 DEBUG remoting.RemotingConnectionEJBReceiver : Un-registering module EJBModuleIdentifier{appName='', moduleName='AuthenticationEJB', distinctName=''} from receiver context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@55be1109, receiver=Remoting connection EJB receiver [connection=Remoting connection <6ce02d6a> on endpoint "config-based-naming-client-endpoint" <4f6aa0b>,channel=jboss.ejb,nodename=desktop-5qi45b2]}
+20:38:16.292 DEBUG remoting.RemotingConnectionEJBReceiver : Received module un-availability report for 1 modules
+20:38:16.292 DEBUG remoting.RemotingConnectionEJBReceiver : Un-registering module EJBModuleIdentifier{appName='', moduleName='AuthenticationEJB', distinctName=''} from receiver context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@55be1109, receiver=Remoting connection EJB receiver [connection=Remoting connection <6ce02d6a> on endpoint "config-based-naming-client-endpoint" <4f6aa0b>,channel=jboss.ejb,nodename=desktop-5qi45b2]}
+20:38:16.315 DEBUG v1.RemoteNamingStoreV1$MessageReceiver : Channel end notification received, closing channel Channel ID c4135e0a (outbound) of Remoting connection 362d9554 to localhost/127.0.0.1:8080 of endpoint "config-based-naming-client-endpoint" <4f6aa0b>
+20:38:16.316 DEBUG remoting.ChannelAssociation$1 : Closing channel Channel ID 97ebf456 (outbound) of Remoting connection 362d9554 to localhost/127.0.0.1:8080 of endpoint "config-based-naming-client-endpoint" <4f6aa0b>
+20:38:16.317 DEBUG remoting.RemotingConnectionEJBReceiver$1$1 : Closing channelChannel ID 97ebf456 (outbound) of Remoting connection 362d9554 to localhost/127.0.0.1:8080 of endpoint "config-based-naming-client-endpoint" <4f6aa0b>
+20:38:16.319 INFO  remoting.ChannelAssociation$ResponseReceiver : EJBCLIENT000016: Channel Channel ID 97ebf456 (outbound) of Remoting connection 362d9554 to localhost/127.0.0.1:8080 of endpoint "config-based-naming-client-endpoint" <4f6aa0b> can no longer process messages
+20:38:20.389 INFO  assignment5.Launcher : Creating connection...
+20:38:20.910 DEBUG client.InitialContextFactory : Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+20:38:20.926 DEBUG client.EJBClientPropertiesLoader : Looking for jboss-ejb-client.properties using classloader sun.misc.Launcher$AppClassLoader@73d16e93
+20:38:20.937 DEBUG client.InitialContextFactory : Looking for jboss-naming-client.properties using classloader sun.misc.Launcher$AppClassLoader@73d16e93
+20:38:20.938 DEBUG client.InitialContextFactory : jboss.naming.client.endpoint.create.options. has the following options {}
+20:38:20.939 DEBUG client.InitialContextFactory : jboss.naming.client.remote.connectionprovider.create.options. has the following options {}
+20:38:20.950 INFO  xnio.Xnio : XNIO version 3.4.0.Final
+20:38:20.957 INFO  nio.NioXnio : XNIO NIO Implementation Version 3.4.0.Final
+20:38:21.231 DEBUG nio.WorkerThread : Started channel thread 'Remoting "config-based-naming-client-endpoint" Accept', selector sun.nio.ch.WindowsSelectorImpl@17d32242
+20:38:21.231 DEBUG nio.WorkerThread : Started channel thread 'Remoting "config-based-naming-client-endpoint" I/O-1', selector sun.nio.ch.WindowsSelectorImpl@3e13318f
+20:38:21.241 INFO  remoting3.EndpointImpl : JBoss Remoting version 4.0.21.Final
+20:38:21.252 DEBUG client.InitialContextFactory : jboss.naming.client.connect.options. has the following options {}
+20:38:22.280 DEBUG client.HaRemoteNamingStore : Failed to connect to server http-remoting://localhost:8080
+java.lang.RuntimeException: java.net.ConnectException: Connection refused: no further information
+	at org.jboss.naming.remote.protocol.IoFutureHelper.get(IoFutureHelper.java:95) ~[jboss-client.jar:10.1.0.Final]
+	at org.jboss.naming.remote.client.HaRemoteNamingStore.failOverSequence(HaRemoteNamingStore.java:198) ~[jboss-client.jar:10.1.0.Final]
+	at org.jboss.naming.remote.client.HaRemoteNamingStore.namingStore(HaRemoteNamingStore.java:149) ~[jboss-client.jar:10.1.0.Final]
+	at org.jboss.naming.remote.client.HaRemoteNamingStore.namingOperation(HaRemoteNamingStore.java:130) ~[jboss-client.jar:10.1.0.Final]
+	at org.jboss.naming.remote.client.HaRemoteNamingStore.lookup(HaRemoteNamingStore.java:272) ~[jboss-client.jar:10.1.0.Final]
+	at org.jboss.naming.remote.client.RemoteContext.lookupInternal(RemoteContext.java:104) ~[jboss-client.jar:10.1.0.Final]
+	at org.jboss.naming.remote.client.RemoteContext.lookup(RemoteContext.java:93) ~[jboss-client.jar:10.1.0.Final]
+	at org.jboss.naming.remote.client.RemoteContext.lookup(RemoteContext.java:146) ~[jboss-client.jar:10.1.0.Final]
+	at javax.naming.InitialContext.lookup(Unknown Source) ~[?:1.8.0_151]
+	at controller.AppController.<init>(AppController.java:92) ~[bin/:?]
+	at controller.AppController.getInstance(AppController.java:299) ~[bin/:?]
+	at assignment5.Launcher.start(Launcher.java:26) ~[bin/:?]
+	at com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$161(LauncherImpl.java:863) ~[jfxrt.jar:?]
+	at com.sun.javafx.application.PlatformImpl.lambda$runAndWait$174(PlatformImpl.java:326) ~[jfxrt.jar:?]
+	at com.sun.javafx.application.PlatformImpl.lambda$null$172(PlatformImpl.java:295) ~[jfxrt.jar:?]
+	at java.security.AccessController.doPrivileged(Native Method) ~[?:1.8.0_151]
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$173(PlatformImpl.java:294) ~[jfxrt.jar:?]
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95) ~[jfxrt.jar:?]
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[jfxrt.jar:?]
+	at com.sun.glass.ui.win.WinApplication.lambda$null$147(WinApplication.java:177) ~[jfxrt.jar:?]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_151]
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[?:1.8.0_151]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source) ~[?:1.8.0_151]
+	at org.xnio.nio.WorkerThread$ConnectHandle.handleReady(WorkerThread.java:321) ~[jboss-client.jar:10.1.0.Final]
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:567) ~[jboss-client.jar:10.1.0.Final]
+	at ...asynchronous invocation...(Unknown Source) ~[?:?]
+	at org.jboss.remoting3.EndpointImpl.doConnect(EndpointImpl.java:294) ~[jboss-client.jar:10.1.0.Final]
+	at org.jboss.remoting3.EndpointImpl.doConnect(EndpointImpl.java:276) ~[jboss-client.jar:10.1.0.Final]
+	at org.jboss.remoting3.EndpointImpl.connect(EndpointImpl.java:393) ~[jboss-client.jar:10.1.0.Final]
+	at org.jboss.remoting3.EndpointImpl.connect(EndpointImpl.java:377) ~[jboss-client.jar:10.1.0.Final]
+	at org.jboss.naming.remote.client.EndpointCache$EndpointWrapper.connect(EndpointCache.java:111) ~[jboss-client.jar:10.1.0.Final]
+	at org.jboss.naming.remote.client.HaRemoteNamingStore.failOverSequence(HaRemoteNamingStore.java:197) ~[jboss-client.jar:10.1.0.Final]
+	... 19 more
+20:38:22.433 INFO  assignment5.Launcher : Closing connection...
+20:38:40.983 INFO  assignment5.Launcher : Creating connection...
+20:38:41.416 DEBUG client.InitialContextFactory : Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+20:38:41.432 DEBUG client.EJBClientPropertiesLoader : Looking for jboss-ejb-client.properties using classloader sun.misc.Launcher$AppClassLoader@73d16e93
+20:38:41.443 DEBUG client.InitialContextFactory : Looking for jboss-naming-client.properties using classloader sun.misc.Launcher$AppClassLoader@73d16e93
+20:38:41.444 DEBUG client.InitialContextFactory : jboss.naming.client.endpoint.create.options. has the following options {}
+20:38:41.445 DEBUG client.InitialContextFactory : jboss.naming.client.remote.connectionprovider.create.options. has the following options {}
+20:38:41.456 INFO  xnio.Xnio : XNIO version 3.4.0.Final
+20:38:41.464 INFO  nio.NioXnio : XNIO NIO Implementation Version 3.4.0.Final
+20:38:41.750 DEBUG nio.WorkerThread : Started channel thread 'Remoting "config-based-naming-client-endpoint" I/O-1', selector sun.nio.ch.WindowsSelectorImpl@741f490f
+20:38:41.750 DEBUG nio.WorkerThread : Started channel thread 'Remoting "config-based-naming-client-endpoint" Accept', selector sun.nio.ch.WindowsSelectorImpl@d5fc97c
+20:38:41.766 INFO  remoting3.EndpointImpl : JBoss Remoting version 4.0.21.Final
+20:38:41.777 DEBUG client.InitialContextFactory : jboss.naming.client.connect.options. has the following options {}
+20:38:41.969 DEBUG remoting.RemotingConnectionEJBReceiver$1 : Channel Channel ID ae12fcb3 (outbound) of Remoting connection 160bf365 to localhost/127.0.0.1:8080 of endpoint "config-based-naming-client-endpoint" <4aa67180> opened for context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@11b180ee, receiver=Remoting connection EJB receiver [connection=Remoting connection <317e2b3e> on endpoint "config-based-naming-client-endpoint" <4aa67180>,channel=jboss.ejb,nodename=desktop-5qi45b2]} Waiting for version handshake message from server
+20:38:41.972 INFO  remoting.VersionReceiver : EJBCLIENT000017: Received server version 2 and marshalling strategies [river]
+20:38:41.980 INFO  remoting.RemotingConnectionEJBReceiver : EJBCLIENT000013: Successful version handshake completed for receiver context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@11b180ee, receiver=Remoting connection EJB receiver [connection=Remoting connection <317e2b3e> on endpoint "config-based-naming-client-endpoint" <4aa67180>,channel=jboss.ejb,nodename=desktop-5qi45b2]} on channel Channel ID ae12fcb3 (outbound) of Remoting connection 160bf365 to localhost/127.0.0.1:8080 of endpoint "config-based-naming-client-endpoint" <4aa67180>
+20:38:41.988 DEBUG remoting.RemotingConnectionEJBReceiver : Received module availability report for 1 modules
+20:38:41.989 DEBUG remoting.RemotingConnectionEJBReceiver : Registering module EJBModuleIdentifier{appName='', moduleName='AuthenticationEJB', distinctName=''} availability for receiver context EJBReceiverContext{clientContext=org.jboss.ejb.client.EJBClientContext@11b180ee, receiver=Remoting connection EJB receiver [connection=Remoting connection <317e2b3e> on endpoint "config-based-naming-client-endpoint" <4aa67180>,channel=jboss.ejb,nodename=desktop-5qi45b2]}
+20:38:42.010 DEBUG client.EJBClientContext : Skipping registration of receiver Remoting connection EJB receiver [connection=Remoting connection <317e2b3e> on endpoint "config-based-naming-client-endpoint" <4aa67180>,channel=jboss.ejb,nodename=desktop-5qi45b2] since an EJB receiver already exists for node name desktop-5qi45b2 in client context org.jboss.ejb.client.EJBClientContext@11b180ee
+20:38:42.226 INFO  client.EJBClient : JBoss EJB Client version 2.1.4.Final
+20:38:42.404 DEBUG client.EJBClientContext : org.jboss.ejb.client.RandomDeploymentNodeSelector@4dfacf29 deployment node selector selected desktop-5qi45b2 node for appname=,modulename=AuthenticationEJB,distinctname=
+20:38:42.405 DEBUG client.ReceiverInterceptor : Sending invocation to node desktop-5qi45b2
+20:38:42.457 DEBUG client.EJBClientContext : org.jboss.ejb.client.RandomDeploymentNodeSelector@4dfacf29 deployment node selector selected desktop-5qi45b2 node for appname=,modulename=AuthenticationEJB,distinctname=
+20:38:42.457 DEBUG client.ReceiverInterceptor : Sending invocation to node desktop-5qi45b2
+20:38:42.460 DEBUG client.EJBClientContext : org.jboss.ejb.client.RandomDeploymentNodeSelector@4dfacf29 deployment node selector selected desktop-5qi45b2 node for appname=,modulename=AuthenticationEJB,distinctname=
+20:38:42.461 DEBUG client.ReceiverInterceptor : Sending invocation to node desktop-5qi45b2
+20:38:42.463 DEBUG client.EJBClientContext : org.jboss.ejb.client.RandomDeploymentNodeSelector@4dfacf29 deployment node selector selected desktop-5qi45b2 node for appname=,modulename=AuthenticationEJB,distinctname=
+20:38:42.463 DEBUG client.ReceiverInterceptor : Sending invocation to node desktop-5qi45b2
+20:38:42.465 DEBUG client.EJBClientContext : org.jboss.ejb.client.RandomDeploymentNodeSelector@4dfacf29 deployment node selector selected desktop-5qi45b2 node for appname=,modulename=AuthenticationEJB,distinctname=
+20:38:42.466 DEBUG client.ReceiverInterceptor : Sending invocation to node desktop-5qi45b2
+20:38:45.649 INFO  controller.AppController : Login menu item clicked
+20:38:53.620 INFO  controller.AppController : userName is sasquatch, password is jerky
+20:38:53.625 INFO  controller.AppController : sha256 hash of password is 4e605ba19bb9781a2af0f2b04256b7af1b2d9923a3d9f91837f33afee13b24e8
+20:38:53.626 DEBUG client.EJBClientContext : org.jboss.ejb.client.RandomDeploymentNodeSelector@4dfacf29 deployment node selector selected desktop-5qi45b2 node for appname=,modulename=AuthenticationEJB,distinctname=
+20:38:53.626 DEBUG client.ReceiverInterceptor : Sending invocation to node desktop-5qi45b2
+20:38:53.630 INFO  controller.AppController : session id is 1
+20:38:53.630 DEBUG client.EJBClientContext : org.jboss.ejb.client.RandomDeploymentNodeSelector@4dfacf29 deployment node selector selected desktop-5qi45b2 node for appname=,modulename=AuthenticationEJB,distinctname=
+20:38:53.630 DEBUG client.ReceiverInterceptor : Sending invocation to node desktop-5qi45b2
+20:38:53.633 DEBUG client.EJBClientContext : org.jboss.ejb.client.RandomDeploymentNodeSelector@4dfacf29 deployment node selector selected desktop-5qi45b2 node for appname=,modulename=AuthenticationEJB,distinctname=
+20:38:53.633 DEBUG client.ReceiverInterceptor : Sending invocation to node desktop-5qi45b2
+20:38:53.635 DEBUG client.EJBClientContext : org.jboss.ejb.client.RandomDeploymentNodeSelector@4dfacf29 deployment node selector selected desktop-5qi45b2 node for appname=,modulename=AuthenticationEJB,distinctname=
+20:38:53.636 DEBUG client.ReceiverInterceptor : Sending invocation to node desktop-5qi45b2
+20:38:53.638 DEBUG client.EJBClientContext : org.jboss.ejb.client.RandomDeploymentNodeSelector@4dfacf29 deployment node selector selected desktop-5qi45b2 node for appname=,modulename=AuthenticationEJB,distinctname=
+20:38:53.638 DEBUG client.ReceiverInterceptor : Sending invocation to node desktop-5qi45b2
+20:38:53.640 DEBUG client.EJBClientContext : org.jboss.ejb.client.RandomDeploymentNodeSelector@4dfacf29 deployment node selector selected desktop-5qi45b2 node for appname=,modulename=AuthenticationEJB,distinctname=
+20:38:53.640 DEBUG client.ReceiverInterceptor : Sending invocation to node desktop-5qi45b2
+20:38:55.783 INFO  controller.AppController : Author list menu item clicked
+20:38:55.892 DEBUG client.EJBClientContext : org.jboss.ejb.client.RandomDeploymentNodeSelector@4dfacf29 deployment node selector selected desktop-5qi45b2 node for appname=,modulename=AuthenticationEJB,distinctname=
+20:38:55.892 DEBUG client.ReceiverInterceptor : Sending invocation to node desktop-5qi45b2
+20:38:57.796 INFO  controller.AppController : Book list menu item clicked
+20:38:59.939 DEBUG client.EJBClientContext : org.jboss.ejb.client.RandomDeploymentNodeSelector@4dfacf29 deployment node selector selected desktop-5qi45b2 node for appname=,modulename=AuthenticationEJB,distinctname=
+20:38:59.939 DEBUG client.ReceiverInterceptor : Sending invocation to node desktop-5qi45b2
+20:39:02.569 INFO  controller.AppController : Logout menu item clicked
+20:39:02.570 DEBUG client.EJBClientContext : org.jboss.ejb.client.RandomDeploymentNodeSelector@4dfacf29 deployment node selector selected desktop-5qi45b2 node for appname=,modulename=AuthenticationEJB,distinctname=
+20:39:02.570 DEBUG client.ReceiverInterceptor : Sending invocation to node desktop-5qi45b2
+20:39:02.572 DEBUG client.EJBClientContext : org.jboss.ejb.client.RandomDeploymentNodeSelector@4dfacf29 deployment node selector selected desktop-5qi45b2 node for appname=,modulename=AuthenticationEJB,distinctname=
+20:39:02.573 DEBUG client.ReceiverInterceptor : Sending invocation to node desktop-5qi45b2
+20:39:02.575 DEBUG client.EJBClientContext : org.jboss.ejb.client.RandomDeploymentNodeSelector@4dfacf29 deployment node selector selected desktop-5qi45b2 node for appname=,modulename=AuthenticationEJB,distinctname=
+20:39:02.575 DEBUG client.ReceiverInterceptor : Sending invocation to node desktop-5qi45b2
+20:39:02.579 DEBUG client.EJBClientContext : org.jboss.ejb.client.RandomDeploymentNodeSelector@4dfacf29 deployment node selector selected desktop-5qi45b2 node for appname=,modulename=AuthenticationEJB,distinctname=
+20:39:02.580 DEBUG client.ReceiverInterceptor : Sending invocation to node desktop-5qi45b2
+20:39:02.582 DEBUG client.EJBClientContext : org.jboss.ejb.client.RandomDeploymentNodeSelector@4dfacf29 deployment node selector selected desktop-5qi45b2 node for appname=,modulename=AuthenticationEJB,distinctname=
+20:39:02.583 DEBUG client.ReceiverInterceptor : Sending invocation to node desktop-5qi45b2
+20:39:05.095 INFO  assignment5.Launcher : Closing connection...
