@@ -3,10 +3,16 @@ package authentication;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.ejb.Singleton;
+import javax.ejb.Stateful;
 
+/**
+ * Session Bean implementation class AuthBean
+ */
+@Singleton
+public class AuthBean implements AuthBeanRemote {
 
-public class AuthenticatorLocal extends Authenticator {
-	private ABACPolicyAuth accessPolicy;
+private ABACPolicyAuth accessPolicy;
 	
 	/**
 	 * fake server session states
@@ -18,7 +24,7 @@ public class AuthenticatorLocal extends Authenticator {
 	 */
 	private List<User> credentials;
 	
-	public AuthenticatorLocal() {
+	public AuthBean() {
 		//init the session list and credentials list
 		sessions = new ArrayList<Session>();
 		credentials = new ArrayList<User>();
@@ -98,4 +104,6 @@ public class AuthenticatorLocal extends Authenticator {
 	}
 	
 	
+
+
 }

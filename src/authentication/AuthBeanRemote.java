@@ -1,8 +1,9 @@
 package authentication;
 
+import javax.ejb.Remote;
 
-
-public abstract class Authenticator {
+@Remote
+public interface AuthBeanRemote {
 	public static final int INVALID_SESSION = 0;
 
 	/**
@@ -30,6 +31,4 @@ public abstract class Authenticator {
 	 * @param sessionId
 	 */
 	public abstract void logout(int sessionId);
-
 }
-
